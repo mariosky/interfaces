@@ -1,0 +1,50 @@
+_id: /quiz/db3d6a34-c1b5-11ed-afa1-0242ac120002
+uri: /quiz/db3d6a34-c1b5-11ed-afa1-0242ac120002
+publisher: 
+level: principiante
+rights: Attribution-ShareAlike 4.0 International
+description: Este es el primer ejemplo de un programa desde archivos
+icon: coffee
+author: mariosky@gmail.com
+tags: 
+  - completa
+  - csharp
+  - frontpage
+image_url: 
+title: Completa el programa
+type: quiz
+lang: csharp
+external_url: https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg
+questions: 
+  - question: En C#, ¿Cúal es la diferencia entre un campo y una propiedad?
+    options: 
+      - La propiedad nos permite modificar y leer campos privados.
+      - Un campo puede debe ser público y las propiedades son siempre privadas.
+      - No existe diferencia, es el mismo concepto.
+    answer: [1, 0, 0]
+    type: radio
+    interaction: simpleChoice
+    hints: 
+    answer_text: 
+      - La propiedad utiliza a los campos
+  - question: Ésta es una sección que encontramos en una propiedad
+    options: 
+      - get
+      - value
+      - set
+    answer: [1, 0, 1]
+    type: multi
+    interaction: choiceInteraction
+    hints: 
+    answer_text: 
+      - get y set
+  - question: ¿Cómo se le llama a la variable que tiene el valor que recibe un propiedad que será set?
+    options: 
+    answer: value 
+    type: str
+    interaction: textEntryInteraction
+    hints:
+      - Contiene el valor 
+    answer_text: 
+      - value
+      - another
