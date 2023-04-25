@@ -1,16 +1,16 @@
-_id: /program/e0350c5a-f324-11ec-b939-0242ac120033
-uri: /program/e0350c5a-f324-11ec-b939-0242ac120033
+_id: /program/e0350c5a-f324-11ec-b939-0242ac122333
+uri: /program/e0350c5a-f324-11ec-b939-0242ac122333
 publisher: 
 level: principiante
 rights: Attribution-ShareAlike 4.0 International
-description: Escribe el constructor de la clase Producto 
+description: La clase Producto debe implementar la interface IFoo 
 icon: coffee
 author: mariosky@gmail.com
 tags: 
   - completa
   - csharp
 image_url: 
-title: Completa el programa
+title: Implementa la interface IFoo
 type: prog
 lang: csharp
 external_url: https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg

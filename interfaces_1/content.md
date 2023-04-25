@@ -9,7 +9,25 @@ objetivo de las interfaces.
 Una ***interface*** es una abstracción que agrupa cierta funcionalidad la cual
 obligatoriamente deben definir aquellas clases que la implementan. Dependiendo
 del lenguaje, las interfaces normalmente pueden incluir solo métodos y
-propiedades y no deben incluir datos miembros (campos). 
+propiedades y no deben incluir datos miembros (campos), por ejemplo:
+
+```csharp
+interface IColeccionable 
+ {
+  // Funcionalidad de la interface: 
+  int Titulo; // 💣 ERROR: No se pueden incluir campos;
+  string Categoría { get; set; } // ✅ BIEN: Se pueden incluir propiedades; 
+  public decimal GetPrecio();// 💣 ERROR: No debe incluir la palabra 'public'  
+  int ComparaCon(object? o); // ✅ BIEN: No es necesario incluir una 
+                             // implementación, no lleva cuerpo { } 
+ }
+```
+
+En C#, indicamos que vamos a definir una interfaz
+con la palabra `interface`, seguida de su nombre. Por convención en C#
+nombramos a las interfaces con el prefijo *I* indicando que es una interface.
+Muchas veces también se utiliza el sufijo 'able' con el que indicamos que es
+'capaz de' (esto es muy común en inglés).
 
 Podemos utilizar interfaces para brindar un servicio a ciertas clases, siempre
 y cuando estas implementen una interfaz que nos permita completar el servicio.
@@ -31,11 +49,7 @@ interface IComparable
 
 Listo, no es muy complicado definir la interfaz, pero lo bueno está en los
 detalles. Al igual que una clase, una interfaz es un bloque que agrupa la
-definición de sus miembros. En C#, indicamos que vamos a definir una interfaz
-con la palabra `interface`, seguida de su nombre. Por convención en C#
-nombramos a las interfaces con el prefijo *I* indicando que es una interface.
-Muchas veces también se utiliza el sufijo 'able' con el que indicamos que es
-'capaz de' (esto es muy común en inglés).
+definición de sus miembros.
 
 En este caso, queremos indicar que las clases que implementen a `IComparable`
 son capaces de compararse contra otros objetos. Esta capacidad será necesaria
