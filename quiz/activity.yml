@@ -16,7 +16,7 @@ lang: csharp
 external_url: https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg
 satisfied_at_least: 5
 questions: 
-  - question: En C#, ¿Cúal es la diferencia entre un campo y una propiedad?
+  - question: En C#, ¿Cuál es la diferencia entre un campo y una propiedad?
     options: 
       - La propiedad nos permite modificar y leer campos privados.
       - Un campo debe ser público y las propiedades son siempre privadas.
@@ -28,7 +28,7 @@ questions:
     answer_text: 
       - La propiedad modifica y lee a los campos privados
     id: 1
-  - question: Éstas son secciones que encontramos en una propiedad
+  - question: Estas son secciones que encontramos en una propiedad
     options: 
       - get
       - value
@@ -40,7 +40,7 @@ questions:
     answer_text: 
       - get y set
     id: 2
-  - question: ¿Cómo se le llama a la variable especial que contiene el valor que recibe un propiedad para la sección `set`?
+  - question: ¿Cómo se le llama a la variable especial que contiene el valor que recibe una propiedad para la sección `set`?
     options: 
     answer: value 
     type: str
@@ -61,7 +61,7 @@ questions:
     answer_text: 
       - interface
     id: 4
-  - question: Esta línea de código nos daría un error 
+  - question: Según el fragmento de código de arriba, en la declaración de la interface. Esta línea de código nos daría un error 
     options: 
       - string directorio { get; set; } 
       - string texto;
@@ -73,12 +73,12 @@ questions:
     answer_text: 
       - No puede haber campos en una interfaz
     id: 5
-  - question: ¿Una interfaz en C# puede tener una implementación por defecto? 
+  - question: ¿Los métodos miembros de una interfaz en C#, ¿Pueden tener una implementación por defecto? 
     options: 
       - No, esto va en contra del concepto de interfaces. 
       - Solo las versiones recientes.
       - A partir de la versión 8.0 ya no es posible.
-    answer: [1, 0, 0]
+    answer: [0, 1, 0]
     type: radio
     interaction: simpleChoice
     hints: 

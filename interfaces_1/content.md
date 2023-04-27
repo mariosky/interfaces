@@ -1,43 +1,52 @@
 
-Vamos a imaginar que tenemos una clase abstracta la cual tiene solo métodos
+Vamos a imaginar que tenemos una clase abstracta, la cual tiene solo métodos
 abstractos. Ahora, si escribimos una nueva clase que herede de nuestra clase
-abstracta "pura", estaríamos obligadas a redefinir todos sus métodos. Sería
-como si estuvieramos firmando un contrato que nos obliga a implementar toda la
+abstracta "pura", estamos obligados a redefinir **todos** sus métodos. Sería
+como si estuviéramos firmando un contrato que nos obliga a implementar toda la
 funcionalidad de la clase base. Justo establecer este tipo de contrato es el
 objetivo de las interfaces. 
 
-Una ***interface*** es una abstracción que agrupa cierta funcionalidad la cual
-obligatoriamente deben definir aquellas clases que la implementan. Dependiendo
-del lenguaje, las interfaces normalmente pueden incluir solo métodos y
-propiedades y no deben incluir datos miembros (campos), por ejemplo:
+Una ***interfaz*** es una abstracción que agrupa cierta funcionalidad la cual
+obligatoriamente deben definir aquellas clases que la implementan. Las
+interfaces refuerzan el encapsulamiento, pues establecen la interfaz de un
+servicio sin necedidad de acoplarse directamente a una clase en particular o
+requerir herencia de tipos. 
+
+Dependiendo del lenguaje, las interfaces normalmente pueden incluir solo
+métodos y propiedades y no deben incluir datos miembros (campos en C#), por
+ejemplo:
 
 ```csharp
 interface IColeccionable 
  {
   // Funcionalidad de la interface: 
   int Titulo; // 💣 ERROR: No se pueden incluir campos;
-  string Categoría { get; set; } // ✅ BIEN: Se pueden incluir propiedades; 
-  public decimal GetPrecio();// 💣 ERROR: No debe incluir la palabra 'public'  
-  int ComparaCon(object? o); // ✅ BIEN: No es necesario incluir una 
-                             // implementación, no lleva cuerpo { } 
- }
+  string Categoría { get; set; } // ✅ Se pueden 
+                                 // incluir propiedades; 
+  decimal GetPrecio();  
+  int ComparaCon(object? o); 
+  }
 ```
 
-En C#, indicamos que vamos a definir una interfaz
-con la palabra `interface`, seguida de su nombre. Por convención en C#
-nombramos a las interfaces con el prefijo *I* indicando que es una interface.
-Muchas veces también se utiliza el sufijo 'able' con el que indicamos que es
-'capaz de' (esto es muy común en inglés).
+En C#, indicamos que vamos a definir una interfaz con la palabra `interface`,
+seguida de su nombre. Por convención, en C# nombramos a las interfaces con el
+prefijo *I* indicando que es una interface. Muchas veces también se utiliza el
+sufijo 'able' con el que indicamos que es 'capaz de' (esto es muy común en
+inglés). Vemos también, que al especificar el método en la interfaz, no
+agregamos una implementación. Tampoco debemos indicar el modificador de acceso
+porque es obligatoriamente público. Del mismo modo, no agregamos la palabra
+`abstract`, ya que todos los miembros de la interface deben implementarse
+obligatoriamente.
 
 Podemos utilizar interfaces para brindar un servicio a ciertas clases, siempre
 y cuando estas implementen una interfaz que nos permita completar el servicio.
 Por ejemplo, vamos a suponer que tenemos un método genérico para ordenar una
 colección de objetos. Para poder ordenar a los objetos necesitamos establecer
-el órden comparando a un objeto contra otros. Necesitamos que los objetos
-cuenten con un método que establezca la comparación entre uno objeto y otro.
-Esto lo podemos especificar utilizando una interface.  
+el orden comparando a un objeto contra otros. Necesitamos que los objetos
+cuenten con un método que establezca la comparación entre un objeto y otro.
+Esto lo podemos especificar utilizando una interfaz.  
 
-Siguiendo con el ejemplo vamos a programar una interfaz `IComparable`, cómo la
+Siguiendo con el ejemplo vamos a programar una interfaz llamada `IComparable`, cómo la
 que se incluye en el framework .net: 
 
 ```csharp
@@ -55,12 +64,7 @@ En este caso, queremos indicar que las clases que implementen a `IComparable`
 son capaces de compararse contra otros objetos. Esta capacidad será necesaria
 para ordenar los objetos de la lista. Para tener la funcionalidad requerida,
 las clases deben *obligatoriamente* implementar el método `int
-CompareTo(object o)`. Vemos que al especificar el método en la interface, no
-agregamos una implementación. Tampoco debemos indicar el modificador de acceso
-ya que es obligatoriamente público. Del mismo modo no agregamos la palabra
-`abstract` ya que todos los miembros de la interface deben implementarse
-obligatoriamente.
-
+CompareTo(object o)`. 
 Según el framework el entero que regresa  `CompareTo` indica el resultado de la
 comparación: 
 
@@ -71,7 +75,7 @@ Cero             | La instacia actual es igual al objeto con el que se compara.
 Mayor que cero   | La instancia actual antecede al objeto. 
 
 Otro detalle es que el argumento del método es de tipo `object`, esto es
-necesario ya que no podemos anticipar el tipo de dato contra el que se hará la
+necesario porque no podemos anticipar el tipo de dato contra el que se hará la
 comparación. Esto nos obliga a realizar una conversión de tipo para poder hacer
 la comparación. Más adelante cuando veamos tipos genéricos utilizaremos a la
 interfaz  `IComparable<T>` la cual elimina este problema. 
@@ -79,10 +83,10 @@ interfaz  `IComparable<T>` la cual elimina este problema.
 La diferencia entre una clase abstracta *pura* y una interfaz, rádica en el
 tipo de relación que tienen con las clases que las heredan/implementan. La
 herencia indica una relación Generalización/Especialización, como la que hay
-entre `Figura` y `Circulo`, por otro lado la relación que tiene una clase con
-una interfaz es de implementación. Simplemente indica, que la clase
+entre `Figura` y `Círculo`, por otro lado, la relación que tiene una clase con
+una interfaz es de implementación. Indica solamente que la clase
 **implementa** a la **interface**. Esta diferencia, permite a las clases
-implementadas en lenguajes con herencia simple, como c#, tener sin embargo, la
+implementadas en lenguajes con herencia simple, como c#, tener la
 capacidad de implementar múltiples interfaces.
 
 El siguiente ejemplo ilustra la implementación de `IComparable` por parte de la clase 
