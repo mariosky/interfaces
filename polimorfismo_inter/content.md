@@ -41,7 +41,7 @@ class Rectángulo : IFigura
     }
 }
 ```
-Ahora podríamos asignar un objeto tipo `Rectánguo` a una referencia `IFigura`: 
+Ahora podríamos asignar un objeto tipo `Rectángulo` a una referencia `IFigura`: 
 
 ```csharp
 class Program 
@@ -84,12 +84,12 @@ class Program
 
 ### Polimorfismo
 
-El polimorfismo se puede implementar igual que con una clase abstracta, asignando 
-a `IFigura` objetos con la capacidad de dibujarse. Esto, es algo distinto al 
-polimorfismo que vimos antes el cual se basaba en la herencia, en este caso no 
-es necesario que haya esta relación en las clases. Por esta razón, incluso 
-sería mejor que la clase se llamara `IDibujable` ya que no tienen que ser 
-necesariamente figuras los objetos que se deseemos dibujar.
+El polimorfismo se puede implementar igual que con una clase abstracta,
+asignando a `IFigura` objetos con la capacidad de dibujarse. Esto es algo
+distinto al polimorfismo que vimos antes, el cual se basaba en la herencia, en
+este caso no es necesario que haya esta relación jerárquica entre las clases.
+Por esta razón, incluso sería mejor que la clase se llamara `IDibujable`, ya
+que no tienen que ser necesariamente figuras los objetos que deseamos dibujar.
 
 ```csharp
 class Program 
@@ -115,8 +115,8 @@ Puedes completar el código anteror como ejercicio personal.
 
 ### Múltiples implementaciones
 
-El uso de las interfaces más allá del polimorfismo, es el establecer cierta
-funcionalidad la cual puede ser implementada por distintos tipos de objetos.
+El uso de las interfaces, más allá del polimorfismo, es el establecer cierta
+funcionalidad, la cual puede ser implementada por distintos tipos de objetos.
 Por ejemplo, la funcionalidad genérica para conectarse a un sistema de bases de
 datos podría especificarse en una interfaz. Por ejemplo: 
 

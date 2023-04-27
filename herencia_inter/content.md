@@ -1,6 +1,6 @@
 
-Las interfaces son una collección de métodos y propiedades las cuales 
-establecen la interfaz de un servicio. Podemos exteder 
+Las interfaces son una colección de métodos y propiedades las cuales 
+establecen la interfaz de un servicio. Podemos extender 
 los servicios que específica una interfaz, agregando los que se definen 
 en otra en una relación parecida a la herencia. Por ejemplo, 
 la interfaz `IFigura` incluye las coordenadas de su posición como propiedades 
@@ -16,7 +16,7 @@ interface IFigura
   }
 ```
 
-Podemos extender esta funcionalidad 
+Vamos a extender esta funcionalidad 
 para agregar la capacidad de rotar sobre su eje, agregando primero la funcionalidad 
 en su propia interfaz:
 
@@ -45,7 +45,7 @@ Una interfaz solo puede extender a otras interfaces, no podemos incluir una clas
 de la lista. 
 
 Ahora, si una clase implementa a `IFigura`, deberá implementar todos los métodos y propiedades 
-que se especifiquen en `IFigura` pero también en las interfaces que la extienden 
+que se especifiquen en ella, y también en las interfaces que la extienden 
 (`IRotable`, `ISerializable`, `IImprimible`). 
 
 Veamos un ejemplo dónde se presenta un caso particular. La clase `Rectángulo` implementa 
