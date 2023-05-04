@@ -219,7 +219,7 @@ funciona como una plantilla, con marcas de posición para los tipos de dato que 
 
 ### Leer 
 
-*  [Programación Genérica] (https://en.wikipedia.org/wiki/Generic_programming#Stepanov%E2%80%93Musser_and_other_generic_programming_paradigms)
+* [Programación Genérica](https://en.wikipedia.org/wiki/Generic_programming#Stepanov%E2%80%93Musser_and_other_generic_programming_paradigms)
 
 #### Referencias
 
