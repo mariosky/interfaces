@@ -1,0 +1,15 @@
+/Users/mario/interfaces/program_stack/stack/bin/Debug/net6.0/stack
+/Users/mario/interfaces/program_stack/stack/bin/Debug/net6.0/stack.deps.json
+/Users/mario/interfaces/program_stack/stack/bin/Debug/net6.0/stack.runtimeconfig.json
+/Users/mario/interfaces/program_stack/stack/bin/Debug/net6.0/stack.dll
+/Users/mario/interfaces/program_stack/stack/bin/Debug/net6.0/stack.pdb
+/Users/mario/interfaces/program_stack/stack/obj/Debug/net6.0/stack.csproj.AssemblyReference.cache
+/Users/mario/interfaces/program_stack/stack/obj/Debug/net6.0/stack.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mario/interfaces/program_stack/stack/obj/Debug/net6.0/stack.AssemblyInfoInputs.cache
+/Users/mario/interfaces/program_stack/stack/obj/Debug/net6.0/stack.AssemblyInfo.cs
+/Users/mario/interfaces/program_stack/stack/obj/Debug/net6.0/stack.csproj.CoreCompileInputs.cache
+/Users/mario/interfaces/program_stack/stack/obj/Debug/net6.0/stack.dll
+/Users/mario/interfaces/program_stack/stack/obj/Debug/net6.0/refint/stack.dll
+/Users/mario/interfaces/program_stack/stack/obj/Debug/net6.0/stack.pdb
+/Users/mario/interfaces/program_stack/stack/obj/Debug/net6.0/stack.genruntimeconfig.cache
+/Users/mario/interfaces/program_stack/stack/obj/Debug/net6.0/ref/stack.dll

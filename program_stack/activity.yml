@@ -1,9 +1,9 @@
-_id: /program/e2210c5a-f666-11ec-b939-0242ac122333
-uri: /program/e2210c5a-f666-11ec-b939-0242ac122333
+_id: /program/e2210c5a-f656-11ec-b939-0242ac122333
+uri: /program/e2210c5a-f656-11ec-b939-0242ac122333
 publisher: 
-level: intermedio
+level: avanzado
 rights: Attribution-ShareAlike 4.0 International
-description: Completa la implementación de la Pila Genérica
+description: Completa la implementación de la pila genérica Stack<T>
 icon: coffee
 author: mariosky@gmail.com
 tags: 

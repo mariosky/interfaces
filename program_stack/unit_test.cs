@@ -1,20 +1,31 @@
-public class InterfaceTest
+public class UnitTest1
 {
     [Fact]
-    public void Interface()
+    public void PushPopStack()
     {
-      List<IDibujable> objetos = new List<IDibujable>();
+       Stack<int> pila = new Stack<int>(5);
+       pila.Push(5);
+       Assert.Equal(5, pila.Pop()); 
+    }
 
-        IDibujable rect = new Rectángulo() {X=120, Y=100};
-        (rect as Rectángulo)!.ImprimeCoordenadas(); 
+    [Fact]
+    public void PopStack()
+    {
+       Stack<int> pila = new Stack<int>(5);
+       pila.Push(5);
+       pila.Pop();
 
-        objetos.Add(rect); 
-        objetos.Add(new Rectángulo() {X=100, Y=200}); 
+       Assert.Throws<InvalidOperationException>(()=>pila.Pop()); 
+    }
 
-        foreach(var o in objetos)
-            o.Dibuja(); // Cada objeto  
+    [Fact]
+    public void PushStack()
+    {
+       Stack<int> pila = new Stack<int>(2);
+       pila.Push(5);
+       pila.Push(5);
+       Action testCode = () => pila.Push(0);
+       StackOverflowException exception = Assert.Throws<StackOverflowException>(testCode); 
+       Assert.Equal("La pila está llena",exception.Message);
     }
 }
-
-
-
