@@ -60,16 +60,36 @@ de entrada, mientras que un stream de salida podría representar los datos que
 se están escribiendo en un archivo o se están enviando a un dispositivo de
 salida. 
 
+Los datos fluyen desde o hacia nuestro programa desde diferentes fuentes: 
+
+* Dispositivos IO (entrada-salida) como el teclado, la consola, impresora
+* Archivos
+* Memoria
+* Un socket TCP/IP
+* Tubería de comunicación ínter-procesos 
+* Una conexión http
+
 ## Buffers
 
+Siguiendo el ejemplo de Netflix, para evitar que la reproducción de la película
+se detenga cuando tenemos una conexión a internet intermitente, se hace uso de
+un búfer. Un búfer (buffer en inglés) se refiere a un área de memoria temporal utilizada para
+almacenar datos antes de que sean procesados o enviados. En este caso, se
+almacenan un búfer bloques de la película conforme van llegando, y se
+reproducen constantemente los blooques ya están en el buffer. En caso de que el
+buffer se vacíe, entonces necesitaremos esperar a que el búfer tenga datos
+suficientes para seguir reproduciendo la película. Entonces, el búfer actúa
+como un intermediario entre la fuente de datos y el destino, permitiendo una
+transferencia más eficiente y controlada de la información.
 
 ## System.IO
 
 La clase abstracta `Stream` y sus derivadas, no brindan un mecanismo abstracto 
 para leer y escribir a múltiples entidades sin preocuparnos por los detalles de 
-bajo nivel específicos al sistema operativo o los dispositivos subyacentes.  
+bajo nivel específicos al sistema operativo o los dispositivos subyacentes.
+Las clases principales que heredan de `Stream` son `FileStream` y `MemoryStream`.
 
-Podemos realizar tres operaciones fundamentales utilizando streams:
+Podemos realizar estas tres operaciones utilizando streams:
 
 * Podemos leer de un stream. Le llamamos lectura a transferir datos del stream 
 a una estructura dentro de nuestro programa como una lista o un arreglo.
@@ -77,74 +97,75 @@ a una estructura dentro de nuestro programa como una lista o un arreglo.
 * Podemos escribir a un stream. Escribir es transferir datos de un arreglo en 
 nuestro programa a un stream. 
 
-* Podemos buscar (seek en inglés) en ciertos streams. La búsqueda hace referencia a la
-  consulta y modificación de la posición actual dentro de un stream. La
-  funcionalidad seek depende del tipo de memoria auxiliar con la que cuenta el stream.
-  Por ejemplo, los flujos de red no tienen ningún concepto unificado
-  de una posición actual y, por lo tanto, normalmente no admiten la búsqueda.
+* Algunos flujos pueden incluir una funcionalidad de posicionamiento (seek),
+  con la cual podemos consultar y modificar la posición actual del flujo.
+  Algunos flujos no tienen esta capacidad, por ejemplo, un flujo de red.
 
 
 Para saber con que capacidades cuenta el stream que estemos utilizando el momento
 dado, podemos consular las siguientes propiedades de la clase `Stream`: `CanRead`, 
 `CanWrite` y `CanSeek` respectivamente.
 
-Para realizar las operaciones descritas arriba, utilizaremos los métodos `Read` y `Write`. 
-Por otro lado, para la búsqueda utilizaremos los métodos `Seek` y `SetLength` para  
+Para realizar las operaciones descritas arriba, utilizaremos los métodos
+[`Read`](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream.read?view=net-7.0)
+y [`Write`](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream.write?view=net-7.0). 
+Por otro lado, para la búsqueda utilizaremos el método `Seek` para posicionarnos en otro lugar en el stream.
 
+La clase `Stream` implementa a la interfaz `IDisposible`. Esto es necesario ya 
+que utilizaremos recursos que están fuera del proceso y por lo tanto no pueden 
+destruirse automáticamente por el *recolector de basura*. Cuando terminamos de utilizar un stream
+debemos desecharlo implicita o explicitamente. Para hacerlo explicitamente debemos de
+llamar al método `Dispose` dentro de un bloque `try/catch`. Para disponerlo explicitamente
+debemos utilizar la construcción `using`.  Al eliminar un stream, se vacían los datos
+almacenados en el búfer y se liberan los recursos del sistema operativo, red u otros. 
 
+En las versiones actuales de .NET también se cuenta con clases asíncronas,  esto se
+verá en otra unidad. 
 
+### `StreamReader`
+
+La clase `StreamReader` nos permite leer archivos de texto. En el constructor
+pasamos la ruta y nombre del archivo que vamos a leer. Podemos llamar
+al método `ReadLine` para leer del archivo una línea de texto. En caso de
+que lleguemos al fin del archivo, `ReadLine` nos regresará `null`.
+En ejemplo siguiente, vemos como se utiliza la construcción `using` para 
+desechar al objeto `sr` de manera implicita. 
 
 ```csharp
-interface IList
- {
-  // Propiedad Count, con el número de elementos 
-  // en la lista.
-  int  Count { get; } 
+using System;
+using System.IO;
 
-  // Agrega un item a la lista, regresa la posición, o -1 si no 
-  // fue posible agregar el elemento.
-  int Add (object? value);
-
-  // Borra un elemento  
-  void Remove (object? value);
-
-  // Regresa o modifica el elemento en el índice especificado
-  object? this[int index] { get; set; }
-  }
-```
-
-
-```csharp
-using System.Collections;
-
-public class Program 
+class Test 
 {
-    public static void Main() 
+  public static void Main()
+  {
+    try 
     {
-    ArrayList objetos = new ArrayList();
-    objetos.Add(5);
-    objetos.Add(23.3m);
-    objetos.Add("Hola");
-
-    // No es posible convertir explicitamente de object a string
-    // string? saludo = objetos[2];
-
-    // Correcto: 
-    string? saludo = (string?) objetos[2];
-  
-    // Warning: Unboxing de un posible valor nulo
-    int z = 10 + (int) objetos[0];
-
-    foreach(Object  o in objetos)
-      Console.WriteLine(o);
-
+    // Creamos una instancia de StreamReader para leer desde un archivo.
+    // using nos permite cerrar y desecharlo de manera indirecta.
+    using (StreamReader sr = new StreamReader(“ArchivoPrueba.txt"))
+      {
+      string line;
+      // Leemos y mostramos las líneas mientras
+      // no lleguemos al final del archivo.
+      while ((line = sr.ReadLine()) != null)
+        {
+            Console.WriteLine(line);
+        }
+      } 
     }
+    catch (Exception e)
+    {
+    Console.WriteLine(“No se pudo leer el archivo");
+    Console.WriteLine(e.Message);
+    }
+  }
 }
+
 ```
 
-### Leer 
-
-* [Programación Genérica](https://en.wikipedia.org/wiki/Generic_programming#Stepanov%E2%80%93Musser_and_other_generic_programming_paradigms)
+En las siguientes secciones veremos como leer y escribir el estado de los objetos
+a archivos de texto y binarios.
 
 #### Referencias
 
