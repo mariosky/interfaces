@@ -1,4 +1,5 @@
-﻿
+﻿using System.Text;
+
 class Product
 {
     public string code;
@@ -17,6 +18,21 @@ class ProductDB
     {
         StreamWriter txtOut = new StreamWriter(
                 new FileStream("products.txt", FileMode.Create, FileAccess.Write));
+
+        foreach (var p in products)
+        {
+            txtOut.WriteLine($"{p.code}|{p.description}|{p.price}");
+        }
+
+        txtOut.Close();
+
+    }
+
+    public static void SaveProducts2(List<Product> products)
+    {
+
+        FileStream fs = new FileStream("products.txt", FileMode.Create, FileAccess.Write);
+        StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512);
 
         foreach (var p in products)
         {

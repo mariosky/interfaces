@@ -6,8 +6,6 @@ operaciones de escritura en archivos en C#. Aunque ambas se pueden utilizar de
 manera independiente , existen algunas diferencias clave entre ellas en
 términos de su funcionalidad y manera de utilizarse:
 
-#### `FileStream`
-
 1. Funcionalidad:
 * `FileStream`: es una clase que se utiliza para leer y escribir
      **bytes** en un archivo. Proporciona métodos para realizar operaciones 
@@ -20,12 +18,13 @@ términos de su funcionalidad y manera de utilizarse:
 
 2. Uso y sintaxis:
 
-   - FileStream: Primero necesitamos crear una
+   - `FileStream`: Primero necesitamos crear una
      instancia de la clase `FileStream` y especificando como parámetro el archivo con el que 
      vamos a trabajar. Luego, puedemos utilizar los
      métodos para leer o escribir bytes en el
-     archivo. Como vemos en el ejemplo a continuación, leemos un a un arreglo de tipo `byte` y al escribir 
-     debemos especificar parámetros adicionales de posición. 
+     archivo. Vemos la operación a bajo nivel en el ejemplo a continuación. Cuando leemos, lo hacemos
+     a un arreglo de bytes y al escribir 
+     debemos especificar parámetros adicionales de posición y tamaño del arreglo. 
 
    ```csharp
    using (FileStream fs = new FileStream("archivo.txt", FileMode.Create))
