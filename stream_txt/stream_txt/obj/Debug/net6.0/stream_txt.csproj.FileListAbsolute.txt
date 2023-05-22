@@ -1,0 +1,15 @@
+/Users/mario/interfaces/stream_txt/stream_txt/bin/Debug/net6.0/stream_txt
+/Users/mario/interfaces/stream_txt/stream_txt/bin/Debug/net6.0/stream_txt.deps.json
+/Users/mario/interfaces/stream_txt/stream_txt/bin/Debug/net6.0/stream_txt.runtimeconfig.json
+/Users/mario/interfaces/stream_txt/stream_txt/bin/Debug/net6.0/stream_txt.dll
+/Users/mario/interfaces/stream_txt/stream_txt/bin/Debug/net6.0/stream_txt.pdb
+/Users/mario/interfaces/stream_txt/stream_txt/obj/Debug/net6.0/stream_txt.csproj.AssemblyReference.cache
+/Users/mario/interfaces/stream_txt/stream_txt/obj/Debug/net6.0/stream_txt.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mario/interfaces/stream_txt/stream_txt/obj/Debug/net6.0/stream_txt.AssemblyInfoInputs.cache
+/Users/mario/interfaces/stream_txt/stream_txt/obj/Debug/net6.0/stream_txt.AssemblyInfo.cs
+/Users/mario/interfaces/stream_txt/stream_txt/obj/Debug/net6.0/stream_txt.csproj.CoreCompileInputs.cache
+/Users/mario/interfaces/stream_txt/stream_txt/obj/Debug/net6.0/stream_txt.dll
+/Users/mario/interfaces/stream_txt/stream_txt/obj/Debug/net6.0/refint/stream_txt.dll
+/Users/mario/interfaces/stream_txt/stream_txt/obj/Debug/net6.0/stream_txt.pdb
+/Users/mario/interfaces/stream_txt/stream_txt/obj/Debug/net6.0/stream_txt.genruntimeconfig.cache
+/Users/mario/interfaces/stream_txt/stream_txt/obj/Debug/net6.0/ref/stream_txt.dll

@@ -143,7 +143,7 @@ class Test
     {
     // Creamos una instancia de StreamReader para leer desde un archivo.
     // using nos permite cerrar y desecharlo de manera indirecta.
-    using (StreamReader sr = new StreamReader(“ArchivoPrueba.txt"))
+    using (StreamReader sr = new StreamReader("ArchivoPrueba.txt"))
       {
       string line;
       // Leemos y mostramos las líneas mientras
@@ -156,7 +156,7 @@ class Test
     }
     catch (Exception e)
     {
-    Console.WriteLine(“No se pudo leer el archivo");
+    Console.WriteLine("No se pudo leer el archivo");
     Console.WriteLine(e.Message);
     }
   }
