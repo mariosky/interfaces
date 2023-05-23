@@ -4,7 +4,7 @@
 Un proceso es un programa en ejecución. El código fuente que escribimos en
 algún lenguaje como C# o C++, se compila a código ejecutable, ya sea binario o
 bytecode. Este código se ejecuta como un proceso y durante su ejecución se
-crean y destruyen objetos. Cada objeto, requiere de cierto espacio de memoria y
+crean y destruyen objetos. Cada objeto requiere de cierto espacio de memoria y
 existe por un determinado tiempo. No obstante, una vez que el proceso termina,
 toda la memoria que tenía asignada el proceso, se libera para ser utilizada por
 otros. Esto significa que todos los objetos creados por nuestro programa se
@@ -15,37 +15,37 @@ nuestras compras. En estos casos necesitamos que nuestros objetos sean
 persistentes.
 
 En el modelo orientado a objetos, decimos que el estado de un objeto es
-**persistente**, si su estado se mantiene aunque el proceso dónde se creó haya
-terminado. Incluso, según la definción de Booch, un objeto persistente
-trasciende el tiempo, ya que el objeto existe aún cuando la entidad que lo creó
+**persistente**, si su estado se mantiene, aunque el proceso dónde se creó haya
+terminado. Incluso, según la definición de Booch, un objeto persistente
+trasciende el tiempo, ya que el objeto existe aun cuando la entidad que lo creó
 haya dejado de existir. También se incluye como una propiedad de la
 persistencia la capacidad de trascender el espacio, pues el objeto se puede
 salir del espacio de memoria en el que se ha creado. 
 
-Normalmente utilizamos sistemas de bases de datos relacionales u orientadas a
+Normalmente, utilizamos sistemas de bases de datos relacionales u orientadas a
 objetos, para gestionar la persistencia. Los sistemas de bases datos nos
 ofrecen una solución escalable y la capacidad de mantener el estado de nuestros
-objetos consistente aun cuando multiples procesos hagan modificaciones al mismo
+objetos consistente aun cuando múltiples procesos hagan modificaciones al mismo
 tiempo. Este es un tema que cae en otra materia, por lo que no lo abordaremos
-en este momento. Como una primera aproximación al tema, vamos utilizar archivos
+en este momento. Como una primera aproximación al tema, vamos a utilizar archivos
 para almacenar el estado de nuestros objetos. 
 
-Para leer o escribir a un archivo, primero debemeos familarizarnos con los 
-conceptos de flujos (streams en íngles) y buffers, ya que esto nos permitira entender mejor
+Para leer o escribir a un archivo, primero debemos familiarizarnos con los 
+conceptos de flujos (streams en inglés) y buffers, ya que esto nos permitirá entender mejor
 el funcionamiento de las clases `StreamReader` y `StreamWriter` que veremos
 a continuación.
 
 ## Streams 
 
 En computación, un flujo  (en inglés *stream*), es una secuencia continua de
-datos que se transmiten o procesan de manera progresiva. Al igual los articulos
+datos que se transmiten o procesan de manera progresiva. Al igual los artículos
 que viajan en una banda transportadora, los datos de un stream son procesados
-uno por uno. Actualmente los servicios de streaming de videos como Netflix, en
+uno por uno. Actualmente, los servicios de streaming de videos como Netflix, en
 lugar de enviarnos el archivo completo de la película que queremos ver (lo cual
 podría tardar mucho tiempo), utilizan precisamente streams para enviarnos la
 película. Para esto, se divide primero el archivo en trozos (o paquetes), los
 cuales se envían a nuestro dispositivo secuencialmente, uno tras otro, y los
-vamos consumiendo a medida que llegan. El uso de streams, nos perimte procesar
+vamos consumiendo a medida que llegan. El uso de streams, nos perimite procesar
 potencialmente un número ilimitado de datos, ya que no estamos limitados por la
 cantidad de memoria disponible localmente.
 
@@ -66,7 +66,7 @@ Los datos fluyen desde o hacia nuestro programa desde diferentes fuentes:
 * Archivos
 * Memoria
 * Un socket TCP/IP
-* Tubería de comunicación ínter-procesos 
+* Tubería de comunicación interprocesos 
 * Una conexión http
 
 ## Buffers
@@ -76,8 +76,8 @@ se detenga cuando tenemos una conexión a internet intermitente, se hace uso de
 un búfer. Un búfer (buffer en inglés) se refiere a un área de memoria temporal utilizada para
 almacenar datos antes de que sean procesados o enviados. En este caso, se
 almacenan un búfer bloques de la película conforme van llegando, y se
-reproducen constantemente los blooques ya están en el buffer. En caso de que el
-buffer se vacíe, entonces necesitaremos esperar a que el búfer tenga datos
+reproducen constantemente los bloques ya están en el búfer. En caso de que el
+búfer se vacíe, entonces necesitaremos esperar a que el búfer tenga datos
 suficientes para seguir reproduciendo la película. Entonces, el búfer actúa
 como un intermediario entre la fuente de datos y el destino, permitiendo una
 transferencia más eficiente y controlada de la información.
@@ -102,7 +102,7 @@ nuestro programa a un stream.
   Algunos flujos no tienen esta capacidad, por ejemplo, un flujo de red.
 
 
-Para saber con que capacidades cuenta el stream que estemos utilizando el momento
+Para saber con qué capacidades cuenta el stream que estemos utilizando el momento
 dado, podemos consular las siguientes propiedades de la clase `Stream`: `CanRead`, 
 `CanWrite` y `CanSeek` respectivamente.
 
@@ -111,11 +111,11 @@ Para realizar las operaciones descritas arriba, utilizaremos los métodos
 y [`Write`](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream.write?view=net-7.0). 
 Por otro lado, para la búsqueda utilizaremos el método `Seek` para posicionarnos en otro lugar en el stream.
 
-La clase `Stream` implementa a la interfaz `IDisposible`. Esto es necesario ya 
-que utilizaremos recursos que están fuera del proceso y por lo tanto no pueden 
+La clase `Stream` implementa a la interfaz `IDisposible`. Esto es necesario porque 
+utilizaremos recursos que están fuera del proceso, y por lo, tanto no pueden 
 destruirse automáticamente por el *recolector de basura*. Cuando terminamos de utilizar un stream
-debemos desecharlo implicita o explicitamente. Para hacerlo explicitamente debemos de
-llamar al método `Dispose` dentro de un bloque `try/catch`. Para disponerlo explicitamente
+debemos desecharlo implícita o explícitamente. Para hacerlo explícitamente debemos de
+llamar al método `Dispose` dentro de un bloque `try/catch`. Para disponerlo explícitamente
 debemos utilizar la construcción `using`.  Al eliminar un stream, se vacían los datos
 almacenados en el búfer y se liberan los recursos del sistema operativo, red u otros. 
 
@@ -128,8 +128,8 @@ La clase `StreamReader` nos permite leer archivos de texto. En el constructor
 pasamos la ruta y nombre del archivo que vamos a leer. Podemos llamar
 al método `ReadLine` para leer del archivo una línea de texto. En caso de
 que lleguemos al fin del archivo, `ReadLine` nos regresará `null`.
-En ejemplo siguiente, vemos como se utiliza la construcción `using` para 
-desechar al objeto `sr` de manera implicita. 
+En ejemplo siguiente, vemos cómo se utiliza la construcción `using` para 
+desechar al objeto `sr` de manera implícita. 
 
 ```csharp
 using System;
@@ -164,12 +164,12 @@ class Test
 
 ```
 
-En las siguientes secciones veremos como leer y escribir el estado de los objetos
+En las siguientes secciones veremos cómo leer y escribir el estado de los objetos
 a archivos de texto y binarios.
 
 #### Referencias
 
-* Algunos partes son adaptadas del material de [dotnet/docs](https://github.com/dotnet/docs/) 
+* Algunas partes son adaptadas del material de [dotnet/docs](https://github.com/dotnet/docs/) 
 con licencia ***Attribution 4.0 International***, este material se comparte con la misma licencia. 
 
 * Streams en [dotnet/docs](https://learn.microsoft.com/es-mx/dotnet/api/system.io.stream?view=net-7.0)
