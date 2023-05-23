@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZE5bJyLLWrjoQGKS/nsGe76OghMg2WII2f61Rxkx6GevmDWxa/Dq1lEIek6696Yparhe7YRQFLEyX3WG6LqgYQ==",
+  "dgSpecHash": "2tkIdJCHx5l8ef/vmsiNpGmgRwFYVlG8vpp7hBSaen2X8qc4joAd4Xup7OY/3hnLEgoHpvQiiMFoyZTCF9MVow==",
   "success": true,
-  "projectFilePath": "/Users/mario/interfaces/stream_txt/stream_txt/stream_txt.csproj",
+  "projectFilePath": "/home/mariosky/interfaces/stream_txt/stream_txt/stream_txt.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

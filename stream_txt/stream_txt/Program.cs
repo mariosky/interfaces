@@ -16,6 +16,7 @@ class ProductDB
 {
     public static void SaveProducts(List<Product> products)
     {
+
         StreamWriter txtOut = new StreamWriter(
                 new FileStream("products.txt", FileMode.Create, FileAccess.Write));
 
@@ -28,18 +29,36 @@ class ProductDB
 
     }
 
-    public static void SaveProducts2(List<Product> products)
+    public static void SaveProducts(List<Product> products)
     {
-
-        FileStream fs = new FileStream("products.txt", FileMode.Create, FileAccess.Write);
-        StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512);
-
-        foreach (var p in products)
-        {
-            txtOut.WriteLine($"{p.code}|{p.description}|{p.price}");
+        FileStream fs = null;
+        try {
+            fs = new FileStream("products.txt", FileMode.Create, FileAccess.Write);
+            using(StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512))
+            {
+                foreach (var p in products)
+                {
+                    txtOut.WriteLine($"{p.code}|{p.description}|{p.price}");
+                }
+            }
+        }
+        finally {
+            if (fs != null)
+                fs.Dispose();
         }
 
-        txtOut.Close();
+    }
+
+    public static void SaveProducts3(List<Product> products)
+    {
+            using(FileStream fs = new FileStream("products3.txt", FileMode.Create, FileAccess.Write))
+            using(StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512))
+            {
+                foreach (var p in products)
+                {
+                    txtOut.WriteLine($"{p.code}|{p.description}|{p.price}");
+                }
+            }
 
     }
 }
@@ -53,7 +72,7 @@ class Program
         productos.Add(new Product("BBX", "NES", 290.99m));
         productos.Add(new Product("CCX", "Game Boy", 90.99m));
 
-		ProductDB.SaveProducts(productos);
+		ProductDB.SaveProducts3(productos);
 
     }
 

@@ -7,14 +7,15 @@ manera independiente , existen algunas diferencias clave entre ellas en
 términos de su funcionalidad y manera de utilizarse:
 
 1. Funcionalidad:
-* `FileStream`: es una clase que se utiliza para leer y escribir
-     **bytes** en un archivo. Proporciona métodos para realizar operaciones 
-     de lectura y escritura a bajo nivel manipulando los bytes. Implementa los métodos Read, Write y Seek.
+* `FileStream`: es una clase que se utiliza para leer y escribir **bytes** en
+  un archivo. Proporciona métodos para realizar operaciones de lectura y
+  escritura a bajo nivel manipulando los bytes. Implementa los métodos Read,
+  Write y Seek.
 
-* `StreamWriter`: proporciona métodos para escribir cadenas y caracteres a
-     un archivo, realizando también tareas de codificación y formato.
-     A `StreamWriter` se considera una clase de nivel superior, ya que no opera a nivel de bytes y 
-     por lo mismo es más fácil de utilizar.
+* `StreamWriter`: proporciona métodos para escribir cadenas y caracteres a un
+  archivo, realizando también tareas de codificación y formato. A
+  `StreamWriter` se considera una clase de nivel superior, ya que no opera a
+  nivel de bytes y por lo mismo es más fácil de utilizar.
 
 2. Uso y sintaxis:
 
@@ -49,16 +50,139 @@ términos de su funcionalidad y manera de utilizarse:
    - `FileStream`: Como `FileStream` trabaja a nivel de bytes, nos permite realizar
      operaciones más avanzadas, como leer o escribir en ubicaciones específicas
      del archivo utilizando el método `Seek`.
-   - `StreamWriter`: Nos proporciona métodos 
-     específicos para escribir texto, y podemos especificar el
-     formato de codificación para el archivo, el uso de una memoria intermedia
-     para almacenar datos antes de escribirlos en el archivo y podemos utilizar el método `WriteLine`.
+   - `StreamWriter`: Nos proporciona métodos específicos para escribir texto, y
+     podemos especificar el formato de codificación para el archivo, el uso de
+     una memoria intermedia para almacenar datos antes de escribirlos en el
+     archivo y podemos utilizar el método `WriteLine`.
 
- 
+#### Uso de `FileStream` y `StreamWriter`
 
+Para este ejemplo vamos a utilizar `FileStream` y `StreamWriter` para almacenar en 
+un archivo de texto objetos de la clase `Producto`:
 
-En las siguientes secciones veremos como leer y escribir el estado de los objetos
-a archivos de texto y binarios.
+```csharp
+class Product
+{
+    public string code;
+    public string description;
+    public decimal price;
+
+    public Product(string c, string d, decimal p)
+    {
+        code = c; description = d; price = p;
+    }
+}
+```
+
+La clase incluye dos campos públicos tipo `string` y un decimal. Vamos 
+a crear una clase de utilería la cual llamaremos `ProductDB`, en ella 
+vamos a agregar los métodos estáticos para guardar y leer instancias de `Producto`
+a archivos de texto.
+
+Para guardar el estado de los productos, utilizaremos una estrategia sencilla 
+para separar los campos, vamos a utilizar un caracter especial como separador.
+En este caso utilizaremos el caracter barra vertical `|`. Hay otras soluciones
+estándar, por ejemplo, los archivos separados por coma, pero queremos una solución básica.
+
+A continuación se muestra la implementación del método `SaveProducts`. Es un método
+estático, y solo recibe como parámetro la lista con los productos que vamos a 
+guardar al archivo. En esta primera prueba hemos dejado el nombre del archivo fijo (*hard-coded*) 
+como `"products.txt"`, pero es mejor que este valor se reciba como parámetro (se dejará como ejercicio). 
+
+```csharp
+class ProductDB
+{
+    public static void SaveProducts(List<Product> products)
+    {
+        // Declaramos el FileStream fuera del bloque try 
+        // para que sea visible en todo el bloque del método
+        FileStream fs = null;
+        try {
+            // Instanciamos un objeto de FileStream
+            // Vamos a crear el archivo y vamos a escribir en el
+            fs = new FileStream("products.txt", FileMode.Create, FileAccess.Write);
+            // Utilizamos 'using' para que se llame a Dispose implicitamente 
+            using(StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512))
+            {
+                foreach (var p in products)
+                {
+                    // Escribimos una línea con los campos de cada objeto 
+                    // Separados por un '|'
+                    txtOut.WriteLine($"{p.code}|{p.description}|{p.price}");
+                }
+            }
+        }
+        // Optamos por llamar explicitamete al Dispose de fs, como ejemplo
+        finally {
+            // Solo se ejecuta si la referencia no es nula
+            if (fs != null)
+                fs.Dispose();
+        }
+
+    }
+}
+```
+En el ejemplo utilizamos una instancia de `FileStream` para especificar el modo y tipo de acceso 
+que utilizaremos al manipular el archivo. Esto lo especificamos utilzando las enumeraciones 
+`FileMode` y `FileAccess`. 
+
+Las opciones para el modo de apertura `FileMode` son: 
+
+| Valor               | Descripción                                                                                                 |
+|---------------------|-------------------------------------------------------------------------------------------------------------|
+| `Append`            | Abre el archivo si existe y se posiciona al final de este. Si el archivo no existe, se crea uno nuevo.      |
+| `Create`            | Crea un nuevo archivo. Si el archivo ya existe, se sobrescribe.                                             |
+| `CreateNew`         | Crea un nuevo archivo. Si el archivo ya existe, se genera una excepción.                                    |
+| `Open`              | Abre un archivo existente. Si el archivo no existe, se genera una excepción.                                |
+| `OpenOrCreate`      | Abre el archivo si existe. Si no existe, se crea uno nuevo.                                                  |
+| `Truncate`          | Abre un archivo existente y lo trunca a cero bytes. Si el archivo no existe, se genera una excepción.       |
+
+Las opciones para el tipo de acceso son `FileAccess.Read`, `FileAccess.Write` y `FileAccess.ReadWrite`, 
+indicando las operaciones que vamos a hacer en el archivo. 
+
+A continuación se muestra otra versión donde se utiliza la construcción `using` para ambas instancias.
+
+```csharp
+    public static void SaveProducts(List<Product> products)
+    {
+            using(FileStream fs = new FileStream("products.txt", FileMode.Create, FileAccess.Write))
+            using(StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512))
+            {
+                foreach (var p in products)
+                {
+                    txtOut.WriteLine($"{p.code}|{p.description}|{p.price}");
+                }
+            }
+
+    }
+```
+Para probar nuestras clases vamos a crear una lista de productos y 
+llamaremos el método `ProductDB.SaveProducts`.
+
+```csharp
+class Program
+{
+    static void Main()
+    {
+        List<Product> productos = new();
+        productos.Add(new Product("AAX", "Atari 2600", 190.99m));
+        productos.Add(new Product("BBX", "NES", 290.99m));
+        productos.Add(new Product("CCX", "Game Boy", 90.99m));
+
+		ProductDB.SaveProducts(productos);
+
+    }
+}
+```
+
+Al ejecutar el código deberíamos crear un archivo llamado `products.txt` que está
+en la raíz del proyecto y tiene los siguientes datos:
+
+```
+AAX|Atari 2600|190.99
+BBX|NES|290.99
+CCX|Game Boy|90.99
+```
 
 #### Referencias
 

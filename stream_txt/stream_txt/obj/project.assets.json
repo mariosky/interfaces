@@ -8,25 +8,24 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/mario/.nuget/packages/": {}
+    "/home/mariosky/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mario/interfaces/stream_txt/stream_txt/stream_txt.csproj",
+      "projectUniqueName": "/home/mariosky/interfaces/stream_txt/stream_txt/stream_txt.csproj",
       "projectName": "stream_txt",
-      "projectPath": "/Users/mario/interfaces/stream_txt/stream_txt/stream_txt.csproj",
-      "packagesPath": "/Users/mario/.nuget/packages/",
-      "outputPath": "/Users/mario/interfaces/stream_txt/stream_txt/obj/",
+      "projectPath": "/home/mariosky/interfaces/stream_txt/stream_txt/stream_txt.csproj",
+      "packagesPath": "/home/mariosky/.nuget/packages/",
+      "outputPath": "/home/mariosky/interfaces/stream_txt/stream_txt/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/mario/.nuget/NuGet/NuGet.Config"
+        "/home/mariosky/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -50,8 +49,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -60,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
       }
     }
   }
