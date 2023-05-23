@@ -7,19 +7,18 @@ manera independiente , existen algunas diferencias clave entre ellas en
 términos de su funcionalidad y manera de utilizarse:
 
 1. Funcionalidad:
-* `FileStream`: es una clase que se utiliza para leer y escribir **bytes** en
-  un archivo. Proporciona métodos para realizar operaciones de lectura y
-  escritura a bajo nivel manipulando los bytes. Implementa los métodos Read,
-  Write y Seek.
+    * FileStream: es una clase que se utiliza para leer y escribir **bytes** en
+      un archivo. Proporciona métodos para realizar operaciones de lectura y
+      escritura a bajo nivel manipulando los bytes. Implementa los métodos Read,
+      Write y Seek.
 
-* `StreamWriter`: proporciona métodos para escribir cadenas y caracteres a un
-  archivo, realizando también tareas de codificación y formato. A
-  `StreamWriter` se considera una clase de nivel superior, ya que no opera a
-  nivel de bytes y por lo mismo es más fácil de utilizar.
+    * StreamWriter: proporciona métodos para escribir cadenas y caracteres a un
+      archivo, realizando también tareas de codificación y formato. A
+      `StreamWriter` se considera una clase de nivel superior, ya que no opera a
+      nivel de bytes y por lo mismo es más fácil de utilizar.
 
-2. Uso y sintaxis:
-
-   - `FileStream`: Primero necesitamos crear una
+2. Uso:
+   - FileStream: Primero necesitamos crear una
      instancia de la clase `FileStream` y especificando como parámetro el archivo con el que 
      vamos a trabajar. Luego, puedemos utilizar los
      métodos para leer o escribir bytes en el
@@ -27,30 +26,31 @@ términos de su funcionalidad y manera de utilizarse:
      a un arreglo de bytes y al escribir 
      debemos especificar parámetros adicionales de posición y tamaño del arreglo. 
 
-   ```csharp
-   using (FileStream fs = new FileStream("archivo.txt", FileMode.Create))
-   {
-       byte[] data = Encoding.UTF8.GetBytes("Ejemplo");
-       fs.Write(data, 0, data.Length);
-   }
-   ```
+    ```csharp
+       using (FileStream fs = new FileStream("archivo.txt", FileMode.Create))
+       {
+           byte[] data = Encoding.UTF8.GetBytes("Ejemplo");
+           fs.Write(data, 0, data.Length);
+       }
+    ```
 
    - StreamWriter: Con `StreamWriter` simplemente utilizamos el método `WriteLine` y pasamos 
    directamente el objeto que deseamos almacenar. De manera similar a cuando escribimos en consola
    internamente se llama al método `ToString` para grabar el texto:
 
    ```csharp
-   using (StreamWriter sw = new StreamWriter("archivo.txt"))
-   {
-       sw.WriteLine("Ejemplo de texto.");
-   }
+       using (StreamWriter sw = new StreamWriter("archivo.txt"))
+       {
+           sw.WriteLine("Ejemplo de texto.");
+       }
    ```
 
 3. Características adicionales:
-   - `FileStream`: Como `FileStream` trabaja a nivel de bytes, nos permite realizar
+   - FileStream: Como `FileStream` trabaja a nivel de bytes, nos permite realizar
      operaciones más avanzadas, como leer o escribir en ubicaciones específicas
      del archivo utilizando el método `Seek`.
-   - `StreamWriter`: Nos proporciona métodos específicos para escribir texto, y
+
+   - StreamWriter: Nos proporciona métodos específicos para escribir texto, y
      podemos especificar el formato de codificación para el archivo, el uso de
      una memoria intermedia para almacenar datos antes de escribirlos en el
      archivo y podemos utilizar el método `WriteLine`.
@@ -143,18 +143,17 @@ indicando las operaciones que vamos a hacer en el archivo.
 A continuación se muestra otra versión donde se utiliza la construcción `using` para ambas instancias.
 
 ```csharp
-    public static void SaveProducts(List<Product> products)
+public static void SaveProducts(List<Product> products)
+{
+    using(FileStream fs = new FileStream("products.txt", FileMode.Create, FileAccess.Write))
+    using(StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512))
     {
-            using(FileStream fs = new FileStream("products.txt", FileMode.Create, FileAccess.Write))
-            using(StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512))
-            {
-                foreach (var p in products)
-                {
-                    txtOut.WriteLine($"{p.code}|{p.description}|{p.price}");
-                }
-            }
-
+        foreach (var p in products)
+        {
+            txtOut.WriteLine($"{p.code}|{p.description}|{p.price}");
+        }
     }
+}
 ```
 Para probar nuestras clases vamos a crear una lista de productos y 
 llamaremos el método `ProductDB.SaveProducts`.

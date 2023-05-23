@@ -1,16 +1,16 @@
-_id: /activity/733edf66-8219-11e7-9265-3401663b8331
-uri: /activity/733edf66-8219-11e7-9265-3401663b8331
+_id: /activity/733edf66-2901-11e7-9265-3401663b8331
+uri: /activity/733edf66-2901-11e7-9265-3401663b8331
 publisher: 
 level: intermedio
 rights: Attribution 4.0 International
-description: Persistencia, Streams, Buffers
+description: Persistencia en archivos de texto, clases FileStream y StreamWriter 
 icon: file
 author: Mario García Valdez
 tags: 
   - clase
   - csharp
 image_url: 
-title: Introducción a Streams
+title: Operaciones básicas en archivos de texto
 type: text
 external_url: https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg
 author_image: https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg
