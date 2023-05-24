@@ -1,3 +1,20 @@
+public class Product
+{
+    public string? code;
+    public string? description;
+    public decimal? price;
+    // agrega el campo like
+    // agrega el campo department
+    // ambos son de tipo uint
+
+    // modifica el constructor para inicializar los 
+    // campos de like y department  
+    public Product(string? c, string? d, decimal? p)
+    {
+        code = c; description = d; price = p; 
+    }
+}
+
 public class UnitTest1
 {
     [Fact]
