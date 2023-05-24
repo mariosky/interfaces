@@ -1,0 +1,17 @@
+_id: /program/eee10c5a-f656-11ec-b939-0242ac122333
+uri: /program/eee10c5a-f656-11ec-b939-0242ac122333
+publisher: 
+level: intermedio
+rights: Attribution-ShareAlike 4.0 International
+description: Completa el programa para guardar una lista de productos a un archivo de texto
+icon: coffee
+author: mariosky@gmail.com
+tags: 
+  - completa
+  - csharp
+image_url: 
+title: Guarda productos a un archivo de texto
+type: prog
+lang: csharp
+external_url: https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg
+
