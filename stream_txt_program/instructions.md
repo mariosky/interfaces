@@ -1,20 +1,27 @@
 ### Guarda objetos de la clase Product a un archivo de texto
 
-Debes completar el programa, siguiendo estos pasos:
+Sigue estos pasos para completar el programa:
 
-1. Debes agregar dos nuevos campos a la clase producto
-   ambos son enteros sin signo (`uint`) : `likes` y `department`.
-   Es importante que los agregues en ese orden.
+1. Debes agregar dos nuevos campos a la clase producto,
+   ambos deben ser enteros sin signo (`uint`) : `likes` y `department`.
+   Es importante que los agregues a la clase en ese orden.
 
-2. Debes crear una instancia de `FileStream` y asignarl a `fs`.
+2. Debes crear una instancia de `FileStream` y asignarla `fs`.
 
-3. Utilizando el separador de barra vertical `|` agrega una línea 
-   por cada objeto, no se te olvide agregar un salto de línea.
+3. El archivo que vamoa a crear se debe llamar `"products.txt`
+
+4. Utilizando el separador de barra vertical `'|'` agrega una línea 
+   por cada objeto, no se te olvide agregar el salto de línea. No
+   debe haber espacio entre los campos, por ejemplo: 
+   ```
+   AAA|DescA|12.22|12|23
+   BBB|DescB|32.99|123|23
+   ```
 
 Observa la manera en la que se desecha el archivo, esto 
 es distinto a lo que vimos en clase.
 
-Puedes guardar tu código temporamente en
+Puedes guardar tu código temporalmente en
 <a href="https://gist.github.com/" target="_blank">GitHub Gist</a>
 
 ---
@@ -82,21 +89,4 @@ Las opciones para el modo de apertura `FileMode` son:
 
 Las opciones para el tipo de acceso son `FileAccess.Read`, `FileAccess.Write` y `FileAccess.ReadWrite`, 
 indicando las operaciones que vamos a hacer en el archivo. 
-
-A continuación se muestra otra versión donde se utiliza la construcción `using` para ambas instancias.
-
-```csharp
-public static void SaveProducts(List<Product> products)
-{
-  using(FileStream fs = new FileStream("products.txt", 
-                                        FileMode.Create, FileAccess.Write))
-  using(StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512))
-  {
-    foreach (var p in products)
-    {
-      txtOut.WriteLine($"{p.code}|{p.description}|{p.price}");
-    }
-  }
-}
-```
 
