@@ -1,25 +1,17 @@
-### Guarda objetos de la clase Product a un archivo de texto
+### Guarda objetos de la clase Alumno a un archivo binario
 
 Sigue estos pasos para completar el programa:
 
-1. Debes agregar dos nuevos campos a la clase producto,
-   ambos deben ser enteros sin signo (`uint`) : `likes` y `department`.
-   Es importante que los agregues a la clase en ese orden.
+1. Debes completar el programa agregando el constructor 
+   de la clase Alumno, incializando todos los campos.
 
-2. Debes crear una instancia de `FileStream` y asignarla `fs`.
+2. Completar los parámetros del constructor de `FileStream`.
 
-3. El archivo que vamoa a crear se debe llamar `"products.txt`
+3. Itera por la lista de alumnos agregando el estado de cada 
+   alumno al archivo binario. Recuerda que debas hacer en el mismo orden
+   en el que se especifican en la clase. 
 
-4. Utilizando el separador de barra vertical `'|'` agrega una línea 
-   por cada objeto, no se te olvide agregar el salto de línea. No
-   debe haber espacio entre los campos, por ejemplo: 
-   ```
-   AAA|DescA|12.22|12|23
-   BBB|DescB|32.99|123|23
-   ```
-
-Observa la manera en la que se desecha el archivo, esto 
-es distinto a lo que vimos en clase.
+Observa el uso de la construcción `using` para `FileSrteam` y `BinaryWriter`.
 
 Puedes guardar tu código temporalmente en
 <a href="https://gist.github.com/" target="_blank">GitHub Gist</a>
@@ -28,52 +20,13 @@ Puedes guardar tu código temporalmente en
 
 #### Notas:
 
-Para guardar el estado de los productos, utilizaremos una estrategia sencilla 
-para separar los campos, vamos a utilizar un caracter especial como separador.
-En este caso utilizaremos el caracter barra vertical `|`. Hay otras soluciones
-estándar, por ejemplo, los archivos separados por coma, pero queremos una solución básica.
+En la salida de **errores de compilación** ahora se incluye el número de línea
+y columna dónde sucede error. Si el número de línea es mayor a las líneas de tu
+programa, significa que tu código compila correctamente, pero ocasiona errores
+en otras partes del programa. 
 
-A continuación se muestra la implementación del método `SaveProducts`. Es un método
-estático, y solo recibe como parámetro la lista con los productos que vamos a 
-guardar al archivo. En esta primera prueba hemos dejado el nombre del archivo fijo (*hard-coded*) 
-como `"products.txt"`, pero es mejor que este valor se reciba como parámetro (se dejará como ejercicio). 
-
-```csharp
-class ProductDB
-{
-   public static void SaveProducts(List<Product> products)
-   {
-    // Declaramos el FileStream fuera del bloque try 
-    // para que sea visible en todo el bloque del método
-    FileStream fs = null;
-    try {
-       // Instanciamos un objeto de FileStream
-       // Vamos a crear el archivo y vamos a escribir en el
-       fs = new FileStream("products.txt", FileMode.Create, 
-                                             FileAccess.Write);
-
-       // Utilizamos 'using' para que se llame a Dispose implicitamente 
-       using(StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512))
-       {
-          foreach (var p in products)
-          {
-              // Escribimos una línea con los campos de cada objeto 
-              // Separados por un '|'
-              txtOut.WriteLine($"{p.code}|{p.description}|{p.price}");
-          }
-       }
-   }
-   // Optamos por llamar explicitamete al Dispose de fs, como ejemplo
-   finally {
-       // Solo se ejecuta si la referencia no es nula
-      if (fs != null)
-          fs.Dispose();
-    }
-  }
-}
-```
 En el ejemplo utilizamos una instancia de `FileStream` para especificar el modo y tipo de acceso 
-que utilizaremos al manipular el archivo. Esto lo especificamos utilzando las enumeraciones 
+que utilizaremos al manipular el archivo. Esto lo especificamos utilizando las enumeraciones 
 `FileMode` y `FileAccess`. 
 
 Las opciones para el modo de apertura `FileMode` son: 

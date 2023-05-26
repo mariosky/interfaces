@@ -22,6 +22,7 @@ public class UnitTest1
 
       List<Alumno> alumnosFF = new();
       alumnosFF = ReadAlumnosBin();
+      Assert.True(alumnosFF.Count > 0, "El archivo no contiene registros!");
       Assert.Equal(1, alumnosFF[0].id);
       Assert.Equal(2, alumnosFF[1].id);
       Assert.Equal(3, alumnosFF[2].id);

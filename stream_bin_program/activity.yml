@@ -3,14 +3,14 @@ uri: /program/11e10c5a-f656-11ec-b939-0242ac122334
 publisher: 
 level: intermedio
 rights: Attribution-ShareAlike 4.0 International
-description: Completa el programa para guardar una lista de productos a un archivo de binario
+description: Completa el programa para guardar una lista de alumnos a un archivo de binario
 icon: coffee
 author: mariosky@gmail.com
 tags: 
   - completa
   - csharp
 image_url: 
-title: Guarda productos a un archivo binario 
+title: Guarda los datos de una lista de alumnos a un archivo binario 
 type: prog
 lang: csharp
 external_url: https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg
