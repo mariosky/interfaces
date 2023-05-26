@@ -7,7 +7,7 @@ public class UnitTest1
       Alumno p = new Alumno(1, "NombreA", 90.22m);
       Assert.Equal("NombreA",p.nombre);
       Assert.Equal(1, p.id);
-      Assert.Equal(90.22,p.calificación);
+      Assert.Equal(90.22m,p.calificación);
     }
 
     [Fact]
@@ -40,7 +40,7 @@ public class UnitTest1
                 {
                     int id = binIn.ReadInt32(); 
                     string name = binIn.ReadString();
-                    decimal? cali= binIn.ReadDecimal();
+                    decimal cali= binIn.ReadDecimal();
                     Console.Write($"{id}{name}{cali}");
                     alumnos.Add(new Alumno(id, name, cali));
                 }
