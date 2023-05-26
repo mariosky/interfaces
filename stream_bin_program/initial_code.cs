@@ -10,7 +10,7 @@ public class Alumno
 
     public Alumno(int id, string n, decimal? c)
     {
-        this.id = id; this.nombre = nombre; this.calificación=c;
+        this.id = id; this.nombre = n; this.calificación=c;
     }
 }
 
@@ -22,15 +22,15 @@ public class AlumnoDB
             // El archivo puede ser que exista previamente
             using(FileStream fs = new FileStream(path, FileMode.OpenOrCreate, 
                         FileAccess.Write))
-            using(BinartWriter binOut = new Writer(fs, Encoding.UTF8, 512))
+            using(BinaryWriter binOut = new BinaryWriter(fs, Encoding.UTF8))
             {
                 foreach (var p in alumnos)
                 {
                     // Utiliza los métodos Write y WriteLine para 
                     // Agregar los productos al archivo
-                    binOut.Write(nombre);
-                    binOut.Write(correo);
-                    binOut.Write(calificación);
+                    binOut.Write(p.id);
+                    binOut.Write(p.nombre);
+                    binOut.Write(p.calificación);
                 }
             }
     }
