@@ -1,0 +1,803 @@
+[{
+  "_id": "/program/f0350c5a-f324-11ec-b939-0242ac122003",
+  "uri": "/program/f0350c5a-f324-11ec-b939-0242ac122003",
+  "publisher": null,
+  "level": "principiante",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Agrega ciertos campos a una clase",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "IMDB Ejercicio 1",
+  "type": "prog",
+  "lang": "csharp",
+  "unit_test": "public class UnitTest1\n    {\n        [Fact]\n        public void ConstructorPelicula()\n        {\n            var p1 = new Pelicula();\n\n            Assert.NotNull(p1);\n        }\n\n        [Fact]\n        public void CamposPelicula()\n        {\n            var p1 = new Pelicula{ titulo = \"La La Land\", año = 2016, país=\"USA\", director=\"Damien Chazelle\"};\n            Assert.NotNull(p1);\n        }\n\n    }\n\n",
+  "initial_code": "using System;\nusing System.IO;\nusing System.Collections.Generic;\nnamespace test;\n\n    public class Pelicula\n    {\n        //Campos\n        \n        //Constructores\n        public Pelicula()\n        {\n\n        } \n        \n        //Métodos\n\n    }\n\n",
+  "instructions": "<h2>Proyecto IMDB</h2>\n<p>De acuerdo a los ejemplos vistos en clase, implementa en c# la clase\n <code>Pelicula</code> con los siguientes campos <strong>públicos</strong>:</p>\n<h3>Pelicula</h3>\n<table>\n<thead>\n<tr>\n<th>campo</th>\n<th>tipo</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>titulo</td>\n<td>String</td>\n</tr>\n<tr>\n<td>año</td>\n<td>Int16</td>\n</tr>\n<tr>\n<td>país</td>\n<td>String</td>\n</tr>\n<tr>\n<td>director</td>\n<td>String</td>\n</tr>\n</tbody>\n</table>",
+  "reg_exp": ""
+},{
+  "_id": "/activity/ejercicio-imdb",
+  "title": "La Clase Película en C#",
+  "uri": "ejercicio-imdb",
+  "description": "Esta es una secuencia de ejercicios básicos de programación orientada a objetos en C#. Deberás agregar constructores, campos y métodos Get y Set. También debes agregar a la clase Película una lista de objetos tipo Actor.",
+  "author": "",
+  "author_image": "",
+  "rights": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+  "is_private": false,
+  "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "level": "principiante",
+  "external_url": "",
+  "current_price": 0,
+  "image_url": "https://evo.sfo2.digitaloceanspaces.com/aula%2Fmovie.jpg",
+  "video_url": "",
+  "duration": "2:00:00",
+  "html_description": "",
+  "tags": [
+    "curso"
+  ],
+  "status": "in_revision",
+  "start_date": null,
+  "type": "course"
+},{
+  "_id": "/program/f0350c5a-g324-11ec-b939-0242ac122003",
+  "uri": "/program/f0350c5a-g324-11ec-b939-0242ac122003",
+  "publisher": null,
+  "level": "principiante",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Agrega métodos Set y Get para la clase Película",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "IMDB Ejercicio 2",
+  "type": "prog",
+  "lang": "csharp",
+  "unit_test": "public class UnitTest1\n    {\n        [Fact]\n        public void GetSetPelicula()\n        {\n            var p1 = new Pelicula();\n            p1.SetTitulo(\"La La Land\");\n            p1.SetAño(2016);\n\n            Assert.Equal(\"La La Land\", p1.GetTitulo());\n            Assert.Equal(2016 , p1.GetAño());\n        }\n\n    }\n\n",
+  "initial_code": "using System;\nusing System.IO;\nusing System.Collections.Generic;\n\n    public class Pelicula\n    {\n        //Campos\n        private string titulo;\n        private Int16 año;\n        private string país;\n        private string director;\n        \n        //Constructores\n        public Pelicula()\n        {\n\n        } \n        \n        //Agrega los Métodos\n\n        // GetTitulo\n        // GetAño \n        // SetTitulo\n        // SetAño\n    }\n\n\n",
+  "instructions": "<h2>Proyecto IMDB</h2>\n<p>Ahora cambia los campos a <strong>private</strong>. Agrega los métodos necesarios para \nmodificar el <code>titulo</code> y el <code>año</code> de las peliculas de la siguiente manera:</p>\n<pre><code class=\"language-csharp\">class Program \n{\nstatic void Main(){\n\n    Pelicula p1 = new Pelicula();\n    p1.SetTitulo(&quot;La La Land&quot;);\n    p1.SetAño(2016);\n    Console.WriteLine(&quot;{0}({1})&quot;, p1.GetTitulo(), p1.GetAño());\n\n}\n} \n</code></pre>\n<p>Debes crear los métodos Get<em> y Set</em> para <code>titulo</code> y <code>año</code>. </p>",
+  "reg_exp": ""
+},{
+  "_id": "/program/f0350c5a-g324-12ec-b939-0242ac122003",
+  "uri": "/program/f0350c5a-g324-12ec-b939-0242ac122003",
+  "publisher": null,
+  "level": "principiante",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Sobrecarga los constructores de la clase Película",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "IMDB Ejercicio 3",
+  "type": "prog",
+  "lang": "csharp",
+  "unit_test": "public class UnitTest1\n    {\n        [Fact]\n        public void ConstructorPelicula()\n        {\n            var p1 = new Pelicula();\n            var p2 = new Pelicula(\"La La Land\", 2016);\n            var p3 = new Pelicula(\"La La Land\", 2016, \"USA\", \"Damien Chazelle\");\n\n            Assert.NotNull(p1);\n            Assert.NotNull(p2);\n            Assert.NotNull(p3);\n            \n        }\n    }\n\n",
+  "initial_code": "using System;\nusing System.IO;\nusing System.Collections.Generic;\n\n    public class Pelicula\n    {\n        //Campos\n        private string titulo;\n        private Int16 año;\n        private string país;\n        private string director;\n        \n        //Constructores\n        public Pelicula()\n        {\n\n        } \n        \n       // Faltan dos sobrecargas de Pelicula()  \n\n       //Métodos\n        public String GetTitulo() => titulo;\n        public void SetTitulo(String titulo) => this.titulo = titulo;\n        public Int16 GetAño() => año;\n        public void SetAño(Int16 año) => this.año = año;    \n    }\n\n\n",
+  "instructions": "<h2>Proyecto IMDB</h2>\n<p>Agrega dos constructores: Pelicula(string titulo, Int16 año) y Pelicula(string\ntitulo, Int16 año, string director, string país).  No\nmodifiques el código de <code>Console.WriteLine()</code> o <code>Imprime()</code> incluidos.\nDebe poder funcionar el código siguiente:</p>\n<pre><code class=\"language-csharp\">class Program \n{\nstatic void Main(){\n\n    Pelicula p1 = new Pelicula();\n    p1.SetTitulo(&quot;La La Land&quot;);\n    p1.SetAño(2016);\n\n    Pelicula p2 = new Pelicula(&quot;La La Land&quot;, 2016);\n    Pelicula p3 = new Pelicula(&quot;La La Land&quot;, 2016, &quot;USA&quot;, &quot;Damien Chazelle&quot;);\n}\n} \n</code></pre>",
+  "reg_exp": ""
+},{
+  "_id": "/program/r0350c5a-g324-11ec-b939-0242ac122003",
+  "uri": "/program/r0350c5a-g324-11ec-b939-0242ac122003",
+  "publisher": null,
+  "level": "principiante",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Agrega una lista de actores a la clase Pelicula",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "IMDB Ejercicio 4",
+  "type": "prog",
+  "lang": "csharp",
+  "unit_test": "public class UnitTest1\n    {\n       [Fact]\n        public void ImprimeActores()\n        {\n\n            Pelicula p1 = new Pelicula(\"La La Land\", 2016);\n            p1.AgregaActor(new Actor(\"Ryan Gosling\", 1980));\n            p1.AgregaActor(new Actor(\"Emma Stone\", 1988));\n\n            \n\n            \n\n            using (StringWriter s = new StringWriter())\n            {\n                Console.SetOut(s);\n                \n                p1.ImprimeActores();\n\n                var result = s.ToString().Trim().Replace(\"\\r\",\"\");\n                Assert.Equal(\"Ryan Gosling (1980)\\nEmma Stone (1988)\", result );\n            }\n        }\n    }\n\n",
+  "initial_code": "using System;\nusing System.IO;\nusing System.Collections.Generic;\n\n    public class Pelicula\n    {\n        //Campos\n        private String titulo;\n        private Int16 año;\n        private String país;\n        private String director;\n        private List<Actor> actores = new List<Actor>();\n\n        //Constructores\n        public Pelicula()\n        {\n\n        } \n        public Pelicula(string titulo, Int16 año )\n        {\n            this.titulo = titulo;\n            this.año = año;\n        }\n        //Métodos\n        public String GetTitulo() => titulo;\n        public void SetTitulo(String titulo) => this.titulo = titulo;\n        public Int16 GetAño() => año;\n        public void SetAño(Int16 año) => this.año = año;\n\n        public void Imprime()\n        {\n            Console.WriteLine($\"{titulo} ({año})\");\n        }\n\n        public void AgregaActor(Actor a)\n        {\n\n        }\n\n        public void ImprimeActores()\n        {\n\n        }\n\n    }\n\n    public class Actor\n    {\n        //Propiedades\n\n        //Constructores\n        public Actor(String nombre, Int16 año){\n\n        } \n\n        //Métodos \n        public void Imprime()\n        {\n            Console.WriteLine($\"{Nombre} ({Año})\");\n        }\n    }\n",
+  "instructions": "<h2>Actores</h2>\n<p>Agrega a tu clase <strong>Pelicula</strong> un campo privado <strong>actores</strong> de tipo <strong>List<Actor></strong>. \nLa clase Actor debe tener las siguientes propiedades: </p>\n<table>\n<thead>\n<tr>\n<th>Propiedad</th>\n<th>tipo</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Nombre</td>\n<td>String</td>\n</tr>\n<tr>\n<td>Año</td>\n<td>Int16</td>\n</tr>\n</tbody>\n</table>\n<p>Tus clases <code>Pelicula</code> y <code>Actor</code> deben permitir el siguiente funcionamiento:</p>\n<p>```csharp\nclass Program \n{\n    static void Main(){</p>\n<pre><code>    Pelicula p1 = new Pelicula(\"La La Land\", 2016);\n    p1.AgregaActor(new Actor(\"Ryan Gosling\", 1980));\n    p1.AgregaActor(new Actor(\"Emma Stone\", 1988));\n\n    p1.ImprimeActores();\n }\n</code></pre>\n<p>} </p>",
+  "reg_exp": ""
+},{
+  "_id": "/activity/7330df52-8b90-11e7-9249-0401663b8331",
+  "uri": "/activity/7330df52-8b90-11e7-9249-0401663b8331",
+  "publisher": null,
+  "level": "principiante",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Definición de herencia con ejemplos en c#",
+  "icon": "file",
+  "author": "Mario García Valdez",
+  "tags": [
+    "clase",
+    "csharp",
+    "frontpage"
+  ],
+  "image_url": null,
+  "title": "Herencia",
+  "type": "text",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "author_image": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "content": "<p>La herencia es uno de los conceptos fundamentales del modelo orientado a objetos. \nNos permite crear nuevas clases estableciendo una relación jerarquíca <strong>tipo de</strong>, \nque va de una clase más general a otra más específica.  </p>\n<p>La herencia permite a los diseñadores definir nuevas clases a partir otras\nclases o de toda una jerarquía de clases preexistente (ya comprobadas y\nverificadas) evitando con ello el rediseño, la modificación y verificación de\nla parte ya implementada <sup id=\"fnref:1\"><a class=\"footnote-ref\" href=\"#fn:1\">1</a></sup>. La clase más general, de la cual se heredan los\nmiembros la denominamos la <strong>clase base</strong> y a la que hereda la <strong>clase\nderivada</strong>. Decimos que la clase derivada es una especialización de la clase\nbase. </p>\n<p>La clase derivada obtiene implícitamente todos los miembros de la clase base,\nexcepto aquellos que son <code>private</code>, sus constructores y finalizadores. La\nventaja principal es que la clase derivada <strong>reutiliza el código</strong> de la clase\nbase sin tener que volver a implementarlo. Lo normal es que en la clase\nderivada agregemos más miembros que la <strong>especializan</strong> ampliando la\nfuncionalidad de la clase base. Además de extender la funcionalidad de la clase\nbase, también podemos <strong>redifinir sus métodos</strong>, cambiando o especializando el\nfuncionamiento definido de manera más general en la clase base. </p>\n<p>Veamos un ejemplo. Primero vamos a definir la clase base, en este caso una clase \nllamada Persona, con dos atributos que todas las personas podemos tener, un identificador\ny nuestro nombre. Este es un fragmento, pero puedes incluirlo en un programa.</p>\n<pre><code class=\"language-csharp\">// Clase Base\nclass Persona \n{ \n  // Propiedades\n  public int ID { get; set;}\n  public string Nombre { get; set;}\n}\n\n// Constructor por defecto. En caso de que una clase derivada no invoque el \n// constructor de la clase base explicitamente, este constructor se ejecutará\n// implicitamente.\npublic Persona()\n{\n  ID = 0;\n  Nombre = &quot;Fulano de Tal&quot;;\n}\n\n// Constructor de instancia con los dos parámetros necesarios para\n// incializar el estado de un objeto.\npublic Persona( int ID, string nombre)\n{\n this.ID = ID // Ocupamos this por que la variable local del parámetro ID\n              // se llama igual que el miembro ID.\n Nombre = nombre;\n}\n\n// Método que imprime los datos de la persona \n// Este método lo vamos a mejorar más adelante\npublic void ImprimePersona()\n{\n  Console.WriteLine($&quot;{ID} {Nombre}&quot;)\n}\n</code></pre>\n<p>Ya que definimos la clase base, ahora podemos crear una clase derivada. En este\ncaso vamos a definir a la clase <code>Alumno</code> que representa a los alumnos. Si te\nfijas, los alumnos somos un <strong>tipo de</strong> persona. La sintáxis para indicar que vamos\na heredar de una clase es simplemente incluir después del nombre de la clase derivada \ndos puntos y la clase base de esta menera: <code>class Derivada:ClaseBase</code>.</p>\n<p>Debemos tomar en cuenta que al heredar de <code>Persona</code> ya se tienen de manera implícita las\npropiedades de <code>ID</code> y <code>Nombre</code> por lo que solo vamos a añadir las propiedades de <code>Carrera</code> y \n<code>NumControl</code>. El Número de Control es un identificadoer escolar y puede contener letras, así que \ndebe ser de tipo <code>string</code>. Nuestra clase derivada se vería de esta manera hasta este momento. Cuidado,\nnos falta agregar los constructores y otros métodos.</p>\n<pre><code>class Alumno:Persona\n{\n  public string NumControl { get; set;}\n  public string Carrera { get; set;}\n}\n</code></pre>\n<h3>Constructores en las clases derivadas</h3>\n<p>Antes de agregar un constructor a la clase derivada, debemos reflexionar sobre un detalle.\nEl contructor de la clase derivada también debe considerar a los atributos heredados, y \nsiguiendo con el principio, también reutilizar el contructor correspondiente en la clase base.\nEsto es tan importante que en C# se sigue una sintáxis especial para realizar esto. Siguiendo con \nel ejemplo:</p>\n<pre><code>class Alumno:Persona\n{\n  public string NumControl { get; set;}\n  public string Carrera { get; set;}\n\n  public Alumno( int ID, string nombre, string nc, string c):base(ID, nombre) // Se utiliza `base` \n  {\n    NumControl = nc; \n    Carrera = c;\n  }\n}\n</code></pre>\n<p>Como podemos observar en el fragmento de código, al terminar la definición de los parámetros del \nconstructor se agrega la ejecución del constructor de la clase Persona referenciada con la \npalabra reservada <code>base</code>. Nunca utilizamos literalmente el nombre de la clase base, siempre lo hacemos\nutilizando la referencia <code>base</code>. En este caso, le pasamos al constructor los dos parámetros que \nnecesita el <code>ID</code> y el <code>Nombre</code>. En el cuerpo del constructor inicializamos solamente los atributos \nparticulares de la clase <code>Alumno</code>. </p>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:1\">\n<p>Párrafo adaptado de <a href=\"https://es.wikipedia.org/wiki/Herencia_(inform%C3%A1tica)\">wikipedia</a> Licencia Creative Commons Atribución Compartir Igual 3.0&#160;<a class=\"footnote-backref\" href=\"#fnref:1\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></p>\n</li>\n</ol>\n</div>"
+},{
+  "_id": "/activity/video/2444c326-ca73-11ed-a8dd-fee7c3bbf1af",
+  "csrfmiddlewaretoken": "9r8v8YB6P58ktP71kdgpNCWwOc66jqNCxroFvGm5WMcateWOPL4DrMBiYkv9fDkL",
+  "title": "Herencia en C#",
+  "description": "Se explica herencia en c# utilizando un ejemplo sencillo.",
+  "author": "Mario García Valdez",
+  "author_image": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "tags": [
+    "csharp\"\u001b",
+    "frontpage"
+  ],
+  "type": "video",
+  "youtube_id": "cx369yTCcXk",
+  "url": "https://www.youtube.com/watch?v=cx369yTCcXk",
+  "startSeconds": "",
+  "endSeconds": "",
+  "rights": "Licencia estándar de YouTube",
+  "rights_url": "",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "publisher": "",
+  "icon": "youtube-play",
+  "level": "principiante",
+  "is_private": "true",
+  "creation_date": "",
+  "duration": "",
+  "image_url": "",
+  "content": "Se explica herencia en c# utilizando un ejemplo sencillo.",
+  "uri": "/activity/video/2444c326-ca73-11ed-a8dd-fee7c3bbf1af"
+},{
+  "_id": "/quiz/db3d6a34-c1b5-11ed-afa1-0242ac120002",
+  "uri": "/quiz/db3d6a34-c1b5-11ed-afa1-0242ac120002",
+  "publisher": null,
+  "level": "principiante",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Este es el primer ejemplo de un programa desde archivos",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "completa",
+    "csharp",
+    "frontpage"
+  ],
+  "image_url": null,
+  "title": "Completa el programa",
+  "type": "quiz",
+  "lang": "csharp",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "questions": [
+    {
+      "question": "En C#, ¿Cúal es la diferencia entre un campo y una propiedad?",
+      "options": [
+        "La propiedad nos permite modificar y leer campos privados.",
+        "Un campo puede debe ser público y las propiedades son siempre privadas.",
+        "No existe diferencia, es el mismo concepto."
+      ],
+      "answer": [
+        1,
+        0,
+        0
+      ],
+      "type": "radio",
+      "interaction": "simpleChoice",
+      "hints": null,
+      "answer_text": [
+        "La propiedad utiliza a los campos"
+      ]
+    },
+    {
+      "question": "Ésta es una sección que encontramos en una propiedad",
+      "options": [
+        "get",
+        "value",
+        "set"
+      ],
+      "answer": [
+        1,
+        0,
+        1
+      ],
+      "type": "multi",
+      "interaction": "choiceInteraction",
+      "hints": null,
+      "answer_text": [
+        "get y set"
+      ]
+    },
+    {
+      "question": "¿Cómo se le llama a la variable que tiene el valor que recibe un propiedad que será set?",
+      "options": null,
+      "answer": "value",
+      "type": "str",
+      "interaction": "textEntryInteraction",
+      "hints": [
+        "Contiene el valor"
+      ],
+      "answer_text": [
+        "value",
+        "another"
+      ]
+    }
+  ],
+  "content": "<h2>There are some problems in this code</h2>\n<p>Cuando creamos un objeto, debemos establecer cual será su estado inicial. Recordemos que\nel estado <code>inicial</code> ide un objeto está dado por los valores actuales de sus propiedades.</p>\n<h3>Sintaxis para crear un constructor</h3>\n<p>Un constructor <em>el nombre está dado por el de la clase.</em></p>\n<pre><code class=\"language-python\">def foo(a, b):\n  return a + b\n</code></pre>\n<pre><code class=\"language-csharp\">class Clase \n{\n  int campo;\n}\n</code></pre>\n<pre><code class=\"language-csharp\">class Clase \n{\n  int campo;\n}\n</code></pre>\n<p><code>python {.language-python .line-numbers}\nclass Clase \n  def __init__(self, o):\n      self.o = o</code></p>"
+},{
+  "_id": "/activity/constructores-csharp",
+  "title": "Constructores C#",
+  "uri": "constructores-csharp",
+  "description": "Actividades para el tema de constructores en C#.",
+  "author": "",
+  "author_image": "",
+  "rights": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+  "is_private": false,
+  "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "level": "principiante",
+  "external_url": "",
+  "current_price": 0,
+  "image_url": "",
+  "video_url": "",
+  "duration": "0:30:00",
+  "html_description": "",
+  "tags": [
+    "curso",
+    "csharp"
+  ],
+  "status": "in_revision",
+  "start_date": null,
+  "type": "course"
+},{
+  "_id": "/program/e0350c5a-f324-11ec-b939-0242ac120033",
+  "uri": "/program/e0350c5a-f324-11ec-b939-0242ac120033",
+  "publisher": null,
+  "level": "principiante",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Escribe el constructor de la clase Producto",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "completa",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Completa el programa",
+  "type": "prog",
+  "lang": "csharp",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "unit_test": "\npublic class ProductoTest\n{\n\n    [Fact]\n    public void Constructor()\n    {\n        Producto p = new Producto(1,\"p\",12.2m,2);\n        Assert.NotNull(p);\n    }\n\n\n    [Fact]\n    public void PrintTest()\n    {\n        Producto p = new Producto(1,\"p\",12.2m,2);\n        p.Imprime();\n\n        using (StringWriter sw = new StringWriter())\n        {\n            Console.SetOut(sw);\n\n\n            p.Imprime();\n\n        string expected = \"id:1 nombre:p precio:12.2\\n\";\n        Assert.Equal(expected, sw.ToString());\n        }\n\n    }\n\n}\n\n\n\n",
+  "initial_code": "using System;\nusing System.IO;\n\npublic class Producto\n{\n   private int id;\n   private string nombre;\n   private decimal precio;\n   private int cantidad;\n\n   // Constructor aquí\n\n\n\n   // Imprime()\n   public void Imprime()\n   {\n           Console.WriteLine(\"id:{0} nombre:{1} precio:{2}\", id, nombre, precio);\n   }\n                   \n}\n",
+  "instructions": "<h3>Escribe el constructor</h3>\n<p>A la clase <code>Producto</code> le hace falta el constructor, queremos crear nuestros objetos de\nla siguiente manera: </p>\n<pre><code class=\"language-csharp\">   public class Program\n  {\n    static void Main()\n    {\n    Producto p = new Producto(1, &quot;Libro de Texto C# Avanzado&quot;, 730.20m, 2);\n    p.Imprime()\n\n    }\n  }\n</code></pre>\n<p>Agrega el constructor correspondiente, este debe tomar cuatro argumentos para\nestablecer el estado inicial del objeto.</p>",
+  "reg_exp": ""
+},{
+  "_id": "/activity/7330df52-8b90-11e7-9241-3401663b8331",
+  "uri": "/activity/7330df52-8b90-11e7-9241-3401663b8331",
+  "publisher": null,
+  "level": "principiante",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Definición de constructor con ejemplos en c#",
+  "icon": "file",
+  "author": "Mario García Valdez",
+  "tags": [
+    "clase",
+    "csharp",
+    "frontpage"
+  ],
+  "image_url": null,
+  "title": "Constructores en C#",
+  "type": "text",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "author_image": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "content": "<p>¿Qué necesitamos para crear un nuevo objeto en los lenguajes orientados a objetos?</p>\n<p>Recordemos que los objetos son instancias de una clase, dicho de otra manera\nnecesitamos primero la clase que va a definir al tipo de objeto que desamos crear. </p>\n<p>Una vez que tenemos la clase, el proceso de crear un nuevo objeto a partir de ella\nlo podemos resumir en tres pasos:</p>\n<ol>\n<li>Necesitamos revisar que haya espacio suficiente en la memoria para almacenar\nel estado del objeto. Dependiendo del lenguaje y las opciones disponibles normalmente\nse almacenan los objetos en la memoria heap o pero a veces en el stack.</li>\n<li>Una vez que reservamos el espacio se crea el objeto y sabemos la dirección en la \nmemoria dónde se almacenó.</li>\n<li>Por último debemos inicializar el estado del objeto. </li>\n</ol>\n<p>Los constructores realizan son métodos especiales que incluimos en las clases, y los\nllamamos como parte de la instrucción para crear un objeto. En el caso de C# y otros\nlenguajes, los constructores reciben los valores iniciales del estado del objeto como \nargumentos y estos se asignan en el constructor. </p>\n<p>Veamos un ejemplo para la clase <code>Persona</code>:</p>\n<pre><code class=\"language-csharp\">// Clase Base\nclass Persona \n{ \n  // Propiedades\n  public int ID { get; set;}\n  public string Nombre { get; set;}\n}\n\n// Constructor por defecto. En caso de que una clase derivada no invoque el \n// constructor de la clase base explicitamente, este constructor se ejecutará\n// implicitamente.\npublic Persona()\n{\n  ID = 0;\n  Nombre = &quot;Fulano de Tal&quot;;\n}\n\n// Constructor de instancia con los dos parámetros necesarios para\n// incializar el estado de un objeto.\npublic Persona( int ID, string nombre)\n{\n this.ID = ID // Ocupamos this por que la variable local del parámetro ID\n              // se llama igual que el miembro ID.\n Nombre = nombre;\n}\n\n// Método que imprime los datos de la persona \n// Este método lo vamos a mejorar más adelante\npublic void ImprimePersona()\n{\n  Console.WriteLine($&quot;{ID} {Nombre}&quot;)\n}\n</code></pre>\n<p>En este ejemplo la clase tiene dos constructores:</p>\n<ol>\n<li>\n<p>El constructor <code>Persona()</code> sin argumentos. Este constructor siempre \ninicializa las propiedades o campos a un valor predeterminado. Por este motivo \na este constructor le llamamos el constructor por defecto. En el caso de C#,\nsi no especificamos ningún constructor para la clase, se crea un constructor \nimplicito sin argumentos el cual inicializa el estado a los valores predeterminados\nsegún el tipo de dato de los campos miembro. Por ejemplo, los enteros en cero,\nlas cadenas vacias, etc. En caso de que agregemos un constructor a nuestra\nclase el constructor por defecto implicito ya no se genera, si necesitamos\neste constructor debemos crearlo explícitamente.</p>\n</li>\n<li>\n<p>El constructor <code>Persona( int ID, string nombre)</code>, en este caso, el constructor\nva a recibir como argumentos los valores iniciales de <code>ID</code> y <code>Nombre</code>. Fíjate\ncomo en el caso del argumento <code>ID</code> como se llama igual que la propiedad <code>ID</code>\nmiembro de la clase, se debe distinguir a la variable miembro con la referencia\n<code>this</code> al hacer la asignación <code>this.ID = ID</code> de otro modo se estaría asignando\nel valor a la misma variable.</p>\n</li>\n</ol>\n<p>Como podemos observar en el código, vemos que los constructores difieren \na los métodos instancia en lo siguiente:</p>\n<ol>\n<li>No se debe especificar un tipo de retorno, ni siquiera <code>void</code>.</li>\n<li>No se heredan a otras clases.</li>\n<li>En C# el constructor debe llamarse igual que la clase. En otros lenguajes debe\ntener nombres especiíficos, por ejemplo <code>constructor</code> en JavaScript o <code>__init__</code> en \nPython.</li>\n<li>En C# contamos con una sintaxis para ejecutar otros constructores dentro \ndel encabezado del constructor, utilizando las palabras reservadas <code>this</code> o <code>base</code>. \nEl caso de <code>base</code> lo veremos en el tema de herencia. </li>\n</ol>\n<blockquote>\n<p>En el siguiente ejemplo modificamos el constructor <code>Persona()</code> para llamar al \nconstructor con argumentos. Esto es un ejemplo de una buena práctica, no repetir\ncódigo.</p>\n</blockquote>\n<pre><code class=\"language-csharp\">// Clase Base\nclass Persona \n{ \n  // Propiedades\n  public int ID { get; set;}\n  public string Nombre { get; set;}\n}\n\n// Constructor por defecto. En caso de que una clase derivada no invoque el \n// constructor de la clase base explicitamente, este constructor se ejecutará\n// implicitamente.\npublic Persona():this(0, &quot;Fulano de Tal&quot;)\n{\n}\n\n// Constructor de instancia con los dos parámetros necesarios para\n// incializar el estado de un objeto.\npublic Persona( int ID, string nombre)\n{\n this.ID = ID // Ocupamos this por que la variable local del parámetro ID\n              // se llama igual que el miembro ID.\n Nombre = nombre;\n}\n\n// Método que imprime los datos de la persona \n// Este método lo vamos a mejorar más adelante\npublic void ImprimePersona()\n{\n  Console.WriteLine($&quot;{ID} {Nombre}&quot;)\n}\n</code></pre>"
+},{
+  "_id": "/activity/interfaces-poo-csharp",
+  "title": "Interfaces",
+  "uri": "interfaces-poo-csharp",
+  "description": "Interfaces: definición, implementación de\r\ninterfaces, herencia de interfaces en C#.",
+  "author": "",
+  "author_image": "",
+  "rights": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+  "is_private": false,
+  "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "level": "intermedio",
+  "external_url": "",
+  "current_price": 0,
+  "image_url": "",
+  "video_url": "",
+  "duration": "None",
+  "html_description": "",
+  "tags": [
+    "curso"
+  ],
+  "status": "in_revision",
+  "start_date": null,
+  "type": "course"
+},{
+  "_id": "/program/e0350c5a-f324-11ec-b939-0242ac122333",
+  "uri": "/program/e0350c5a-f324-11ec-b939-0242ac122333",
+  "publisher": null,
+  "level": "principiante",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "La clase Producto debe implementar la interface IFoo",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "completa",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Implementa la interface IFoo",
+  "type": "prog",
+  "lang": "csharp",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "unit_test": "public class ProductoTest\n{\n    [Fact]\n    public void Constructor()\n    {\n        Producto p = new Producto( );\n        Assert.NotNull(p);\n    }\n}\n\n\n\n",
+  "initial_code": "using System;\nusing System.IO;\n\ninterface IFoo\n{\n   int ID { set; } \n   string Nombre { get; set; } \n   bool HazAlgo(string g); \n   int GetID();\n}\n\npublic class Producto : IFoo\n  {\n  // Agrega los miembros necesarios para implementar IFoo.\n  }\n\n",
+  "instructions": "<h3>Implementa la interface IFoo</h3>\n<p>Nuestra clase <code>Producto</code> debe implementar la interface <code>IFoo</code>.</p>\n<h4>Si tienes dudas</h4>\n<p>Aquí tienes este ejemplo:</p>\n<pre><code class=\"language-csharp\">interface IAmigable\n {\n  string? Nombre { get; set; } \n  bool EsAmigo(string nombre); \n  int GetNumAmigos();\n }\n\npublic class Alumno : IAmigable\n  {\n  // En implementaciones debemos indicar \n  // el modificador de accreso.\n  private string? _nombre; // Campo para implementar la propiedad\n  // Propiedad \n  public string? Nombre  \n     {\n      get =&gt; _nombre;\n      set{ \n        _nombre = value;\n        }\n     }\n   // También se podría: \n   // public string? Nombre { get; set;}\n  public int GetNumAmigos()\n     {\n      return 100000; // Para el ejemplo es suficiente con regresar \n                     // un valor del tipo correcto.\n     }\n  public bool EsAmigo(string n) =&gt; true;\n  }\n</code></pre>",
+  "reg_exp": ""
+},{
+  "_id": "/quiz/db3d6a32-c1b5-11ed-afa1-0242ac120003",
+  "uri": "/quiz/db3d6a32-c1b5-11ed-afa1-0242ac120003",
+  "publisher": null,
+  "level": "principiante",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Quiz básico de interfaces en C#",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "quiz",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Quiz Interfaces 1",
+  "type": "quiz",
+  "lang": "csharp",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "satisfied_at_least": 5,
+  "questions": [
+    {
+      "question": "En C#, ¿Cuál es la diferencia entre un campo y una propiedad?",
+      "options": [
+        "La propiedad nos permite modificar y leer campos privados.",
+        "Un campo debe ser público y las propiedades son siempre privadas.",
+        "No existe diferencia, es el mismo concepto."
+      ],
+      "answer": [
+        1,
+        0,
+        0
+      ],
+      "type": "radio",
+      "interaction": "simpleChoice",
+      "hints": null,
+      "answer_text": [
+        "La propiedad modifica y lee a los campos privados"
+      ],
+      "id": 1
+    },
+    {
+      "question": "Estas son secciones que encontramos en una propiedad",
+      "options": [
+        "get",
+        "value",
+        "set"
+      ],
+      "answer": [
+        1,
+        0,
+        1
+      ],
+      "type": "multi",
+      "interaction": "choiceInteraction",
+      "hints": null,
+      "answer_text": [
+        "get y set"
+      ],
+      "id": 2
+    },
+    {
+      "question": "¿Cómo se le llama a la variable especial que contiene el valor que recibe una propiedad para la sección `set`?",
+      "options": null,
+      "answer": "value",
+      "type": "str",
+      "interaction": "textEntryInteraction",
+      "hints": [
+        "Contiene el valor"
+      ],
+      "answer_text": [
+        "value",
+        "another"
+      ],
+      "id": 3
+    },
+    {
+      "question": "¿Cuál es la palabra reservada para crear una interfaz?",
+      "options": null,
+      "answer": "interface",
+      "type": "str",
+      "interaction": "textEntryInteraction",
+      "hints": [
+        "Está en la pregunta"
+      ],
+      "answer_text": [
+        "interface"
+      ],
+      "id": 4
+    },
+    {
+      "question": "Según el fragmento de código de arriba, en la declaración de la interface. Esta línea de código nos daría un error",
+      "options": [
+        "string directorio { get; set; }",
+        "string texto;",
+        "void escribe(string destino);"
+      ],
+      "answer": [
+        0,
+        1,
+        0
+      ],
+      "type": "radio",
+      "interaction": "simpleChoice",
+      "hints": null,
+      "answer_text": [
+        "No puede haber campos en una interfaz"
+      ],
+      "id": 5
+    },
+    {
+      "question": "¿Los métodos miembros de una interfaz en C#, ¿Pueden tener una implementación por defecto?",
+      "options": [
+        "No, esto va en contra del concepto de interfaces.",
+        "Solo las versiones recientes.",
+        "A partir de la versión 8.0 ya no es posible."
+      ],
+      "answer": [
+        0,
+        1,
+        0
+      ],
+      "type": "radio",
+      "interaction": "simpleChoice",
+      "hints": null,
+      "answer_text": [
+        "A partir de la versión 8.0"
+      ],
+      "id": 6
+    }
+  ],
+  "content": "<h3>Quiz</h3>\n<p>Responde las preguntas correctamente.</p>\n<pre><code class=\"language-csharp\">// Fragmento de código \n\n_________ IEscribible             \n{                                 \n  string directorio { get; set; } \n  string texto;                   \n  void escribe(string destino);    \n}                                 \n</code></pre>"
+},{
+  "_id": "/activity/7e30df52-8b90-11e7-9241-3401663b8331",
+  "uri": "/activity/7e30df52-8b90-11e7-9241-3401663b8331",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Definición de interface con ejemplos en c#",
+  "icon": "file",
+  "author": "Mario García Valdez",
+  "tags": [
+    "clase",
+    "csharp",
+    "frontpage"
+  ],
+  "image_url": null,
+  "title": "Interfaces en C#",
+  "type": "text",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "author_image": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "content": "<p>Vamos a imaginar que tenemos una clase abstracta, la cual tiene solo métodos\nabstractos. Ahora, si escribimos una nueva clase que herede de nuestra clase\nabstracta \"pura\", estamos obligados a redefinir <strong>todos</strong> sus métodos. Sería\ncomo si estuviéramos firmando un contrato que nos obliga a implementar toda la\nfuncionalidad de la clase base. Justo establecer este tipo de contrato es el\nobjetivo de las interfaces. </p>\n<p>Una <strong><em>interfaz</em></strong> es una abstracción que agrupa cierta funcionalidad la cual\nobligatoriamente deben definir aquellas clases que la implementan. Dependiendo\ndel lenguaje, las interfaces normalmente pueden incluir solo métodos y\npropiedades y no deben incluir datos miembros (campos en C#), por ejemplo:</p>\n<pre><code class=\"language-csharp\">interface IColeccionable \n {\n  // Funcionalidad de la interface: \n  int Titulo; // 💣 ERROR: No se pueden incluir campos;\n  string Categoría { get; set; } // ✅ Se pueden \n                                 // incluir propiedades; \n  decimal GetPrecio();  \n  int ComparaCon(object? o); \n  }\n</code></pre>\n<p>En C#, indicamos que vamos a definir una interfaz con la palabra <code>interface</code>,\nseguida de su nombre. Por convención, en C# nombramos a las interfaces con el\nprefijo <em>I</em> indicando que es una interface. Muchas veces también se utiliza el\nsufijo 'able' con el que indicamos que es 'capaz de' (esto es muy común en\ninglés). Vemos también, que al especificar el método en la interfaz, no\nagregamos una implementación. Tampoco debemos indicar el modificador de acceso\nporque es obligatoriamente público. Del mismo modo, no agregamos la palabra\n<code>abstract</code>, ya que todos los miembros de la interface deben implementarse\nobligatoriamente.</p>\n<p>Podemos utilizar interfaces para brindar un servicio a ciertas clases, siempre\ny cuando estas implementen una interfaz que nos permita completar el servicio.\nPor ejemplo, vamos a suponer que tenemos un método genérico para ordenar una\ncolección de objetos. Para poder ordenar a los objetos necesitamos establecer\nel orden comparando a un objeto contra otros. Necesitamos que los objetos\ncuenten con un método que establezca la comparación entre un objeto y otro.\nEsto lo podemos especificar utilizando una interfaz.  </p>\n<p>Siguiendo con el ejemplo vamos a programar una interfaz llamada <code>IComparable</code>, cómo la\nque se incluye en el framework .net: </p>\n<pre><code class=\"language-csharp\">interface IComparable \n {\n  int CompareTo(object? o);\n }\n</code></pre>\n<p>Listo, no es muy complicado definir la interfaz, pero lo bueno está en los\ndetalles. Al igual que una clase, una interfaz es un bloque que agrupa la\ndefinición de sus miembros.</p>\n<p>En este caso, queremos indicar que las clases que implementen a <code>IComparable</code>\nson capaces de compararse contra otros objetos. Esta capacidad será necesaria\npara ordenar los objetos de la lista. Para tener la funcionalidad requerida,\nlas clases deben <em>obligatoriamente</em> implementar el método <code>int\nCompareTo(object o)</code>. \nSegún el framework el entero que regresa  <code>CompareTo</code> indica el resultado de la\ncomparación: </p>\n<table>\n<thead>\n<tr>\n<th>Valor de retorno</th>\n<th>Significado</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Menor que cero</td>\n<td>La instancia actual precede al objeto especificado como parámetro de <code>CompareTo</code>.</td>\n</tr>\n<tr>\n<td>Cero</td>\n<td>La instacia actual es igual al objeto con el que se compara.</td>\n</tr>\n<tr>\n<td>Mayor que cero</td>\n<td>La instancia actual antecede al objeto.</td>\n</tr>\n</tbody>\n</table>\n<p>Otro detalle es que el argumento del método es de tipo <code>object</code>, esto es\nnecesario porque no podemos anticipar el tipo de dato contra el que se hará la\ncomparación. Esto nos obliga a realizar una conversión de tipo para poder hacer\nla comparación. Más adelante cuando veamos tipos genéricos utilizaremos a la\ninterfaz  <code>IComparable&lt;T&gt;</code> la cual elimina este problema. </p>\n<p>La diferencia entre una clase abstracta <em>pura</em> y una interfaz, rádica en el\ntipo de relación que tienen con las clases que las heredan/implementan. La\nherencia indica una relación Generalización/Especialización, como la que hay\nentre <code>Figura</code> y <code>Círculo</code>, por otro lado, la relación que tiene una clase con\nuna interfaz es de implementación. Indica solamente que la clase\n<strong>implementa</strong> a la <strong>interface</strong>. Esta diferencia, permite a las clases\nimplementadas en lenguajes con herencia simple, como c#, tener la\ncapacidad de implementar múltiples interfaces.</p>\n<p>El siguiente ejemplo ilustra la implementación de <code>IComparable</code> por parte de la clase \n<code>Alumno</code>, en este caso queremos ordenar a los objetos por su número de control. </p>\n<pre><code class=\"language-csharp\">using System;\nusing System.Collections.Generic;\n\npublic class Alumno : IComparable\n{\n    public int NumControl {get; set;} \n    public string? Nombre {get; set;}\n\n    // Este método es obligatorio debido a que implementamos \n    // IComparable.\n    // El argumento podría ser nulo.\n    public int CompareTo(object? o) {\n        if (o == null) return 1;\n        // Conversión de tipo\n        Alumno? otroAlumno = o as Alumno;\n\n        if (otroAlumno != null)\n          // La clase Int implementa IComparable también, \n          // así que comparamos por NumControl.\n          return this.NumControl.CompareTo(otroAlumno.NumControl);\n        else\n          throw new ArgumentException(&quot;El argumento no es tipo Alumno&quot;);\n    }\n}\n\npublic class Program \n{\n    public static void Main()\n    {\n    List&lt;Alumno&gt; alumnos = new();\n    // Insertamos algunos alumnos\n    alumnos.Add( new Alumno() {NumControl = 1201, Nombre=&quot;ana&quot;});\n    alumnos.Add( new Alumno() {NumControl = 1003, Nombre=&quot;tom&quot;});\n    alumnos.Add( new Alumno() {NumControl = 1105, Nombre=&quot;liz&quot;});\n\n    // Ordenamos la lista, esto funciona porque \n    // Alumno implementa IComparable\n    alumnos.Sort();\n\n    // Imprimimos a los alumnos para comprobar el órden\n    foreach ( var alumno in alumnos)\n        Console.WriteLine($&quot;{alumno.NumControl} {alumno.Nombre}&quot;);\n\n    }\n}\n</code></pre>\n<h4>Notas</h4>\n<ul>\n<li>Al igual que las clases abstractas, no podemos crear objetos a partir de una interface.</li>\n<li>A partir de la versión 8.0 de C#, es posible definir implementaciones por defecto para los métodos miembros de una interface. </li>\n<li>Es opcional implementar aquellos métodos que ya tienen una implementación por defecto.</li>\n</ul>"
+},{
+  "_id": "/program/e2210c5a-f324-11ec-b939-0242ac122333",
+  "uri": "/program/e2210c5a-f324-11ec-b939-0242ac122333",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Completa el programa para que funcione correctamente",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "completa",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Completa el programa de polimorfismo con interfaces",
+  "type": "prog",
+  "lang": "csharp",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "unit_test": "public class InterfaceTest\n{\n    [Fact]\n    public void Interface()\n    {\n      List<IDibujable> objetos = new List<IDibujable>();\n\n        IDibujable rect = new Rectángulo() {X=120, Y=100};\n        (rect as Rectángulo)!.ImprimeCoordenadas(); \n\n        objetos.Add(rect); \n        objetos.Add(new Rectángulo() {X=100, Y=200}); \n\n        foreach(var o in objetos)\n            o.Dibuja(); // Cada objeto  \n    }\n}\n\n\n\n",
+  "initial_code": "\ninterface Dibujable \n {\n  double  X { get; set; }\n  double  Y { get; set; } \n }\n\nclass Rectángulo : IDibujable\n{\n    private double _X, _Y;\n\n    public void Dibuja() { \n        Console.WriteLine($\"Se dibuja un círculo en ({X},{Y})\");\n        }\n\n    public double X{ \n        set => _X = value;\n        get => _X; \n    }\n\n    public double Y {\n        set { _Y = value; }\n        get { return _Y; }\n    }\n\n    public void ImprimeCoordenadas() {\n        Console.WriteLine($\"Mis coordenadas son: ({X},{Y})\");\n    }\n}\n\nclass Alumno  \n{\n    public string? Nombre;\n    public double X {get; set;} \n    public double Y {get; set;} \n\n    public void Dibuja() { \n        Console.WriteLine($\"Se dibuja un círculo en ({X},{Y})\");\n        }\n\n\n    public void ImprimeNombre() {\n        Console.WriteLine($\"Mis coordenadas son: ({X},{Y})\");\n    }\n}\nclass Program \n{\n    static void MainEjemplo()\n    {\n        List<IDibujable> objetos = new List<IDibujable>();\n\n        IDibujable rect = new Rectángulo() {X=120, Y=100};\n        rect.ImprimeCoordenadas(); \n\n        objetos.Add(rect); \n        objetos.Add(new Rectángulo() {X=100, Y=200}); \n        objetos.Add(new Alumno() {X=300, Y=300}); \n\n        foreach(var o in objetos)\n            o.Dibuja(); // Cada objeto se dibuja de acuerdo a su implementación \n    }\n}\n\n",
+  "instructions": "<h3>Implementa el polimorfismo con interfaces</h3>\n<p>Nuestro programa tiene algunos errores, \nfaltan algunas propiedades, algunos nombres están mal. \nTu tarea es corregir el desastre. </p>\n<h3>Referencias</h3>\n<p>El ejemplo utilizado es una adaptación de <a href=\"https://en.wikibooks.org/wiki/C_Sharp_Programming/Interfaces\">Interfaces en C# de Wikibooks</a>  </p>",
+  "reg_exp": ""
+},{
+  "_id": "/program/e2210c5a-f324-11ec-b939-0242ac122973",
+  "uri": "/program/e2210c5a-f324-11ec-b939-0242ac122973",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Completa el programa para que funcione correctamente",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "completa",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Completa el programa implementación de múltiples interfaces",
+  "type": "prog",
+  "lang": "csharp",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "unit_test": "public class InterfaceTest\n{\n    [Fact]\n    public void Interface()\n    {\n        \n        Alumno a = new Alumno() {Nombre=\"Juan\"};\n\n        ISaludador sa  = a as ISaludador; \n        Assert.NotNull(sa);\n        IEstudioso est =  a as IEstudioso; \n        Assert.NotNull(est);\n        IAmigable ami  = a as IAmigable;\n        Assert.NotNull(ami);\n    }\n\n    [Fact]\n    public void ISaludador()\n    {\n        \n        Alumno a = new Alumno() {Nombre=\"Juan\"};\n        ISaludador sa  = a as ISaludador; \n        using (StringWriter s = new StringWriter())\n            {\n                Console.SetOut(s);\n                \n                sa.Saluda();\n\n                var result = s.ToString().Trim().Replace(\"\\r\",\"\");\n                Assert.Equal(\"Hola\", result );\n            }\n\n    }\n\n    [Fact]\n    public void IAmigable()\n    {\n        \n        Alumno a = new Alumno() {Nombre=\"Juan\"};\n\n        IAmigable ami  = a as IAmigable; \n        using (StringWriter s = new StringWriter())\n            {\n                Console.SetOut(s);\n                \n                ami.Saluda();\n\n                var result = s.ToString().Trim().Replace(\"\\r\",\"\");\n                Assert.Equal($\"{ami.Nombre} dice Hola\", result );\n            }\n\n    }\n\n}\n\n\n\n",
+  "initial_code": "interface ISaludador\n {\n     void Saluda();\n }\n\ninterface IEstudioso\n {\n\n  void Estudia();\n\n }\n\ninterface IAmigable\n {\n   string? Nombre { get; set; } \n   bool EsAmigo(string nombre); \n   void Saluda();\n }\n\nclass Alumno : IAmigable, ISaludador,  IEstudioso \n  { \n\n\n\n\n  }\n\n",
+  "instructions": "<h3>Completa la clase Alumno, implementando las interfaces especificadas</h3>\n<p>El método <code>void Saluda()</code> de <code>ISaludador</code> debe imprimir <code>\"Hola\"</code>, mientras \nque el debe <code>IAmigable</code> debe imprimir <code>$\"{Nombre} dice Hola\"</code>.</p>",
+  "reg_exp": ""
+},{
+  "_id": "/activity/733edf52-8b90-11e7-9241-3401663b8331",
+  "uri": "/activity/733edf52-8b90-11e7-9241-3401663b8331",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Polimorfismo e interfaces con ejemplos en c#",
+  "icon": "file",
+  "author": "Mario García Valdez",
+  "tags": [
+    "clase",
+    "csharp",
+    "frontpage"
+  ],
+  "image_url": null,
+  "title": "Polimorfismo e Interfaces en C#",
+  "type": "text",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "author_image": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "content": "<p>Aunque no podemos crear objetos a partir de una interfaz, si podemos asignar\nobjetos a referencias de tipo interfaz.  La única restricción es que el objeto\nen cuestión implemente a la interfaz. Veamos un ejemplo:</p>\n<pre><code class=\"language-csharp\">interface IFigura \n {\n  int  X { get; set; } \n  int  Y { get; set; } \n  void Dibuja();  \n  }\n</code></pre>\n<p>En este caso, para definir una figura concreta, por ejemplo un rectángulo,\nsimplemente implementamos a <code>IFigura</code>, incluyendo todos sus miembros en la \nclase: </p>\n<pre><code class=\"language-csharp\">class Rectángulo : IFigura\n{\n    private double _X, _Y;\n\n    public void Dibuja() { \n        Console.WriteLine($&quot;Se dibuja un círculo en ({X},{Y})&quot;);\n        }\n\n    public double X{ \n        set =&gt; _X = value\n        get =&gt; _X  \n    }\n\n    public double Y {\n        set { _Y = value; }\n        get { return _Y; }\n    }\n\n    public ImprimeCoordenadas() {\n        Console.WriteLine($&quot;Mis coordenadas son: ({X},{Y})&quot;);\n    }\n}\n</code></pre>\n<p>Ahora podríamos asignar un objeto tipo <code>Rectángulo</code> a una referencia <code>IFigura</code>: </p>\n<pre><code class=\"language-csharp\">class Program \n{\n    static void Main()\n    {\n        IFigura rect = new Rectángulo();\n        rect.Dibuja();\n    }\n}\n</code></pre>\n<p>Cuándo asignamos un objeto a la referencia, en este caso <code>rect</code>, mediante\nella podemos acceder a los miembros definidos en la interfaz <code>IFigura</code>. Aunque no\nsería posible, por ejemplo, llamar al método <code>ImprimeCoordenadas()</code>, que \naunque es miembro de la clase <code>Rectángulo</code>, no es miembro de la interfaz. </p>\n<p>En caso de ser necesario podríamos hacer una conversión de tipo:</p>\n<pre><code class=\"language-csharp\">class Program \n{\n    static void Main()\n    {\n\n        IFigura rect = new Rectángulo() {X=120, Y=100};\n        rect.Dibuja();\n\n        // Para ejecutar un método miembro de Rectángulo \n        // debemos dereferenciar a esta clase\n        (rect as Rectángulo).ImprimeCoordenadas(); \n\n        // En versiones recientes de C#, nos marca un warning\n        // porque rect podría ser nulo. En este caso podemos \n        // utilizar el operador ! para que no considere el posible error\n        (rect as Rectángulo)!.ImprimeCoordenadas(); \n    }\n}\n</code></pre>\n<h3>Polimorfismo</h3>\n<p>El polimorfismo se puede implementar igual que con una clase abstracta,\nasignando a <code>IFigura</code> objetos con la capacidad de dibujarse. Esto es algo\ndistinto al polimorfismo que vimos antes, el cual se basaba en la herencia, en\neste caso no es necesario que haya esta relación jerárquica entre las clases.\nPor esta razón, incluso sería mejor que la clase se llamara <code>IDibujable</code>, ya\nque no tienen que ser necesariamente figuras los objetos que deseamos dibujar.</p>\n<pre><code class=\"language-csharp\">class Program \n{\n    static void Main()\n    {\n        List&lt;IDibujable&gt; objetos = new List&lt;IDibujable&gt;();\n\n        IDibujable rect = new Rectángulo() {X=120, Y=100};\n        (rect as Rectángulo)!.ImprimeCoordenadas(); \n\n        objetos.Add(rect); \n        objetos.Add(new Elipse() {X=100, Y=200}); \n        objetos.Add(new Imágen() {X=300, Y=300}); \n\n        foreach(var o in objetos)\n            o.Dibuja(); // Cada objeto se dibuja de acuerdo a su implementación \n    }\n}\n</code></pre>\n<p>Puedes completar el código anteror como ejercicio personal.</p>\n<h3>Múltiples implementaciones</h3>\n<p>El uso de las interfaces, más allá del polimorfismo, es el establecer cierta\nfuncionalidad, la cual puede ser implementada por distintos tipos de objetos.\nPor ejemplo, la funcionalidad genérica para conectarse a un sistema de bases de\ndatos podría especificarse en una interfaz. Por ejemplo: </p>\n<pre><code class=\"language-csharp\">interface IBaseDeDatos \n {\n  IConexion CreaConexión();  \n  ICursor ExecutaConsulta(IConexion c);\n  int CierraConexión();\n  }\n</code></pre>\n<p>Después otros programadores podrían implementar estas interfaces con clases para distintos servidores como \nMySQL, Oracle, SQLServer, etc. </p>\n<h4>Referencias</h4>\n<p>El ejemplo utilizado es una adaptación de <a href=\"https://en.wikibooks.org/wiki/C_Sharp_Programming/Interfaces\">Interfaces en C# de Wikibooks</a>  </p>"
+},{
+  "_id": "/activity/733edf66-8b90-11e7-9241-3401663b8331",
+  "uri": "/activity/733edf66-8b90-11e7-9241-3401663b8331",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Extensión de interfaces con ejemplos en C#",
+  "icon": "file",
+  "author": "Mario García Valdez",
+  "tags": [
+    "clase",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Extensión de interfaces con ejemplos en C#",
+  "type": "text",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "author_image": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "content": "<p>Las interfaces son una colección de métodos y propiedades las cuales \nestablecen la interfaz de un servicio. Podemos extender \nlos servicios que específica una interfaz, agregando los que se definen \nen otra en una relación parecida a la herencia. Por ejemplo, \nla interfaz <code>IFigura</code> incluye las coordenadas de su posición como propiedades \ny el método <code>void Dibuja ()</code>.  </p>\n<pre><code class=\"language-csharp\">interface IFigura \n {\n  int  X { get; set; } \n  int  Y { get; set; } \n  void Dibuja();  \n  }\n</code></pre>\n<p>Vamos a extender esta funcionalidad \npara agregar la capacidad de rotar sobre su eje, agregando primero la funcionalidad \nen su propia interfaz:</p>\n<pre><code class=\"language-csharp\">interface IRotable \n {\n  void Rota(double radianes);  \n }\n</code></pre>\n<p>Separar la funcionalidad nos va a permitir reutilizar la interfaz <code>IRotable</code> en otros \ncontextos, esto no lo podríamos hacer si incluimos la funcionalidad dentro de <code>IFigura</code>. \nPara extender a la interfaz <code>IFigura</code> utilizamos la misma sintaxis que la herencia, \nen este caso vamos a extender la funcionalidad con múltiples interfaces:</p>\n<pre><code class=\"language-csharp\">interface IFigura : IRotable, ISerializable, IImprimible\n {\n  int  X { get; set; } \n  int  Y { get; set; } \n  void Dibuja();  \n  }\n</code></pre>\n<p>Una interfaz solo puede extender a otras interfaces, no podemos incluir una clase dentro\nde la lista. </p>\n<p>Ahora, si una clase implementa a <code>IFigura</code>, deberá implementar todos los métodos y propiedades \nque se especifiquen en ella, y también en las interfaces que la extienden \n(<code>IRotable</code>, <code>ISerializable</code>, <code>IImprimible</code>). </p>\n<p>Veamos un ejemplo dónde se presenta un caso particular. La clase <code>Rectángulo</code> implementa \ntanto a <code>IFigura</code> como a <code>IDibujable</code>, y ambas interfaces incluyen al método <code>void Dibuja()</code>. </p>\n<pre><code class=\"language-csharp\">interface IDibujable\n {\n  void Dibuja();\n }\n\ninterface IRotable \n {\n  void Rota(double radianes);  \n }\n\ninterface IFigura : IRotable\n {\n  int  X { get; set; } \n  int  Y { get; set; } \n  void Dibuja();  \n  }\n\nclass Rectángulo: IFigura, IDibujable\n{\n\n    public double X { get; set;}\n    public double Y { get; set;}\n\n    void IFigura.Dibuja() { \n        Console.WriteLine($&quot;Se dibuja un rectángulo en ({X},{Y})&quot;);\n        }\n    public void Rota(double r) { \n        Console.WriteLine($&quot;Se rota el rectángulo {r} radianes&quot;);\n        }\n\n    void IDibujable.Dibuja() { \n        Console.WriteLine($&quot;Se dibuja un rectángulo&quot;);\n        }\n\n}\n</code></pre>\n<p>La ambigüedad se resuelve añadiendo como prefijo el nombre de la interfaz correspondiente \nal momento de implementar el método y eliminando el modificador de acceso <code>public</code>. En\neste caso implementamos distinta funcionalidad según el caso. Otra opción sería implementar \nun solo <code>void Dibuja()</code> el cual se utilice en ambos casos.</p>\n<h4>Notas</h4>\n<ul>\n<li>En ocasiones se le conoce como <strong><em>herencia de interfaces</em></strong> al extender una interfaz.</li>\n</ul>"
+},{
+  "_id": "/activity/generics-csharp",
+  "title": "Programación Genérica en C#",
+  "uri": "generics-csharp",
+  "description": "La programación genérica es un estilo de programación en la que se deja para después la especificación de los tipos de datos, los cuales se indican utilizando parámetros de tipo. C# incluye este estilo de programación, vemos ejemplos de su aplicación.",
+  "author": "",
+  "author_image": "",
+  "rights": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+  "is_private": false,
+  "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "level": "avanzado",
+  "external_url": "",
+  "current_price": 0,
+  "image_url": "",
+  "video_url": "",
+  "duration": "None",
+  "html_description": "",
+  "tags": [
+    "curso"
+  ],
+  "status": "in_revision",
+  "start_date": null,
+  "type": "course"
+},{
+  "_id": "/activity/733edf66-8219-11e7-9241-3401663b8331",
+  "uri": "/activity/733edf66-8219-11e7-9241-3401663b8331",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution 4.0 International",
+  "description": "Variables Polimórficas en C#",
+  "icon": "file",
+  "author": "Mario García Valdez",
+  "tags": [
+    "clase",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Generics en C#",
+  "type": "text",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "author_image": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "content": "<p>¿Cuál sería la interfaz básica para una colección tipo lista?, podríamos \ndefinir para empezar las operaciones de agregar, leer y borrar elementos. \nUna versión reducida de la interfaz <code>IList</code> de <em>.NET</em> puede ser: </p>\n<pre><code class=\"language-csharp\">interface IList\n {\n  // Propiedad Count, con el número de elementos \n  // en la lista.\n  int  Count { get; } \n\n  // Agrega un item a la lista, regresa la posición, o -1 si no \n  // fue posible agregar el elemento.\n  int Add (object? value);\n\n  // Borra un elemento  \n  void Remove (object? value);\n\n  // Regresa o modifica el elemento en el índice especificado\n  object? this[int index] { get; set; }\n  }\n</code></pre>\n<p>Hay varias opciones para implementar en una clase concreta esta interfaz.\nPor ejemplo, utilizando un arreglo de tamaño fijo o podríamos diseñar una\nlista enlazada –que ya es un tema para <em>Estructura de Datos</em>. En fin, en lo que \nnos vamos a enfocar de momento, es en la decisión de utilizar a la clase <code>Object</code>,\ncomo el tipo de dato que almacenaremos en la lista.\nEsto tiene la ventaja de que podemos almacenar cualquier tipo de objeto en la lista:</p>\n<pre><code class=\"language-csharp\">using System.Collections;\n\npublic class Program \n{\n    public static void Main() \n    {\n    ArrayList objetos = new ArrayList();\n    objetos.Add(5);\n    objetos.Add(23.3m);\n    objetos.Add(&quot;Hola&quot;);\n\n    // No es posible convertir explicitamente de object a string\n    // string? saludo = objetos[2];\n\n    // Correcto: \n    string? saludo = (string?) objetos[2];\n\n    // Warning: Unboxing de un posible valor nulo\n    int z = 10 + (int) objetos[0];\n\n    foreach(Object  o in objetos)\n      Console.WriteLine(o);\n\n    }\n}\n</code></pre>\n<p>En este caso estamos utilizando a la clase <code>ArrayList</code> la cual implementa a <code>IList</code> con \ntamaño dinámico. Vemos que podemos agregar distintos tipos de objetos, pero hay un detalle importante: \ncuando leemos los datos debemos hacer una conversión de tipos, de <code>Object</code> al tipo del objeto\nque almacenamos. Esto sucede también al momento en el que guardamos los datos, aunque no lo \nhagamos explícitamente. También debemos tener cuidado de saber exactamente en que posición almacenamos \nque tipo de dato. Una solución a esto, sería tener cuidado de almacenar solo objetos de un tipo.\n¿Qué opciones tenemos para aliviar este problema?. Una idea podría ser el establecer una interfaz por\ncada tipo de dato, por ejemplo, para almacenar enteros tendríamos:</p>\n<pre><code class=\"language-csharp\">interface IList\n {\n  // Propiedad Count, con el número de elementos \n  // en la lista.\n  int  Count { get; } \n\n  // Agrega un item a la lista, regresa la posición, o -1 si no \n  // fue posible agregar el elemento.\n  int Add (int? value);\n\n  // Borra un elemento  \n  void Remove (int? value);\n\n  // Regresa o modifica el elemento en el índice especificado\n  int? this[int index] { get; set; }\n  }\n</code></pre>\n<p>Y así sucesivamente para <code>string</code>, <code>double</code>, y otras clases. Si te fijas, lo único que \ncambiaría en las interfaces ¡y en las implementaciones!, sería solamente el tipo de dato. \nPrácticamente, podríamos hacer un <em>Find &amp; Replace</em> en el código, o utilizar una plantilla \ndónde solo cambiemos el tipo de dato. Esta tarea la evitamos utilizando interfaces, clases \ny métodos genéricos.</p>\n<h3>Genéricos en .NET</h3>\n<p>Las clases, estructuras, interfaces y métodos genéricos utilizan unos marcadores de posición\nespeciales –llamados <strong>parámetros de tipo</strong>- los cuales después son reemplazados por los tipos \nde dato específicos que van a utilizar. Los parámetros de tipo, aparecen en aquellos lugares\ndoode se utilizaría el tipo de dato a emplear (como valores de retorno, argumentos, en los campos,\npropiedades, etc.). Por ejemplo, nuestra interfaz IList genérica quedaría de la siguiente manera:</p>\n<pre><code class=\"language-csharp\">interface IList&lt;T&gt;\n {\n  // Propiedad Count, con el número de elementos \n  // en la lista.\n  int  Count { get; } \n\n  // Agrega un item a la lista, regresa la posición, o -1 si no \n  // fue posible agregar el elemento.\n  int Add (T? value);\n\n  // Borra un elemento  \n  void Remove (T? value);\n\n  // Regresa o modifica el elemento en el índice especificado\n  T? this[int index] { get; set; }\n  }\n</code></pre>\n<p>Cómo vemos, el nombre de la interfaz cambia, pues ahora le agregamos el\nparámetro de tipo <code>T</code>, los parámetros de tipo van entre los símbolos <code>&lt; &gt;</code> en\nlugar de paréntesis. Los nombres de los parámetros genéricos tienen el prefijo\no se llaman <code>T</code> por convención.  Una vez especificado el parámetro, cambiamos\ndónde correspondería el tipo <code>Object</code> por <code>T</code>. </p>\n<p>A continuación se muestra como podríamos utilizar la clase genérica <code>List&lt;T&gt;</code>\nla cual implementa a <code>IList</code>. En este caso la lista solo puede almacenar un\ntipo de dato específico: </p>\n<pre><code class=\"language-csharp\">using System.Collections.Generic; // No es necesario en versiones recientes\n\npublic class Program \n{\n    public static void Main() \n    {\n    List&lt;int&gt; enteros = new List&lt;int&gt;();\n    enteros.Add(5);\n    enteros.Add(15);\n    enteros.Add(25);\n\n    List&lt;string&gt; saludos = new List&lt;string&gt;();\n    saludos.Add(&quot;Hola&quot;);\n    saludos.Add(&quot;Hey&quot;);\n    saludos.Add(&quot;What's up&quot;);\n\n    string? saludo = saludos[2];\n\n    int z = 10 + enteros[0];\n\n    foreach(var saludo in saludos) // se puede utilizar var en lugar de string\n      Console.WriteLine(saludos);\n    }\n}\n</code></pre>\n<p>Al momento de crear una instancia de un objeto genérico, debemos especificar el tipo de \n dato que queremos utilizar, según nuestras necesidades. A esta le llamamos una <strong><em>clase genérica \n construida</em></strong>, en la cual se han reemplazado los marcadores de posición, por los tipos de datos \n especificados. </p>\n<h2>Métodos Genéricos</h2>\n<p>Podemos definir también, métodos genéricos los cuales tendrán dos listas de parámetros: una lista \nde parámetros de tipo genérico y otra lista de parámetros formales. Esto se muestra en el siguiente\nejemplo:</p>\n<pre><code class=\"language-csharp\">static void Swap&lt;T&gt;(ref T a, ref T b)\n{\n    T temp = a;\n      a = b;\n      b = temp;\n}\n</code></pre>\n<p>El método <em>Swap</em>, nos permite intercambiar los valores de dos variables entre sí. \nPara utilizar el método con dos enteros haríamos lo siguiente:</p>\n<pre><code class=\"language-csharp\">    // Fragmento de código\n    int x = 10;\n    int y = 1;\n\n    Swap&lt;int&gt;(ref x, ref y);\n\n    // valor de x = 1\n    // valor de y = 10\n\n</code></pre>\n<p>En este caso solo se utiliza un parámetro de tipo genérico. </p>\n<h3>Terminología</h3>\n<ul>\n<li>\n<p>Una <em>definición de tipo genérica</em> es una declaración de clase, estructura o interfaz, la cual \nfunciona como una plantilla, con marcas de posición para los tipos de dato que contiene o utiliza.</p>\n</li>\n<li>\n<p>Los <em>parámetros de tipo genéricos</em> son los marcadores de posición empleados\n  en la definición de tipos o métodos genéricos. Por ejemplo, una estructura\n  <a href=\"https://es.wikipedia.org/wiki/Tabla_hash\">tipo diccionario</a> como la clase\n  <code>Dictionary&lt;TKey,TValue&gt;</code> puede incluir dos parámetros de tipo genéricos: <code>TKey</code> y\n  <code>TValue</code>, para representar a los tipos de datos de las claves y valores\n  almacenados en el diccionario. </p>\n</li>\n</ul>\n<h3>Vista General</h3>\n<ul>\n<li>Utiliza tipos genéricos para maximizar el reuso de código, protección de\n  tipos y desempeño.</li>\n<li>Los tipos de datos genéricos se utilizan sobre todo en colecciónes de datos.</li>\n<li>Se incluyen clases genéricas para la mayoría de estructuras de datos que\n  utilizamos al programar.</li>\n<li>El mismo concepto en otros lenguajes tiene otros nombres: plantillas en C++,\n  con origen en la <a href=\"https://www.stroustrup.com/DnE2005.pdf\">Standar Template Library</a> (Ver 3.1 The emergence of the STL).</li>\n</ul>\n<h3>Leer</h3>\n<ul>\n<li><a href=\"https://en.wikipedia.org/wiki/Generic_programming#Stepanov%E2%80%93Musser_and_other_generic_programming_paradigms\">Programación Genérica</a></li>\n</ul>\n<h4>Referencias</h4>\n<ul>\n<li>Algunos partes son adaptadas del material de <a href=\"https://github.com/dotnet/docs/\">dotnet/docs</a> \ncon licencia <strong><em>Attribution 4.0 International</em></strong>, este material se comparte con la misma licencia. </li>\n</ul>"
+},{
+  "_id": "/program/e2210c5a-f656-11ec-b939-0242ac122333",
+  "uri": "/program/e2210c5a-f656-11ec-b939-0242ac122333",
+  "publisher": null,
+  "level": "avanzado",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Completa la implementación de la pila genérica Stack<T>",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "completa",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Pila Genérica",
+  "type": "prog",
+  "lang": "csharp",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "unit_test": "public class UnitTest1\n{\n    [Fact]\n    public void PushPopStack()\n    {\n       Stack<int> pila = new Stack<int>(5);\n       pila.Push(5);\n       Assert.Equal(5, pila.Pop()); \n    }\n\n    [Fact]\n    public void PopStack()\n    {\n       Stack<int> pila = new Stack<int>(5);\n       pila.Push(5);\n       pila.Pop();\n\n       Assert.Throws<InvalidOperationException>(()=>pila.Pop()); \n    }\n\n    [Fact]\n    public void PushStack()\n    {\n       Stack<int> pila = new Stack<int>(2);\n       pila.Push(5);\n       pila.Push(5);\n       Action testCode = () => pila.Push(0);\n       StackOverflowException exception = Assert.Throws<StackOverflowException>(testCode); \n       Assert.Equal(\"La pila está llena\",exception.Message);\n    }\n}\n",
+  "initial_code": "\nclass Stack<T>\n{\n private readonly int ;\n private int StackPointer = 0;\n\n private [] Items;\n\n public Stack():this(5){}\n public Stack(int size){\n        this.Size = size;\n        Items = new int[size];\n }\n \n public void Push(T item){\n     if (StackPointer >= Size)\n        throw new StackOverflowException(\"La pila está llena\");\n     // Completar \n     // Agregar elementos al arrglo en la posición del StackPointer\n     // Incrementar el StackPoiner en uno\n }\n public T Pop()\n {\n     // Completar\n     // Primero debemos decrementar el StackPointer\n\n    if (StackPointer >= 0)\n     // Completar\n     // Si estamos en una posición válida regresamos el Item en esa posición \n    else\n    {\n    StackPointer = 0;\n    throw new InvalidOperationException(\"La pila está vacía\");\n    }\n }\n}\n\n\n",
+  "instructions": "<h3>Implementa la estructura Stack Genérica</h3>\n<p>Completa y cambia el tipo de dato de algún elemento\nde la clase Stack, para que funcione como eso, una pila.</p>\n<p>Si te fijas, la clase es Genérica y utilizamos el parámetro de \ntipo <code>T</code>. El funcionamiento de la pila para utilizar enteros\nse muestra a continuación:</p>\n<pre><code class=\"language-csharp\">class Program{\n    static void Main(){\n        Console.WriteLine(&quot;Pila de tamaño 5&quot;);\n    // Una pila para utilizar objetos tipo entero\n        Stack&lt;int&gt; pila = new Stack&lt;int&gt;();\n        pila.Push(3);\n        pila.Push(4);\n        pila.Push(5);\n\n        Console.WriteLine(pila.Pop());\n        Console.WriteLine(pila.Pop());\n        Console.WriteLine(pila.Pop());\n        // Hay una excepción si queremos extrer otro elemento \n        // de la pila\n        Console.WriteLine(pila.Pop());\n    }\n}\n</code></pre>",
+  "reg_exp": ""
+},{
+  "_id": "/activity/733edf66-8219-11e7-9265-3401663b8331",
+  "uri": "/activity/733edf66-8219-11e7-9265-3401663b8331",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution 4.0 International",
+  "description": "Persistencia, Streams, Buffers",
+  "icon": "file",
+  "author": "Mario García Valdez",
+  "tags": [
+    "clase",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Introducción a Streams",
+  "type": "text",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "author_image": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "content": "<h2>Objetos Peristentes</h2>\n<p>Un proceso es un programa en ejecución. El código fuente que escribimos en\nalgún lenguaje como C# o C++, se compila a código ejecutable, ya sea binario o\nbytecode. Este código se ejecuta como un proceso y durante su ejecución se\ncrean y destruyen objetos. Cada objeto requiere de cierto espacio de memoria y\nexiste por un determinado tiempo. No obstante, una vez que el proceso termina,\ntoda la memoria que tenía asignada el proceso, se libera para ser utilizada por\notros. Esto significa que todos los objetos creados por nuestro programa se\ndestruyen. Muchas veces necesitamos mantener el estado de nuestros objetos por\nmucho tiempo, por ejemplo, en un sistema de control escolar o de comercio\nelectrónico es necesario contar siempre con la información de los alumnos y\nnuestras compras. En estos casos necesitamos que nuestros objetos sean\npersistentes.</p>\n<p>En el modelo orientado a objetos, decimos que el estado de un objeto es\n<strong>persistente</strong>, si su estado se mantiene, aunque el proceso dónde se creó haya\nterminado. Incluso, según la definición de Booch, un objeto persistente\ntrasciende el tiempo, ya que el objeto existe aun cuando la entidad que lo creó\nhaya dejado de existir. También se incluye como una propiedad de la\npersistencia la capacidad de trascender el espacio, pues el objeto se puede\nsalir del espacio de memoria en el que se ha creado. </p>\n<p>Normalmente, utilizamos sistemas de bases de datos relacionales u orientadas a\nobjetos, para gestionar la persistencia. Los sistemas de bases datos nos\nofrecen una solución escalable y la capacidad de mantener el estado de nuestros\nobjetos consistente aun cuando múltiples procesos hagan modificaciones al mismo\ntiempo. Este es un tema que cae en otra materia, por lo que no lo abordaremos\nen este momento. Como una primera aproximación al tema, vamos a utilizar archivos\npara almacenar el estado de nuestros objetos. </p>\n<p>Para leer o escribir a un archivo, primero debemos familiarizarnos con los \nconceptos de flujos (streams en inglés) y buffers, ya que esto nos permitirá entender mejor\nel funcionamiento de las clases <code>StreamReader</code> y <code>StreamWriter</code> que veremos\na continuación.</p>\n<h2>Streams</h2>\n<p>En computación, un flujo  (en inglés <em>stream</em>), es una secuencia continua de\ndatos que se transmiten o procesan de manera progresiva. Al igual los artículos\nque viajan en una banda transportadora, los datos de un stream son procesados\nuno por uno. Actualmente, los servicios de streaming de videos como Netflix, en\nlugar de enviarnos el archivo completo de la película que queremos ver (lo cual\npodría tardar mucho tiempo), utilizan precisamente streams para enviarnos la\npelícula. Para esto, se divide primero el archivo en trozos (o paquetes), los\ncuales se envían a nuestro dispositivo secuencialmente, uno tras otro, y los\nvamos consumiendo a medida que llegan. El uso de streams, nos perimite procesar\npotencialmente un número ilimitado de datos, ya que no estamos limitados por la\ncantidad de memoria disponible localmente.</p>\n<p>Nuestros programas utilizan esta misma estrategia para enviar o recibir datos a\notras entidades que están fuera del proceso, por ejemplo, archivos, servidores\nremotos, la terminal o  el teclado.  </p>\n<p>Los streams pueden ser de entrada o de salida, dependiendo de la dirección del\nflujo de datos. Por ejemplo, un stream de entrada podría representar los datos\nque se están leyendo de un archivo o se están recibiendo desde un dispositivo\nde entrada, mientras que un stream de salida podría representar los datos que\nse están escribiendo en un archivo o se están enviando a un dispositivo de\nsalida. </p>\n<p>Los datos fluyen desde o hacia nuestro programa desde diferentes fuentes: </p>\n<ul>\n<li>Dispositivos IO (entrada-salida) como el teclado, la consola, impresora</li>\n<li>Archivos</li>\n<li>Memoria</li>\n<li>Un socket TCP/IP</li>\n<li>Tubería de comunicación interprocesos </li>\n<li>Una conexión http</li>\n</ul>\n<h2>Buffers</h2>\n<p>Siguiendo el ejemplo de Netflix, para evitar que la reproducción de la película\nse detenga cuando tenemos una conexión a internet intermitente, se hace uso de\nun búfer. Un búfer (buffer en inglés) se refiere a un área de memoria temporal utilizada para\nalmacenar datos antes de que sean procesados o enviados. En este caso, se\nalmacenan un búfer bloques de la película conforme van llegando, y se\nreproducen constantemente los bloques ya están en el búfer. En caso de que el\nbúfer se vacíe, entonces necesitaremos esperar a que el búfer tenga datos\nsuficientes para seguir reproduciendo la película. Entonces, el búfer actúa\ncomo un intermediario entre la fuente de datos y el destino, permitiendo una\ntransferencia más eficiente y controlada de la información.</p>\n<h2>System.IO</h2>\n<p>La clase abstracta <code>Stream</code> y sus derivadas, no brindan un mecanismo abstracto \npara leer y escribir a múltiples entidades sin preocuparnos por los detalles de \nbajo nivel específicos al sistema operativo o los dispositivos subyacentes.\nLas clases principales que heredan de <code>Stream</code> son <code>FileStream</code> y <code>MemoryStream</code>.</p>\n<p>Podemos realizar estas tres operaciones utilizando streams:</p>\n<ul>\n<li>\n<p>Podemos leer de un stream. Le llamamos lectura a transferir datos del stream \na una estructura dentro de nuestro programa como una lista o un arreglo.</p>\n</li>\n<li>\n<p>Podemos escribir a un stream. Escribir es transferir datos de un arreglo en \nnuestro programa a un stream. </p>\n</li>\n<li>\n<p>Algunos flujos pueden incluir una funcionalidad de posicionamiento (seek),\n  con la cual podemos consultar y modificar la posición actual del flujo.\n  Algunos flujos no tienen esta capacidad, por ejemplo, un flujo de red.</p>\n</li>\n</ul>\n<p>Para saber con qué capacidades cuenta el stream que estemos utilizando el momento\ndado, podemos consular las siguientes propiedades de la clase <code>Stream</code>: <code>CanRead</code>, \n<code>CanWrite</code> y <code>CanSeek</code> respectivamente.</p>\n<p>Para realizar las operaciones descritas arriba, utilizaremos los métodos\n<a href=\"https://learn.microsoft.com/en-us/dotnet/api/system.io.stream.read?view=net-7.0\"><code>Read</code></a>\ny <a href=\"https://learn.microsoft.com/en-us/dotnet/api/system.io.stream.write?view=net-7.0\"><code>Write</code></a>. \nPor otro lado, para la búsqueda utilizaremos el método <code>Seek</code> para posicionarnos en otro lugar en el stream.</p>\n<p>La clase <code>Stream</code> implementa a la interfaz <code>IDisposible</code>. Esto es necesario porque \nutilizaremos recursos que están fuera del proceso, y por lo, tanto no pueden \ndestruirse automáticamente por el <em>recolector de basura</em>. Cuando terminamos de utilizar un stream\ndebemos desecharlo implícita o explícitamente. Para hacerlo explícitamente debemos de\nllamar al método <code>Dispose</code> dentro de un bloque <code>try/catch</code>. Para disponerlo explícitamente\ndebemos utilizar la construcción <code>using</code>.  Al eliminar un stream, se vacían los datos\nalmacenados en el búfer y se liberan los recursos del sistema operativo, red u otros. </p>\n<p>En las versiones actuales de .NET también se cuenta con clases asíncronas,  esto se\nverá en otra unidad. </p>\n<h3><code>StreamReader</code></h3>\n<p>La clase <code>StreamReader</code> nos permite leer archivos de texto. En el constructor\npasamos la ruta y nombre del archivo que vamos a leer. Podemos llamar\nal método <code>ReadLine</code> para leer del archivo una línea de texto. En caso de\nque lleguemos al fin del archivo, <code>ReadLine</code> nos regresará <code>null</code>.\nEn ejemplo siguiente, vemos cómo se utiliza la construcción <code>using</code> para \ndesechar al objeto <code>sr</code> de manera implícita. </p>\n<div class=\"highlight\"><pre><span></span><code><span class=\"k\">using</span><span class=\"w\"> </span><span class=\"nn\">System</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"k\">using</span><span class=\"w\"> </span><span class=\"nn\">System.IO</span><span class=\"p\">;</span><span class=\"w\"></span>\n\n<span class=\"k\">class</span><span class=\"w\"> </span><span class=\"nc\">Test</span><span class=\"w\"> </span>\n<span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">  </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"k\">static</span><span class=\"w\"> </span><span class=\"k\">void</span><span class=\"w\"> </span><span class=\"nf\">Main</span><span class=\"p\">()</span><span class=\"w\"></span>\n<span class=\"w\">  </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">try</span><span class=\"w\"> </span>\n<span class=\"w\">    </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"c1\">// Creamos una instancia de StreamReader para leer desde un archivo.</span>\n<span class=\"w\">    </span><span class=\"c1\">// using nos permite cerrar y desecharlo de manera indirecta.</span>\n<span class=\"w\">    </span><span class=\"k\">using</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"n\">StreamReader</span><span class=\"w\"> </span><span class=\"n\">sr</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">StreamReader</span><span class=\"p\">(</span><span class=\"s\">&quot;ArchivoPrueba.txt&quot;</span><span class=\"p\">))</span><span class=\"w\"></span>\n<span class=\"w\">      </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">      </span><span class=\"kt\">string</span><span class=\"w\"> </span><span class=\"n\">line</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">      </span><span class=\"c1\">// Leemos y mostramos las líneas mientras</span>\n<span class=\"w\">      </span><span class=\"c1\">// no lleguemos al final del archivo.</span>\n<span class=\"w\">      </span><span class=\"k\">while</span><span class=\"w\"> </span><span class=\"p\">((</span><span class=\"n\">line</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">sr</span><span class=\"p\">.</span><span class=\"n\">ReadLine</span><span class=\"p\">())</span><span class=\"w\"> </span><span class=\"p\">!=</span><span class=\"w\"> </span><span class=\"k\">null</span><span class=\"p\">)</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">            </span><span class=\"n\">Console</span><span class=\"p\">.</span><span class=\"n\">WriteLine</span><span class=\"p\">(</span><span class=\"n\">line</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">      </span><span class=\"p\">}</span><span class=\"w\"> </span>\n<span class=\"w\">    </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">catch</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"n\">Exception</span><span class=\"w\"> </span><span class=\"n\">e</span><span class=\"p\">)</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"n\">Console</span><span class=\"p\">.</span><span class=\"n\">WriteLine</span><span class=\"p\">(</span><span class=\"s\">&quot;No se pudo leer el archivo&quot;</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"n\">Console</span><span class=\"p\">.</span><span class=\"n\">WriteLine</span><span class=\"p\">(</span><span class=\"n\">e</span><span class=\"p\">.</span><span class=\"n\">Message</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">  </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"p\">}</span><span class=\"w\"></span>\n</code></pre></div>\n<p>En las siguientes secciones veremos cómo leer y escribir el estado de los objetos\na archivos de texto y binarios.</p>\n<h4>Referencias</h4>\n<ul>\n<li>\n<p>Algunas partes son adaptadas del material de <a href=\"https://github.com/dotnet/docs/\">dotnet/docs</a> \ncon licencia <strong><em>Attribution 4.0 International</em></strong>, este material se comparte con la misma licencia. </p>\n</li>\n<li>\n<p>Streams en <a href=\"https://learn.microsoft.com/es-mx/dotnet/api/system.io.stream?view=net-7.0\">dotnet/docs</a></p>\n</li>\n</ul>"
+},{
+  "_id": "/activity/733edf66-2901-11e7-9265-3401663b8331",
+  "uri": "/activity/733edf66-2901-11e7-9265-3401663b8331",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution 4.0 International",
+  "description": "Persistencia en archivos de texto, clases FileStream y StreamWriter",
+  "icon": "file",
+  "author": "Mario García Valdez",
+  "tags": [
+    "clase",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Operaciones básicas en archivos de texto",
+  "type": "text",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "author_image": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "content": "<h3>Cómo almacenar objetos a un archivo de texto</h3>\n<p>Para escribir a un archivo de texto vamos a utilizar dos clases\ncomplementarias: <code>FileStream</code> y <code>StreamWriter</code>, estas se utilizan para realizar\noperaciones de escritura en archivos en C#. Aunque ambas se pueden utilizar de\nmanera independiente, existen algunas diferencias clave entre ellas en\ntérminos de su funcionalidad y manera de utilizarse:</p>\n<ol>\n<li>\n<p>Funcionalidad:</p>\n<ul>\n<li>\n<p>FileStream: es una clase que se utiliza para leer y escribir <strong>bytes</strong> en\n  un archivo. Proporciona métodos para realizar operaciones de lectura y\n  escritura a bajo nivel manipulando los bytes. Implementa los métodos Read,\n  Write y Seek.</p>\n</li>\n<li>\n<p>StreamWriter: proporciona métodos para escribir cadenas y caracteres a un\n  archivo, realizando también tareas de codificación y formato. A\n  <code>StreamWriter</code> se considera una clase de nivel superior, ya que no opera \n  en el ámbito de los bytes y por lo mismo es más fácil de utilizar.</p>\n</li>\n</ul>\n</li>\n<li>\n<p>Uso:</p>\n<ul>\n<li>FileStream: Primero necesitamos crear una\n     instancia de la clase <code>FileStream</code> y especificando como parámetro el archivo con el que \n     vamos a trabajar. Luego, podemos utilizar los\n     métodos para leer o escribir bytes en el\n     archivo. Vemos la operación a bajo nivel en el ejemplo a continuación. Cuando leemos, lo hacemos\n     a un arreglo de bytes y al escribir \n     debemos especificar parámetros adicionales de posición y tamaño del arreglo. </li>\n</ul>\n<div class=\"highlight\"><pre><span></span><code><span class=\"k\">using</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"n\">FileStream</span><span class=\"w\"> </span><span class=\"n\">fs</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">FileStream</span><span class=\"p\">(</span><span class=\"s\">&quot;archivo.txt&quot;</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">FileMode</span><span class=\"p\">.</span><span class=\"n\">Create</span><span class=\"p\">))</span><span class=\"w\"></span>\n<span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">   </span><span class=\"kt\">byte</span><span class=\"p\">[]</span><span class=\"w\"> </span><span class=\"n\">data</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">Encoding</span><span class=\"p\">.</span><span class=\"n\">UTF8</span><span class=\"p\">.</span><span class=\"n\">GetBytes</span><span class=\"p\">(</span><span class=\"s\">&quot;Ejemplo&quot;</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">   </span><span class=\"n\">fs</span><span class=\"p\">.</span><span class=\"n\">Write</span><span class=\"p\">(</span><span class=\"n\">data</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"m\">0</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">data</span><span class=\"p\">.</span><span class=\"n\">Length</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"p\">}</span><span class=\"w\"></span>\n</code></pre></div>\n<ul>\n<li>StreamWriter: Con <code>StreamWriter</code> simplemente utilizamos el método <code>WriteLine</code> y pasamos \n   directamente el objeto que deseamos almacenar. De manera similar a cuando escribimos en consola\n   internamente se llama al método <code>ToString</code> para grabar el texto:</li>\n</ul>\n<div class=\"highlight\"><pre><span></span><code><span class=\"k\">using</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"n\">StreamWriter</span><span class=\"w\"> </span><span class=\"n\">sw</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">StreamWriter</span><span class=\"p\">(</span><span class=\"s\">&quot;archivo.txt&quot;</span><span class=\"p\">))</span><span class=\"w\"></span>\n<span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"n\">sw</span><span class=\"p\">.</span><span class=\"n\">WriteLine</span><span class=\"p\">(</span><span class=\"s\">&quot;Ejemplo de texto.&quot;</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"p\">}</span><span class=\"w\"></span>\n</code></pre></div>\n</li>\n<li>\n<p>Características adicionales:</p>\n<ul>\n<li>\n<p>FileStream: Como <code>FileStream</code> trabaja a bajo nivel, nos permite realizar\n operaciones más avanzadas, como leer o escribir en ubicaciones específicas\n del archivo utilizando el método <code>Seek</code>.</p>\n</li>\n<li>\n<p>StreamWriter: Nos proporciona métodos específicos para escribir texto, y\n podemos especificar el formato de codificación para el archivo, el uso de\n una memoria intermedia para almacenar datos antes de escribirlos en el\n archivo y podemos utilizar el método <code>WriteLine</code>.</p>\n</li>\n</ul>\n</li>\n</ol>\n<h4>Uso de <code>FileStream</code> y <code>StreamWriter</code></h4>\n<p>Para este ejemplo vamos a utilizar <code>FileStream</code> y <code>StreamWriter</code> para almacenar en \nun archivo de texto objetos de la clase <code>Producto</code>:</p>\n<div class=\"highlight\"><pre><span></span><code><span class=\"k\">class</span><span class=\"w\"> </span><span class=\"nc\">Product</span><span class=\"w\"></span>\n<span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"kt\">string</span><span class=\"w\"> </span><span class=\"n\">code</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"kt\">string</span><span class=\"w\"> </span><span class=\"n\">description</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"kt\">decimal</span><span class=\"w\"> </span><span class=\"n\">price</span><span class=\"p\">;</span><span class=\"w\"></span>\n\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"nf\">Product</span><span class=\"p\">(</span><span class=\"kt\">string</span><span class=\"w\"> </span><span class=\"n\">c</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"kt\">string</span><span class=\"w\"> </span><span class=\"n\">d</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"kt\">decimal</span><span class=\"w\"> </span><span class=\"n\">p</span><span class=\"p\">)</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"n\">code</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">c</span><span class=\"p\">;</span><span class=\"w\"> </span><span class=\"n\">description</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">d</span><span class=\"p\">;</span><span class=\"w\"> </span><span class=\"n\">price</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">p</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"p\">}</span><span class=\"w\"></span>\n</code></pre></div>\n<p>La clase incluye dos campos públicos tipo <code>string</code> y un decimal. Vamos \na crear una clase de utilería la cual llamaremos <code>ProductDB</code>, en ella \nvamos a agregar los métodos estáticos para guardar y leer instancias de <code>Producto</code>\na archivos de texto.</p>\n<p>Para guardar el estado de los productos, utilizaremos una estrategia sencilla \npara separar los campos, vamos a utilizar un caracter especial como separador.\nEn este caso utilizaremos el caracter barra vertical <code>|</code>. Hay otras soluciones\nestándar, por ejemplo, los archivos separados por coma, pero queremos una solución básica.</p>\n<p>A continuación se muestra la implementación del método <code>SaveProducts</code>. Es un método\nestático, y solo recibe como parámetro la lista con los productos que vamos a \nguardar al archivo. En esta primera prueba hemos dejado el nombre del archivo fijo (<em>hard-coded</em>) \ncomo <code>\"products.txt\"</code>, pero es mejor que este valor se reciba como parámetro (se dejará como ejercicio). </p>\n<p><div class=\"highlight\"><pre><span></span><code><span class=\"k\">class</span><span class=\"w\"> </span><span class=\"nc\">ProductDB</span><span class=\"w\"></span>\n<span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">   </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"k\">static</span><span class=\"w\"> </span><span class=\"k\">void</span><span class=\"w\"> </span><span class=\"nf\">SaveProducts</span><span class=\"p\">(</span><span class=\"n\">List</span><span class=\"p\">&lt;</span><span class=\"n\">Product</span><span class=\"p\">&gt;</span><span class=\"w\"> </span><span class=\"n\">products</span><span class=\"p\">)</span><span class=\"w\"></span>\n<span class=\"w\">   </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"c1\">// Declaramos el FileStream fuera del bloque try </span>\n<span class=\"w\">    </span><span class=\"c1\">// para que sea visible en todo el bloque del método</span>\n<span class=\"w\">    </span><span class=\"n\">FileStream</span><span class=\"w\"> </span><span class=\"n\">fs</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">null</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">try</span><span class=\"w\"> </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">       </span><span class=\"c1\">// Instanciamos un objeto de FileStream</span>\n<span class=\"w\">       </span><span class=\"c1\">// Vamos a crear el archivo y vamos a escribir en el</span>\n<span class=\"w\">       </span><span class=\"n\">fs</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">FileStream</span><span class=\"p\">(</span><span class=\"s\">&quot;products.txt&quot;</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">FileMode</span><span class=\"p\">.</span><span class=\"n\">Create</span><span class=\"p\">,</span><span class=\"w\"> </span>\n<span class=\"w\">                                                   </span><span class=\"n\">FileAccess</span><span class=\"p\">.</span><span class=\"n\">Write</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">       </span><span class=\"c1\">// Utilizamos &#39;using&#39; para que se llame a Dispose implicitamente </span>\n<span class=\"w\">       </span><span class=\"n\">using</span><span class=\"p\">(</span><span class=\"n\">StreamWriter</span><span class=\"w\"> </span><span class=\"n\">txtOut</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">StreamWriter</span><span class=\"p\">(</span><span class=\"n\">fs</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">Encoding</span><span class=\"p\">.</span><span class=\"n\">UTF8</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"m\">512</span><span class=\"p\">))</span><span class=\"w\"></span>\n<span class=\"w\">       </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">          </span><span class=\"k\">foreach</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"kt\">var</span><span class=\"w\"> </span><span class=\"n\">p</span><span class=\"w\"> </span><span class=\"k\">in</span><span class=\"w\"> </span><span class=\"n\">products</span><span class=\"p\">)</span><span class=\"w\"></span>\n<span class=\"w\">          </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">              </span><span class=\"c1\">// Escribimos una línea con los campos de cada objeto </span>\n<span class=\"w\">              </span><span class=\"c1\">// Separados por un &#39;|&#39;</span>\n<span class=\"w\">              </span><span class=\"n\">txtOut</span><span class=\"p\">.</span><span class=\"n\">WriteLine</span><span class=\"p\">(</span><span class=\"s\">$&quot;{p.code}|{p.description}|{p.price}&quot;</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">          </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">       </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">   </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">   </span><span class=\"c1\">// Optamos por llamar explicitamete al Dispose de fs, como ejemplo</span>\n<span class=\"w\">   </span><span class=\"k\">finally</span><span class=\"w\"> </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">       </span><span class=\"c1\">// Solo se ejecuta si la referencia no es nula</span>\n<span class=\"w\">      </span><span class=\"k\">if</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"n\">fs</span><span class=\"w\"> </span><span class=\"p\">!=</span><span class=\"w\"> </span><span class=\"k\">null</span><span class=\"p\">)</span><span class=\"w\"></span>\n<span class=\"w\">          </span><span class=\"n\">fs</span><span class=\"p\">.</span><span class=\"n\">Dispose</span><span class=\"p\">();</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">  </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"p\">}</span><span class=\"w\"></span>\n</code></pre></div>\nEn el ejemplo utilizamos una instancia de <code>FileStream</code> para especificar el modo y tipo de acceso \nque utilizaremos al manipular el archivo. Esto lo especificamos utilzando las enumeraciones \n<code>FileMode</code> y <code>FileAccess</code>. </p>\n<p>Las opciones para el modo de apertura <code>FileMode</code> son: </p>\n<table>\n<thead>\n<tr>\n<th>Valor</th>\n<th>Descripción</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>Append</code></td>\n<td>Abre el archivo si existe y se posiciona al final de este. Si el archivo no existe, se crea uno nuevo.</td>\n</tr>\n<tr>\n<td><code>Create</code></td>\n<td>Crea un nuevo archivo. Si el archivo ya existe, se sobrescribe.</td>\n</tr>\n<tr>\n<td><code>CreateNew</code></td>\n<td>Crea un nuevo archivo. Si el archivo ya existe, se genera una excepción.</td>\n</tr>\n<tr>\n<td><code>Open</code></td>\n<td>Abre un archivo existente. Si el archivo no existe, se genera una excepción.</td>\n</tr>\n<tr>\n<td><code>OpenOrCreate</code></td>\n<td>Abre el archivo si existe. Si no existe, se crea uno nuevo.</td>\n</tr>\n<tr>\n<td><code>Truncate</code></td>\n<td>Abre un archivo existente y lo trunca a cero bytes. Si el archivo no existe, se genera una excepción.</td>\n</tr>\n</tbody>\n</table>\n<p>Las opciones para el tipo de acceso son <code>FileAccess.Read</code>, <code>FileAccess.Write</code> y <code>FileAccess.ReadWrite</code>, \nindicando las operaciones que vamos a hacer en el archivo. </p>\n<p>A continuación se muestra otra versión donde se utiliza la construcción <code>using</code> para ambas instancias.</p>\n<p><div class=\"highlight\"><pre><span></span><code><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"k\">static</span><span class=\"w\"> </span><span class=\"k\">void</span><span class=\"w\"> </span><span class=\"nf\">SaveProducts</span><span class=\"p\">(</span><span class=\"n\">List</span><span class=\"p\">&lt;</span><span class=\"n\">Product</span><span class=\"p\">&gt;</span><span class=\"w\"> </span><span class=\"n\">products</span><span class=\"p\">)</span><span class=\"w\"></span>\n<span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">  </span><span class=\"n\">using</span><span class=\"p\">(</span><span class=\"n\">FileStream</span><span class=\"w\"> </span><span class=\"n\">fs</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">FileStream</span><span class=\"p\">(</span><span class=\"s\">&quot;products.txt&quot;</span><span class=\"p\">,</span><span class=\"w\"> </span>\n<span class=\"w\">                                        </span><span class=\"n\">FileMode</span><span class=\"p\">.</span><span class=\"n\">Create</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">FileAccess</span><span class=\"p\">.</span><span class=\"n\">Write</span><span class=\"p\">))</span><span class=\"w\"></span>\n<span class=\"w\">  </span><span class=\"n\">using</span><span class=\"p\">(</span><span class=\"n\">StreamWriter</span><span class=\"w\"> </span><span class=\"n\">txtOut</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">StreamWriter</span><span class=\"p\">(</span><span class=\"n\">fs</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">Encoding</span><span class=\"p\">.</span><span class=\"n\">UTF8</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"m\">512</span><span class=\"p\">))</span><span class=\"w\"></span>\n<span class=\"w\">  </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">foreach</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"kt\">var</span><span class=\"w\"> </span><span class=\"n\">p</span><span class=\"w\"> </span><span class=\"k\">in</span><span class=\"w\"> </span><span class=\"n\">products</span><span class=\"p\">)</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">      </span><span class=\"n\">txtOut</span><span class=\"p\">.</span><span class=\"n\">WriteLine</span><span class=\"p\">(</span><span class=\"s\">$&quot;{p.code}|{p.description}|{p.price}&quot;</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">  </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"p\">}</span><span class=\"w\"></span>\n</code></pre></div>\nPara probar nuestras clases vamos a crear una lista de productos y \nllamaremos el método <code>ProductDB.SaveProducts</code>.</p>\n<div class=\"highlight\"><pre><span></span><code><span class=\"k\">class</span><span class=\"w\"> </span><span class=\"nc\">Program</span><span class=\"w\"></span>\n<span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">static</span><span class=\"w\"> </span><span class=\"k\">void</span><span class=\"w\"> </span><span class=\"nf\">Main</span><span class=\"p\">()</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"n\">List</span><span class=\"p\">&lt;</span><span class=\"n\">Product</span><span class=\"p\">&gt;</span><span class=\"w\"> </span><span class=\"n\">productos</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">new</span><span class=\"p\">();</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"n\">productos</span><span class=\"p\">.</span><span class=\"n\">Add</span><span class=\"p\">(</span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">Product</span><span class=\"p\">(</span><span class=\"s\">&quot;AAX&quot;</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"s\">&quot;Atari 2600&quot;</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"m\">190.99</span><span class=\"n\">m</span><span class=\"p\">));</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"n\">productos</span><span class=\"p\">.</span><span class=\"n\">Add</span><span class=\"p\">(</span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">Product</span><span class=\"p\">(</span><span class=\"s\">&quot;BBX&quot;</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"s\">&quot;NES&quot;</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"m\">290.99</span><span class=\"n\">m</span><span class=\"p\">));</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"n\">productos</span><span class=\"p\">.</span><span class=\"n\">Add</span><span class=\"p\">(</span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">Product</span><span class=\"p\">(</span><span class=\"s\">&quot;CCX&quot;</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"s\">&quot;Game Boy&quot;</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"m\">90.99</span><span class=\"n\">m</span><span class=\"p\">));</span><span class=\"w\"></span>\n\n<span class=\"w\">        </span><span class=\"n\">ProductDB</span><span class=\"p\">.</span><span class=\"n\">SaveProducts</span><span class=\"p\">(</span><span class=\"n\">productos</span><span class=\"p\">);</span><span class=\"w\"></span>\n\n<span class=\"w\">    </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"p\">}</span><span class=\"w\"></span>\n</code></pre></div>\n<p>Al ejecutar el código deberíamos crear un archivo llamado <code>products.txt</code> que está\nen la raíz del proyecto y tiene los siguientes datos:</p>\n<div class=\"highlight\"><pre><span></span><code>AAX|Atari 2600|190.99\nBBX|NES|290.99\nCCX|Game Boy|90.99\n</code></pre></div>\n<h4>Referencias</h4>\n<ul>\n<li>\n<p>Algunas partes son adaptadas del material de <a href=\"https://github.com/dotnet/docs/\">dotnet/docs</a> \ncon licencia <strong><em>Attribution 4.0 International</em></strong>, este material se comparte con la misma licencia. </p>\n</li>\n<li>\n<p>Streams en <a href=\"https://learn.microsoft.com/es-mx/dotnet/api/system.io.stream?view=net-7.0\">dotnet/docs</a></p>\n</li>\n</ul>"
+},{
+  "_id": "/program/fee10c5a-f656-11ec-b939-0242ac122333",
+  "uri": "/program/fee10c5a-f656-11ec-b939-0242ac122333",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Atrapa la excepción que surge al guardar el archivo",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "completa",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Atrapa una excepción de IO",
+  "type": "prog",
+  "lang": "csharp",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "unit_test": "public class UnitTest1\n{\n    [Fact]\n    public void SaveProductsTxt()\n    {\n      string data = \"data\";\n      string file = \"data.txt\";\n\n      using (StringWriter s = new StringWriter())\n            {\n                Console.SetOut(s);\n                \n                FileSaver.SaveToText(data, file);\n\n                var result = s.ToString().Trim().Replace(\"\\r\",\"\");\n                Assert.Equal(\"El archivo no existe\", result );\n            }\n    }\n\n}\n",
+  "initial_code": "using System.Text;\n\npublic class FileSaver\n{\n    public static void SaveToText(string data, string file)\n    {\n        FileStream fs = null;\n        try {\n            fs =  new FileStream(file, FileMode.Open, FileAccess.Write);\n            using(StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512))\n            {\n               txtOut.Write(data); \n            }\n        }\n        \n        finally {\n            if (fs != null)\n                fs.Dispose();\n        }\n    }\n}\n",
+  "instructions": "<h3>Atrapa la excepción</h3>\n<p>El código inicial tiene un error, el programador quiere\nabrir el archivo que llega como parámetro, pero el \narchivo no existe. Cuando sucede esto se dispara \nla excepción <code>System.IO.FileNotFoundException</code>. </p>\n<p>Agrega el bloque necesario para atrapar esta \nexcepción, dentro de ella simplemente imprime a la \nconsola el mensaje: <code>\"El archivo no existe\"</code>.</p>\n<p>No es necesario modificar otra parte del programa.</p>",
+  "reg_exp": ""
+},{
+  "_id": "/program/eee10c5a-f656-11ec-b939-0242ac122333",
+  "uri": "/program/eee10c5a-f656-11ec-b939-0242ac122333",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Completa el programa para guardar una lista de productos a un archivo de texto",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "completa",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Guarda productos a un archivo de texto",
+  "type": "prog",
+  "lang": "csharp",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "unit_test": "public class UnitTest1\n{\n    [Fact]\n    public void ProductClass()\n    {\n      Product p = new Product(\"AAA\", \"Desc\", 12.22m, 12,  23);\n      Assert.Equal(\"AAA\",p.code);\n    }\n\n    [Fact]\n    public void SaveProductsTxt()\n    {\n      List<Product> products = new();\n      products.Add(new Product(\"AAA\", \"DescA\", 12.22m, 12,  23));\n      products.Add(new Product(\"BAA\", \"DescB\", 12.22m, 12,  23));\n      products.Add(new Product(\"CAA\", \"DescC\", 12.22m, 12,  23));\n    \n      ProductDB.SaveProducts(products);\n\n      List<Product> productsFF = new();\n      productsFF = ReadProducts();\n      Assert.Equal(\"AAA\", productsFF[0].code);\n      Assert.Equal(\"BAA\", productsFF[1].code);\n      Assert.Equal(\"CAA\", productsFF[2].code);\n      \n    }\n\n    private static List<Product> ReadProducts()\n    {\n        List<Product> prods = new();\n        FileStream? fs = null;\n        try {\n            fs = new FileStream(\"products.txt\", FileMode.Open, FileAccess.Read);\n            using(StreamReader txtIn = new StreamReader(fs, Encoding.UTF8))\n            {\n                while (txtIn.Peek() != -1)\n                {\n                string? row = txtIn.ReadLine();\n                Console.WriteLine(row);\n                if (row is not null)\n                    {\n                    string?[] cols = row.Split(\"|\");\n                    string? code = cols[0];\n                    string? description = cols[1];\n                    decimal? price = decimal.Parse(cols[2]!);\n                    uint? likes = uint.Parse(cols[3]!);\n                    uint? department = uint.Parse(cols[4]!);\n                    prods.Add(new Product(code,description, price, likes, department));\n                    }\n                }\n            }\n        }\n        finally {\n            if (fs != null)\n                fs.Dispose();\n        }\n        return prods;\n    }\n\n}\n",
+  "initial_code": "using System.Text;\n\npublic class Product\n{\n    public string? code;\n    public string? description;\n    public decimal? price;\n    // agrega el campo like\n    // agrega el campo department\n    // ambos son de tipo uint\n\n    // modifica el constructor para inicializar los \n    // campos de like y department  \n    public Product(string? c, string? d, decimal? p)\n    {\n        code = c; description = d; price = p; \n    }\n}\n\npublic class ProductDB\n{\n    public static void SaveProducts(List<Product> products)\n    {\n        FileStream fs = null;\n        try {\n            // Crea el FileStream y asignalo a fs \n            // Vamos a crear el archivo y escribir \n            // fs = \n            using(StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512))\n            {\n                foreach (var p in products)\n                {\n                    // Utiliza los métodos Write y WriteLine para \n                    // Agregar los productos al archivo\n                    // Utiliza el caracter de barra vertical como separador\n                }\n            }\n        }\n        finally {\n            if (fs != null)\n                fs.Dispose();\n        }\n    }\n}\n",
+  "instructions": "<h3>Guarda objetos de la clase Product a un archivo de texto</h3>\n<p>Sigue estos pasos para completar el programa:</p>\n<ol>\n<li>\n<p>Debes agregar dos nuevos campos a la clase producto,\n   ambos deben ser enteros sin signo (<code>uint</code>) : <code>likes</code> y <code>department</code>.\n   Es importante que los agregues a la clase en ese orden.</p>\n</li>\n<li>\n<p>Debes crear una instancia de <code>FileStream</code> y asignarla <code>fs</code>.</p>\n</li>\n<li>\n<p>El archivo que vamoa a crear se debe llamar <code>\"products.txt</code></p>\n</li>\n<li>\n<p>Utilizando el separador de barra vertical <code>'|'</code> agrega una línea \n   por cada objeto, no se te olvide agregar el salto de línea. No\n   debe haber espacio entre los campos, por ejemplo: \n   <div class=\"highlight\"><pre><span></span><code>AAA|DescA|12.22|12|23\nBBB|DescB|32.99|123|23\n</code></pre></div></p>\n</li>\n</ol>\n<p>Observa la manera en la que se desecha el archivo, esto \nes distinto a lo que vimos en clase.</p>\n<p>Puedes guardar tu código temporalmente en\n<a href=\"https://gist.github.com/\" target=\"_blank\">GitHub Gist</a></p>\n<hr />\n<h4>Notas:</h4>\n<p>Para guardar el estado de los productos, utilizaremos una estrategia sencilla \npara separar los campos, vamos a utilizar un caracter especial como separador.\nEn este caso utilizaremos el caracter barra vertical <code>|</code>. Hay otras soluciones\nestándar, por ejemplo, los archivos separados por coma, pero queremos una solución básica.</p>\n<p>A continuación se muestra la implementación del método <code>SaveProducts</code>. Es un método\nestático, y solo recibe como parámetro la lista con los productos que vamos a \nguardar al archivo. En esta primera prueba hemos dejado el nombre del archivo fijo (<em>hard-coded</em>) \ncomo <code>\"products.txt\"</code>, pero es mejor que este valor se reciba como parámetro (se dejará como ejercicio). </p>\n<p><div class=\"highlight\"><pre><span></span><code><span class=\"k\">class</span><span class=\"w\"> </span><span class=\"nc\">ProductDB</span><span class=\"w\"></span>\n<span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">   </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"k\">static</span><span class=\"w\"> </span><span class=\"k\">void</span><span class=\"w\"> </span><span class=\"nf\">SaveProducts</span><span class=\"p\">(</span><span class=\"n\">List</span><span class=\"p\">&lt;</span><span class=\"n\">Product</span><span class=\"p\">&gt;</span><span class=\"w\"> </span><span class=\"n\">products</span><span class=\"p\">)</span><span class=\"w\"></span>\n<span class=\"w\">   </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"c1\">// Declaramos el FileStream fuera del bloque try </span>\n<span class=\"w\">    </span><span class=\"c1\">// para que sea visible en todo el bloque del método</span>\n<span class=\"w\">    </span><span class=\"n\">FileStream</span><span class=\"w\"> </span><span class=\"n\">fs</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">null</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">try</span><span class=\"w\"> </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">       </span><span class=\"c1\">// Instanciamos un objeto de FileStream</span>\n<span class=\"w\">       </span><span class=\"c1\">// Vamos a crear el archivo y vamos a escribir en el</span>\n<span class=\"w\">       </span><span class=\"n\">fs</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">FileStream</span><span class=\"p\">(</span><span class=\"s\">&quot;products.txt&quot;</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">FileMode</span><span class=\"p\">.</span><span class=\"n\">Create</span><span class=\"p\">,</span><span class=\"w\"> </span>\n<span class=\"w\">                                             </span><span class=\"n\">FileAccess</span><span class=\"p\">.</span><span class=\"n\">Write</span><span class=\"p\">);</span><span class=\"w\"></span>\n\n<span class=\"w\">       </span><span class=\"c1\">// Utilizamos &#39;using&#39; para que se llame a Dispose implicitamente </span>\n<span class=\"w\">       </span><span class=\"n\">using</span><span class=\"p\">(</span><span class=\"n\">StreamWriter</span><span class=\"w\"> </span><span class=\"n\">txtOut</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">StreamWriter</span><span class=\"p\">(</span><span class=\"n\">fs</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">Encoding</span><span class=\"p\">.</span><span class=\"n\">UTF8</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"m\">512</span><span class=\"p\">))</span><span class=\"w\"></span>\n<span class=\"w\">       </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">          </span><span class=\"k\">foreach</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"kt\">var</span><span class=\"w\"> </span><span class=\"n\">p</span><span class=\"w\"> </span><span class=\"k\">in</span><span class=\"w\"> </span><span class=\"n\">products</span><span class=\"p\">)</span><span class=\"w\"></span>\n<span class=\"w\">          </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">              </span><span class=\"c1\">// Escribimos una línea con los campos de cada objeto </span>\n<span class=\"w\">              </span><span class=\"c1\">// Separados por un &#39;|&#39;</span>\n<span class=\"w\">              </span><span class=\"n\">txtOut</span><span class=\"p\">.</span><span class=\"n\">WriteLine</span><span class=\"p\">(</span><span class=\"s\">$&quot;{p.code}|{p.description}|{p.price}&quot;</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">          </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">       </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">   </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">   </span><span class=\"c1\">// Optamos por llamar explicitamete al Dispose de fs, como ejemplo</span>\n<span class=\"w\">   </span><span class=\"k\">finally</span><span class=\"w\"> </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">       </span><span class=\"c1\">// Solo se ejecuta si la referencia no es nula</span>\n<span class=\"w\">      </span><span class=\"k\">if</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"n\">fs</span><span class=\"w\"> </span><span class=\"p\">!=</span><span class=\"w\"> </span><span class=\"k\">null</span><span class=\"p\">)</span><span class=\"w\"></span>\n<span class=\"w\">          </span><span class=\"n\">fs</span><span class=\"p\">.</span><span class=\"n\">Dispose</span><span class=\"p\">();</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">  </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"p\">}</span><span class=\"w\"></span>\n</code></pre></div>\nEn el ejemplo utilizamos una instancia de <code>FileStream</code> para especificar el modo y tipo de acceso \nque utilizaremos al manipular el archivo. Esto lo especificamos utilzando las enumeraciones \n<code>FileMode</code> y <code>FileAccess</code>. </p>\n<p>Las opciones para el modo de apertura <code>FileMode</code> son: </p>\n<table>\n<thead>\n<tr>\n<th>Valor</th>\n<th>Descripción</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>Append</code></td>\n<td>Abre el archivo si existe y se posiciona al final de este. Si el archivo no existe, se crea uno nuevo.</td>\n</tr>\n<tr>\n<td><code>Create</code></td>\n<td>Crea un nuevo archivo. Si el archivo ya existe, se sobrescribe.</td>\n</tr>\n<tr>\n<td><code>CreateNew</code></td>\n<td>Crea un nuevo archivo. Si el archivo ya existe, se genera una excepción.</td>\n</tr>\n<tr>\n<td><code>Open</code></td>\n<td>Abre un archivo existente. Si el archivo no existe, se genera una excepción.</td>\n</tr>\n<tr>\n<td><code>OpenOrCreate</code></td>\n<td>Abre el archivo si existe. Si no existe, se crea uno nuevo.</td>\n</tr>\n<tr>\n<td><code>Truncate</code></td>\n<td>Abre un archivo existente y lo trunca a cero bytes. Si el archivo no existe, se genera una excepción.</td>\n</tr>\n</tbody>\n</table>\n<p>Las opciones para el tipo de acceso son <code>FileAccess.Read</code>, <code>FileAccess.Write</code> y <code>FileAccess.ReadWrite</code>, \nindicando las operaciones que vamos a hacer en el archivo. </p>",
+  "reg_exp": ""
+},{
+  "_id": "/activity/733edf66-8219-81e7-9265-3401663b8331",
+  "uri": "/activity/733edf66-8219-81e7-9265-3401663b8331",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution 4.0 International",
+  "description": "Persistencia utilizando streams binarios, BinaryStream",
+  "icon": "file",
+  "author": "Mario García Valdez",
+  "tags": [
+    "clase",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Operaciones básicas con archivos binarios",
+  "type": "text",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "author_image": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "content": "<h3>Archivos de Texto</h3>\n<p>Todos los archivos almacenan datos que consisten en una secuencia de bytes. \nEsto nos permite almacenar en archivos tipo de información digital como \nimágenes, videos, texto y hasta programas ejecutables. El detalle está en la \nmanera en la que interpretamos a los bytes que almacenamos en el archivo.</p>\n<p>En caso de \nlos archivos de texto, exiten varias codificaciones que asocian a los caracteres\nde un alfabeto a una representación binaria, por ejemplo, las codificaciones ASCII o \nUTF-8. Decimos que un archivo de texto (también les llamamos de texto plano) incluye solo \ntexto codificado en algún estándar. No incluye bytes que representen \ndirectamente imágenes u otro tipo de datos. Los programadores utilizamos editores de \ntexto como <em>vscode</em>, <em>vim</em>, <em>emacs</em> o <em>notepad++</em> para programar, ya que el código fuente\nde nuestros programas es puro texto. Un archivo de texto también incluye caracteres que no\nse muestran en el editor directamente, por ejemplo un salto de línea o una tabulación. \nLa ventaja que tienen los archivos de texto al limitar el tipo de datos que contienen,\nes que pueden leerse de manera universal, no importa el sistema operativo, o el tipo de \nprograma con interfaz gráfica o directamente en la consola de comandos, tenemos muchas \nherramientas para leer y editar el texto. Además de la codificación, también hay \nformatos de almacenamiento que se basan en texto, por ejemplo los archivos de html, xml, json\no yaml. </p>\n<h3>Archivos Binarios</h3>\n<p>Por otro lado, los archivos binarios no tienen la limitación de contener solamente texto.\nAlgunos bytes dentro del archivo pueden codificar texto, pero otro pueden representar \nuna imagen, o tipos de dato básicos definidos en un lenguaje. Por ejemplo, hablando de C#,\nsi queremos almacenar el valor <code>23.1m</code> de tipo decimal, vimos como al guardarlo en un archivo\nde texto, debemos convertirlo a <code>string</code> (esto se hace internamente por el método <code>ToString()</code>). \nY al leerlo debemos hacer la conversión de regreso de <code>string</code> a <code>decimal</code>. En el caso de \nun archivo binario, esto no es necesario porque el podemos grabar directamente los bytes que \nrepresentan al decimal. De la misma manera, al leer, los bytes ya representan al valor decimal. </p>\n<p>Almacenar datos a un archivo binario es más fácil que a uno de texto, pues no\ntenemos que hacer ninguna conversión de tipos. Todo se guarda con los mismos\nbytes que el tipo dato en C#. ¿Un entero?, pues se guarda directamente como\nentero, más correctamente, su representación binaria.  </p>\n<p>Como ahora tenemos la posibilidad de almacenar bytes con distintos significados, perdemos la \nventaja de leer todo de la misma manera. Ya no podemos tener un solo método <code>Read()</code> o <code>ReadLine()</code>,\nesto era posible porque en el archivo todo es texto (<code>string</code>). Ahora debemos ajustar la lectura del \nstream al tipo de dato que esperamos. ¿Es un decimal o un entero?, ¿es entero de 16 o 32 bits?, cada \ntipo de dato básico requiere de un procesamiento algo diferente. Por esta razón, al leer archivos \nbinarios, debemos utilizar métodos especializados para cada tipo básico, por ejemplo, para un\n<code>Decimal</code> utilizamos <code>ReadDecimal()</code> y para un <code>Int16</code> usamos <code>ReadInt16</code>.</p>\n<h3>BinaryWriter y BinaryReader</h3>\n<p>Al igual que en la contraparte de archivos de texto, utilizamos dos clases derivadas de <code>Stream</code>, \nlas cuales se especializan en streams binarios. Utilizamos estas clases en conjunto con la \nclase <code>FileStream</code> de la misma manera que antes. Vamos el ejemplo de la documentación de C#:</p>\n<p><div class=\"highlight\"><pre><span></span><code><span class=\"k\">using</span><span class=\"w\"> </span><span class=\"nn\">System</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"k\">using</span><span class=\"w\"> </span><span class=\"nn\">System.IO</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"k\">using</span><span class=\"w\"> </span><span class=\"nn\">System.Text</span><span class=\"p\">;</span><span class=\"w\"></span>\n\n<span class=\"k\">class</span><span class=\"w\"> </span><span class=\"nc\">ConsoleApplication</span><span class=\"w\"></span>\n<span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">const</span><span class=\"w\"> </span><span class=\"kt\">string</span><span class=\"w\"> </span><span class=\"n\">fileName</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"s\">&quot;AppSettings.dat&quot;</span><span class=\"p\">;</span><span class=\"w\"></span>\n\n<span class=\"w\">    </span><span class=\"k\">static</span><span class=\"w\"> </span><span class=\"k\">void</span><span class=\"w\"> </span><span class=\"nf\">Main</span><span class=\"p\">()</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"n\">WriteDefaultValues</span><span class=\"p\">();</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"n\">DisplayValues</span><span class=\"p\">();</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">}</span><span class=\"w\"></span>\n\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"k\">static</span><span class=\"w\"> </span><span class=\"k\">void</span><span class=\"w\"> </span><span class=\"nf\">WriteDefaultValues</span><span class=\"p\">()</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"k\">using</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"kt\">var</span><span class=\"w\"> </span><span class=\"n\">stream</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">File</span><span class=\"p\">.</span><span class=\"n\">Open</span><span class=\"p\">(</span><span class=\"n\">fileName</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">FileMode</span><span class=\"p\">.</span><span class=\"n\">Create</span><span class=\"p\">))</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">            </span><span class=\"k\">using</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"kt\">var</span><span class=\"w\"> </span><span class=\"n\">writer</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">BinaryWriter</span><span class=\"p\">(</span><span class=\"n\">stream</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">Encoding</span><span class=\"p\">.</span><span class=\"n\">UTF8</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"k\">false</span><span class=\"p\">))</span><span class=\"w\"></span>\n<span class=\"w\">            </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">                </span><span class=\"n\">writer</span><span class=\"p\">.</span><span class=\"n\">Write</span><span class=\"p\">(</span><span class=\"m\">1.250F</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">                </span><span class=\"n\">writer</span><span class=\"p\">.</span><span class=\"n\">Write</span><span class=\"p\">(</span><span class=\"s\">@&quot;c:\\Temp&quot;</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">                </span><span class=\"n\">writer</span><span class=\"p\">.</span><span class=\"n\">Write</span><span class=\"p\">(</span><span class=\"m\">10</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">                </span><span class=\"n\">writer</span><span class=\"p\">.</span><span class=\"n\">Write</span><span class=\"p\">(</span><span class=\"k\">true</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">            </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">}</span><span class=\"w\"></span>\n\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"k\">static</span><span class=\"w\"> </span><span class=\"k\">void</span><span class=\"w\"> </span><span class=\"nf\">DisplayValues</span><span class=\"p\">()</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"kt\">float</span><span class=\"w\"> </span><span class=\"n\">aspectRatio</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"kt\">string</span><span class=\"w\"> </span><span class=\"n\">tempDirectory</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"kt\">int</span><span class=\"w\"> </span><span class=\"n\">autoSaveTime</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"kt\">bool</span><span class=\"w\"> </span><span class=\"n\">showStatusBar</span><span class=\"p\">;</span><span class=\"w\"></span>\n\n<span class=\"w\">        </span><span class=\"k\">if</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"n\">File</span><span class=\"p\">.</span><span class=\"n\">Exists</span><span class=\"p\">(</span><span class=\"n\">fileName</span><span class=\"p\">))</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">            </span><span class=\"k\">using</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"kt\">var</span><span class=\"w\"> </span><span class=\"n\">stream</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">File</span><span class=\"p\">.</span><span class=\"n\">Open</span><span class=\"p\">(</span><span class=\"n\">fileName</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">FileMode</span><span class=\"p\">.</span><span class=\"n\">Open</span><span class=\"p\">))</span><span class=\"w\"></span>\n<span class=\"w\">            </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">                </span><span class=\"k\">using</span><span class=\"w\"> </span><span class=\"p\">(</span><span class=\"kt\">var</span><span class=\"w\"> </span><span class=\"n\">reader</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"k\">new</span><span class=\"w\"> </span><span class=\"n\">BinaryReader</span><span class=\"p\">(</span><span class=\"n\">stream</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"n\">Encoding</span><span class=\"p\">.</span><span class=\"n\">UTF8</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"k\">false</span><span class=\"p\">))</span><span class=\"w\"></span>\n<span class=\"w\">                </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">                    </span><span class=\"n\">aspectRatio</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">reader</span><span class=\"p\">.</span><span class=\"n\">ReadSingle</span><span class=\"p\">();</span><span class=\"w\"></span>\n<span class=\"w\">                    </span><span class=\"n\">tempDirectory</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">reader</span><span class=\"p\">.</span><span class=\"n\">ReadString</span><span class=\"p\">();</span><span class=\"w\"></span>\n<span class=\"w\">                    </span><span class=\"n\">autoSaveTime</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">reader</span><span class=\"p\">.</span><span class=\"n\">ReadInt32</span><span class=\"p\">();</span><span class=\"w\"></span>\n<span class=\"w\">                    </span><span class=\"n\">showStatusBar</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">reader</span><span class=\"p\">.</span><span class=\"n\">ReadBoolean</span><span class=\"p\">();</span><span class=\"w\"></span>\n<span class=\"w\">                </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">            </span><span class=\"p\">}</span><span class=\"w\"></span>\n\n<span class=\"w\">            </span><span class=\"n\">Console</span><span class=\"p\">.</span><span class=\"n\">WriteLine</span><span class=\"p\">(</span><span class=\"s\">&quot;Aspect ratio set to: &quot;</span><span class=\"w\"> </span><span class=\"p\">+</span><span class=\"w\"> </span><span class=\"n\">aspectRatio</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">            </span><span class=\"n\">Console</span><span class=\"p\">.</span><span class=\"n\">WriteLine</span><span class=\"p\">(</span><span class=\"s\">&quot;Temp directory is: &quot;</span><span class=\"w\"> </span><span class=\"p\">+</span><span class=\"w\"> </span><span class=\"n\">tempDirectory</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">            </span><span class=\"n\">Console</span><span class=\"p\">.</span><span class=\"n\">WriteLine</span><span class=\"p\">(</span><span class=\"s\">&quot;Auto save time set to: &quot;</span><span class=\"w\"> </span><span class=\"p\">+</span><span class=\"w\"> </span><span class=\"n\">autoSaveTime</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">            </span><span class=\"n\">Console</span><span class=\"p\">.</span><span class=\"n\">WriteLine</span><span class=\"p\">(</span><span class=\"s\">&quot;Show status bar: &quot;</span><span class=\"w\"> </span><span class=\"p\">+</span><span class=\"w\"> </span><span class=\"n\">showStatusBar</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"p\">}</span><span class=\"w\"></span>\n</code></pre></div>\nEl ejemplo muestra un caso práctico donde queremos almacenar la configuración de nuestro \nprograma en un archivo binario. Para indicar que es un archivo binario en este caso le \npondremos la extensión <code>.dat</code>. El nombre del archivo es:\n<div class=\"highlight\"><pre><span></span><code>const string fileName = &quot;AppSettings.dat&quot;;\n</code></pre></div>\nEmpecemos por almacenar los datos, eso se hace en el método <code>WriteDefaultValues</code>. Como\nvemos al igual que en el caso de los archivos de texto, creamos el <code>BinaryStream</code> tomando \ncomo primer parámetro una instancia del <code>FileStream</code> con el archivo dónde vamos guardar los datos.\nComo vemos, no es necesario utilizar algún mecanismo para separar los datos, cómo un separador u \nalgo similar.</p>\n<p>Para la lectura ahora debemos utilizar el método de <code>BinaryReader</code> específico para el tipo de\ndato que vamos a leer. Vemos que aun en el caso binario especificamos el tipo de codificación \n<code>Encoding.UTF8</code>, pues recordemos que los archivos binarios también pueden incluir texto. \nPara el caso del tipo de dato <code>float</code>, se utiliza el método <code>ReadSingle</code> el cual lee un \nflotante de 4 bytes, a esto se le conoce como <code>single precision</code>.  </p>\n<h4>Referencias</h4>\n<ul>\n<li>\n<p>Algunas partes son adaptadas del material de <a href=\"https://github.com/dotnet/docs/\">dotnet/docs</a> \ncon licencia <strong><em>Attribution 4.0 International</em></strong>, este material se comparte con la misma licencia. </p>\n</li>\n<li>\n<p>Streams en <a href=\"https://learn.microsoft.com/es-mx/dotnet/api/system.io.stream?view=net-7.0\">dotnet/docs</a></p>\n</li>\n</ul>"
+},{
+  "_id": "/program/eeef9c5a-f656-11ec-b939-0242ac122333",
+  "uri": "/program/eeef9c5a-f656-11ec-b939-0242ac122333",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Completa el programa para leer una lista de productos almacenados archivo de texto",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "completa",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Lee los productos almacenados en un archivo de texto",
+  "type": "prog",
+  "lang": "csharp",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "unit_test": "\npublic class Product\n{\n    public string? code;\n    public string? description;\n    public decimal? price;\n    public uint? likes;\n    public uint? department;\n\n    public Product(string? c, string? d, decimal? p, uint? l, uint? de)\n    {\n        code = c; description = d; price = p; \n        likes = l; department = de;\n    }\n\n    public override string ToString()\n    {\n        return String.Format($\"{code} {description} {price}\");\n    }\n}\n\npublic class UnitTest1\n{\n\n    [Fact]\n    public void ReadProductsTxt()\n    {\n      List<Product> products = new();\n      products.Add(new Product(\"AAA\", \"DescA\", 12.22m, 12,  23));\n      products.Add(new Product(\"BAA\", \"DescB\", 12.22m, 12,  23));\n      products.Add(new Product(\"CAA\", \"DescC\", 12.22m, 12,  23));\n    \n      SaveProducts(products);\n\n      List<Product> productsFF = new();\n      productsFF = ProductDB.ReadProducts();\n      Assert.Equal(\"AAA\", productsFF[0].code);\n      Assert.Equal(\"BAA\", productsFF[1].code);\n      Assert.Equal(\"CAA\", productsFF[2].code);\n\n      foreach(var p in productsFF)\n          Console.WriteLine(p);\n    }\n    \n    private static void SaveProducts(List<Product> products)\n    {\n        FileStream? fs = null;\n        try {\n            fs = new FileStream(\"products.txt\", FileMode.Create, FileAccess.Write);\n            using(StreamWriter txtOut = new StreamWriter(fs, Encoding.UTF8, 512))\n            {\n                foreach (var p in products)\n                {\n                    txtOut.WriteLine($\"{p.code}|{p.description}|{p.price}|{p.likes}|{p.department}\");\n                }\n            }\n        }\n        finally {\n            if (fs != null)\n                fs.Dispose();\n        }\n    }\n}\n\n",
+  "initial_code": "using System.Text;\n\npublic class ProductDB\n{\n    public static  List<Product> ReadProducts()\n    {\n        // Lista que vamos a regresar\n        List<Product> prods = new();\n        // Creamos la referencia fs\n        FileStream? fs = null;\n        try {\n            // Crea una instancia de FileStream\n            // Completa las enumeracions FileMode y FileAccess\n            \n            fs = new FileStream(\"products.txt\", FileMode. , FileAccess.);\n            using(StreamReader txtIn = new StreamReader(fs, Encoding.UTF8))\n            {\n                while (txtIn.Peek() != -1)\n                {\n                string? row = txtIn.ReadLine();\n                // leemos hasta el fin de archivo\n                if (row is not null)\n                    {\n                    // Separa los campos de cada renglón\n                    // en un arreglo llamado cols\n                    // string?[] cols =  \n\n                    string? code = cols[0];\n                    string? description = cols[1];\n                    decimal? price = decimal.Parse(cols[2]!);\n                    // Agrega las variables que falten\n\n                    // Agregamos un nuevo producto a la lista\n                    // No modificar esta línea\n                    prods.Add(new Product(code,description, price, \n                                likes, department));\n                    }\n                }\n            }\n        }\n        finally {\n            if (fs != null)\n                fs.Dispose();\n        }\n\n        // REGRESA LA LISTA\n\n    }\n}\n",
+  "instructions": "<h3>Lee objetos de la clase <code>Product</code> desde un archivo de texto</h3>\n<p>El archivo <code>\"products.txt</code> contiene el estado \nde una colección de objetos de la clase <code>Product</code>:</p>\n<div class=\"highlight\"><pre><span></span><code><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"k\">class</span><span class=\"w\"> </span><span class=\"nc\">Product</span><span class=\"w\"></span>\n<span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"kt\">string?</span><span class=\"w\"> </span><span class=\"n\">code</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"kt\">string?</span><span class=\"w\"> </span><span class=\"n\">description</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"kt\">decimal?</span><span class=\"w\"> </span><span class=\"n\">price</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"kt\">uint?</span><span class=\"w\"> </span><span class=\"n\">likes</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"kt\">uint?</span><span class=\"w\"> </span><span class=\"n\">department</span><span class=\"p\">;</span><span class=\"w\"></span>\n\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"nf\">Product</span><span class=\"p\">(</span><span class=\"kt\">string?</span><span class=\"w\"> </span><span class=\"n\">c</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"kt\">string?</span><span class=\"w\"> </span><span class=\"n\">d</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"kt\">decimal?</span><span class=\"w\"> </span><span class=\"n\">p</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"kt\">uint?</span><span class=\"w\"> </span><span class=\"n\">l</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"kt\">uint?</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"p\">)</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"n\">code</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">c</span><span class=\"p\">;</span><span class=\"w\"> </span><span class=\"n\">description</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">d</span><span class=\"p\">;</span><span class=\"w\"> </span><span class=\"n\">price</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">p</span><span class=\"p\">;</span><span class=\"w\"> </span>\n<span class=\"w\">        </span><span class=\"n\">likes</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">l</span><span class=\"p\">;</span><span class=\"w\"> </span><span class=\"n\">department</span><span class=\"w\"> </span><span class=\"p\">=</span><span class=\"w\"> </span><span class=\"n\">de</span><span class=\"p\">;</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">}</span><span class=\"w\"></span>\n\n<span class=\"w\">    </span><span class=\"k\">public</span><span class=\"w\"> </span><span class=\"k\">override</span><span class=\"w\"> </span><span class=\"kt\">string</span><span class=\"w\"> </span><span class=\"nf\">ToString</span><span class=\"p\">()</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">{</span><span class=\"w\"></span>\n<span class=\"w\">        </span><span class=\"k\">return</span><span class=\"w\"> </span><span class=\"n\">String</span><span class=\"p\">.</span><span class=\"n\">Format</span><span class=\"p\">(</span><span class=\"s\">$&quot;{code} {description} {price}&quot;</span><span class=\"p\">);</span><span class=\"w\"></span>\n<span class=\"w\">    </span><span class=\"p\">}</span><span class=\"w\"></span>\n<span class=\"p\">}</span><span class=\"w\"></span>\n</code></pre></div>\n<p>El archivo de texto tiene el siguiente formato:</p>\n<div class=\"highlight\"><pre><span></span><code>AAA|DescA|12.22|12|23\nBBB|De\n</code></pre></div>\n<p>Debes completar el método para que <strong>regrese</strong> una lista de tipo <code>List&lt;Product&gt;</code>\ncon los objetos que se haz leído del archivo.</p>\n<p>Para hacer la lectura utilizaremos una instancia de <code>StreamReader</code>.</p>\n<p>Puedes guardar tu código temporalmente en\n<a href=\"https://gist.github.com/\" target=\"_blank\">GitHub Gist</a></p>\n<h4>Notas:</h4>\n<p>En el ejemplo utilizamos una instancia de <code>FileStream</code> para especificar el modo y tipo de acceso \nque utilizaremos al manipular el archivo. Esto lo especificamos utilzando las enumeraciones \n<code>FileMode</code> y <code>FileAccess</code>. </p>\n<p>Las opciones para el modo de apertura <code>FileMode</code> son: </p>\n<table>\n<thead>\n<tr>\n<th>Valor</th>\n<th>Descripción</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>Append</code></td>\n<td>Abre el archivo si existe y se posiciona al final de este. Si el archivo no existe, se crea uno nuevo.</td>\n</tr>\n<tr>\n<td><code>Create</code></td>\n<td>Crea un nuevo archivo. Si el archivo ya existe, se sobrescribe.</td>\n</tr>\n<tr>\n<td><code>CreateNew</code></td>\n<td>Crea un nuevo archivo. Si el archivo ya existe, se genera una excepción.</td>\n</tr>\n<tr>\n<td><code>Open</code></td>\n<td>Abre un archivo existente. Si el archivo no existe, se genera una excepción.</td>\n</tr>\n<tr>\n<td><code>OpenOrCreate</code></td>\n<td>Abre el archivo si existe. Si no existe, se crea uno nuevo.</td>\n</tr>\n<tr>\n<td><code>Truncate</code></td>\n<td>Abre un archivo existente y lo trunca a cero bytes. Si el archivo no existe, se genera una excepción.</td>\n</tr>\n</tbody>\n</table>\n<p>Las opciones para el tipo de acceso son <code>FileAccess.Read</code>, <code>FileAccess.Write</code> y <code>FileAccess.ReadWrite</code>, \nindicando las operaciones que vamos a hacer en el archivo. </p>",
+  "reg_exp": ""
+},{
+  "_id": "/program/11e10c5a-f656-11ec-b939-0242ac122334",
+  "uri": "/program/11e10c5a-f656-11ec-b939-0242ac122334",
+  "publisher": null,
+  "level": "intermedio",
+  "rights": "Attribution-ShareAlike 4.0 International",
+  "description": "Completa el programa para guardar una lista de alumnos a un archivo de binario",
+  "icon": "coffee",
+  "author": "mariosky@gmail.com",
+  "tags": [
+    "completa",
+    "csharp"
+  ],
+  "image_url": null,
+  "title": "Guarda los datos de una lista de alumnos a un archivo binario",
+  "type": "prog",
+  "lang": "csharp",
+  "external_url": "https://sfo2.digitaloceanspaces.com/evo/uno/autores/mario.jpg",
+  "unit_test": "\npublic class UnitTest1\n{\n    [Fact]\n    public void ConstructorClass()\n    {\n      Alumno p = new Alumno(1, \"NombreA\", 90.22m);\n      Assert.Equal(\"NombreA\",p.nombre);\n      Assert.Equal(1, p.id);\n      Assert.Equal(90.22m,p.calificación);\n    }\n\n    [Fact]\n    public void SaveAlumnosTxt()\n    {\n      List<Alumno> alumnos = new();\n      alumnos.Add(new Alumno(1, \"NombreA\", 82.22m));\n      alumnos.Add(new Alumno(2, \"NombreB\", 92.22m));\n      alumnos.Add(new Alumno(3, \"NombreC\", 32.22m));\n    \n      AlumnoDB.SaveAlumnosBin(alumnos, \"alumnos.dat\");\n\n      List<Alumno> alumnosFF = new();\n      alumnosFF = ReadAlumnosBin();\n      Assert.True(alumnosFF.Count > 0, \"El archivo no contiene registros!\");\n      Assert.Equal(1, alumnosFF[0].id);\n      Assert.Equal(2, alumnosFF[1].id);\n      Assert.Equal(3, alumnosFF[2].id);\n      \n    }\n\n    private static List<Alumno> ReadAlumnosBin()\n    {\n        List<Alumno> alumnos = new();\n        FileStream? fs = null;\n        try {\n            fs = new FileStream(\"alumnos.dat\", FileMode.Open, FileAccess.Read);\n            using(BinaryReader binIn = new BinaryReader(fs, Encoding.UTF8))\n            {\n                while (binIn.PeekChar() != -1)\n                {\n                    int id = binIn.ReadInt32(); \n                    string name = binIn.ReadString();\n                    decimal cali= binIn.ReadDecimal();\n                    Console.Write($\"{id}{name}{cali}\");\n                    alumnos.Add(new Alumno(id, name, cali));\n                }\n            }\n        }\n        finally {\n            if (fs != null)\n                fs.Dispose();\n        }\n        return alumnos;\n    }\n\n}\n",
+  "initial_code": "using System.Text;\n\npublic class Alumno\n{\n    public int id;\n    public string nombre;\n    public decimal calificación;\n\n    // Agrega el constructor\n}\n\npublic class AlumnoDB\n{\n    public static void SaveAlumnosBin(List<Alumno> alumnos, string path)\n    {\n            // El nombre del archivo nos lo envían en el parámetro path\n            // El archivo puede ser que exista previamente\n            using(FileStream fs = new FileStream( ,  , \n                        FileAccess.Write))\n            using(BinaryWriter binOut = new BinaryWriter(fs, Encoding.UTF8))\n            {\n                //Debes iterar por la lista que nos han enviado como parámetro\n                //Escribe al stream en binario los campos de cada alumno\n                //En el mismo orden que en la clase\n\n            }\n    }\n}\n",
+  "instructions": "<h3>Guarda objetos de la clase Alumno a un archivo binario</h3>\n<p>Sigue estos pasos para completar el programa:</p>\n<ol>\n<li>\n<p>Debes completar el programa agregando el constructor \n   de la clase Alumno, incializando todos los campos.</p>\n</li>\n<li>\n<p>Completar los parámetros del constructor de <code>FileStream</code>.</p>\n</li>\n<li>\n<p>Itera por la lista de alumnos agregando el estado de cada \n   alumno al archivo binario. Recuerda que debas hacer en el mismo orden\n   en el que se especifican en la clase. </p>\n</li>\n</ol>\n<p>Observa el uso de la construcción <code>using</code> para <code>FileSrteam</code> y <code>BinaryWriter</code>.</p>\n<p>Puedes guardar tu código temporalmente en\n<a href=\"https://gist.github.com/\" target=\"_blank\">GitHub Gist</a></p>\n<hr />\n<h4>Notas:</h4>\n<p>En la salida de <strong>errores de compilación</strong> ahora se incluye el número de línea\ny columna dónde sucede error. Si el número de línea es mayor a las líneas de tu\nprograma, significa que tu código compila correctamente, pero ocasiona errores\nen otras partes del programa. </p>\n<p>En el ejemplo utilizamos una instancia de <code>FileStream</code> para especificar el modo y tipo de acceso \nque utilizaremos al manipular el archivo. Esto lo especificamos utilizando las enumeraciones \n<code>FileMode</code> y <code>FileAccess</code>. </p>\n<p>Las opciones para el modo de apertura <code>FileMode</code> son: </p>\n<table>\n<thead>\n<tr>\n<th>Valor</th>\n<th>Descripción</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>Append</code></td>\n<td>Abre el archivo si existe y se posiciona al final de este. Si el archivo no existe, se crea uno nuevo.</td>\n</tr>\n<tr>\n<td><code>Create</code></td>\n<td>Crea un nuevo archivo. Si el archivo ya existe, se sobrescribe.</td>\n</tr>\n<tr>\n<td><code>CreateNew</code></td>\n<td>Crea un nuevo archivo. Si el archivo ya existe, se genera una excepción.</td>\n</tr>\n<tr>\n<td><code>Open</code></td>\n<td>Abre un archivo existente. Si el archivo no existe, se genera una excepción.</td>\n</tr>\n<tr>\n<td><code>OpenOrCreate</code></td>\n<td>Abre el archivo si existe. Si no existe, se crea uno nuevo.</td>\n</tr>\n<tr>\n<td><code>Truncate</code></td>\n<td>Abre un archivo existente y lo trunca a cero bytes. Si el archivo no existe, se genera una excepción.</td>\n</tr>\n</tbody>\n</table>\n<p>Las opciones para el tipo de acceso son <code>FileAccess.Read</code>, <code>FileAccess.Write</code> y <code>FileAccess.ReadWrite</code>, \nindicando las operaciones que vamos a hacer en el archivo. </p>",
+  "reg_exp": ""
+},{
+  "_id": "/activity/python-basico",
+  "title": "Python Básico",
+  "uri": "python-basico",
+  "description": "En sdfhlakjsdfh lkajsdfh alskdfjh lkajshdf alksjfh alsdkfjh aslkdfjh aslkjhasdf lkjh alskdjfh alsdkjh alskjfh alskdfjh alskdjh alskfjha ldkjh asdlkjhasldkfjhasdl fkjashdf laskjdfh aslkdfjha sldkfjh",
+  "author": "",
+  "author_image": "",
+  "rights": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+  "is_private": false,
+  "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "level": "principiante",
+  "external_url": "",
+  "current_price": 0,
+  "image_url": "",
+  "video_url": "",
+  "duration": "None",
+  "html_description": "",
+  "tags": [
+    "curso"
+  ],
+  "status": "in_revision",
+  "start_date": null,
+  "type": "course"
+}]
